@@ -1,0 +1,20 @@
+{
+  "name": "dawnbreak-website",
+  "version": "0.1.0",
+  "description": "Dawnbreak City — the living record of a city that keeps getting saved",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "build:prod": "npm run lint:articles && eleventy && pagefind --site _site",
+    "start": "eleventy --serve",
+    "dev": "eleventy --serve --incremental",
+    "lint:articles": "node scripts/lint-articles.js",
+    "new": "node scripts/lint-articles.js --new"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "pagefind": "^1.1.0"
+  }
+}
