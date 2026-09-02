@@ -30,6 +30,21 @@ module.exports = {
     anonKey: "",
   },
 
+  /**
+   * The other setting, for the header switcher.
+   *
+   * The switcher is the one control that exists on both sites, and it is
+   * deliberately the same object on each — same geometry, same proportions,
+   * same behaviour — wearing this site's tokens instead of Ahvantir's. It
+   * should read as the seam between two worlds, not as a stray outbound link.
+   *
+   * Blanking `url` removes the control site-wide without touching a template.
+   */
+  sister: {
+    label: "Ahvantir",
+    url: "https://ahvantir.world/",
+  },
+
   site: {
     title: "Dawnbreak City",
     /**
