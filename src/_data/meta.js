@@ -32,7 +32,15 @@ module.exports = {
 
   site: {
     title: "Dawnbreak City",
-    subtitle: "It Keeps Getting Saved",
+    /**
+     * Not a slogan the site invented — a phrase the city has carried since its
+     * founding, whose meaning H-Day took away from it. The refugees who founded
+     * Dawnbreak meant a place where a life could be changed. After 11 June 2028
+     * it means something that happens to people rather than something they
+     * choose. Nobody rebranded; the words simply stopped meaning the first
+     * thing. See docs/CANON-NOTES.md.
+     */
+    subtitle: "The City of Changes",
     description:
       "The living record of Dawnbreak City — its heroes, the people who fight them, " +
       "the streets they keep wrecking, and the day everything changed.",

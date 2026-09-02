@@ -15,21 +15,48 @@ revisiting every article already written under it.
 
 ## The voice
 
-**Default, and the one every template below is written for: the site is a civic
-record, not a publication with an agenda.** Neutral, specific, unhurried. It
-reports what is known, attributes what is claimed, and says plainly when the
-two differ.
+**Neutral, vague, and quietly omniscient. The narrator is never named,
+described, explained or acknowledged.**
+
+The record knows more than it says. It states things nobody in the city could
+have verified, and it does not draw attention to the fact that it knows them.
+It does not have a masthead, a byline, an editorial policy or an about page. It
+never refers to itself.
+
+That is the whole effect, and it is fragile: one sentence explaining where the
+information came from collapses it.
+
+### What that means in practice
+
+- **Never `I`, `we`, `our records`, `this site`, `the editors`, `the archive`.**
+  There is no first person and no institution. If a sentence needs a subject,
+  it is the city, the DCPD, Arkon, or the fact itself.
+- **Never explain the record's own limits.** "The connection has never been
+  established" is in voice. "No sources could be found" is not — it admits
+  someone was looking.
+- **State plainly; attribute where it matters.** When something is disputed,
+  the dispute is reported as a fact, flatly. Avoid `some say`, `it is
+  rumoured`, `many believe` — hedges make the narrator sound uncertain, and it
+  is not uncertain. It is *withholding*, which is different.
+- **Occasionally know too much, and never wink about it.** A private
+  conversation, a number nobody published, what someone was thinking. Used
+  sparingly it is the entire character of the thing. Used with a nudge —
+  irony, a knowing aside, a rhetorical question — it dies instantly.
+- **No jokes at the subject's expense.** Dry is fine, and understatement is the
+  register. Sneering is not.
+- **Unhurried.** Nothing is being sold and nothing is urgent. Short declarative
+  sentences, and no build-up to a reveal.
 
 In-world publications — the Arkon Media Pantheon roster above all — are
-**quoted inside** articles, never adopted as the site's own voice. That keeps
-your existing Arkon material usable exactly as written, as a source with a
-byline, and it stops "Locations" and "Events" articles from having to sound
-like a press release, which they cannot.
+**quoted inside** articles with attribution, never adopted as the narrator's
+own voice. Arkon has a byline. The record does not.
 
-The alternative, if you want it, is that the site IS an in-world artifact —
-the city's own archive, or an independent outlet operating in Arkon's shadow.
-That is a better story and a worse encyclopedia, and it would mean rewriting
-all five templates around a narrator. Say the word and I will.
+### The line this walks
+
+The narrator must never become a character. No personality, no history, no
+motive, no hints toward any of the three. A reader should finish fifty articles
+with the strong sense that something is telling them this, and nothing whatever
+to say about what.
 
 ---
 
