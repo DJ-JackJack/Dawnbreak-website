@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "eleventy",
-    "build:prod": "npm test && eleventy && pagefind --site _site",
+    "build:prod": "npm test && eleventy && npm run check:links && pagefind --site _site",
     "start": "eleventy --serve",
     "dev": "eleventy --serve --incremental",
     "lint:articles": "node scripts/lint-articles.js",
@@ -13,7 +13,8 @@
     "test:auth": "node scripts/test-auth-storage.js",
     "test:timeline": "node scripts/test-timeline-year.js",
     "test": "npm run lint:articles && npm run lint:scope && npm run test:auth && npm run test:timeline",
-    "lint:scope": "node scripts/lint-campaign-scope.js"
+    "lint:scope": "node scripts/lint-campaign-scope.js",
+    "check:links": "node scripts/check-links.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",

@@ -1,0 +1,21 @@
+---
+layout: base
+title: Notes
+permalink: /player/notes/
+---
+<div class="wrap">
+  <header class="page-head">
+    <h1 class="page-title">Notes</h1>
+    <p class="page-lead">Yours alone. Nobody else can read these, including the GM.</p>
+  </header>
+
+  <div class="notes" id="notes-root">
+    <p class="entry-empty">Loading…</p>
+  </div>
+</div>
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.108.1/dist/umd/supabase.min.js" integrity="sha384-UQ9Ztz63gzT2JZCuDRkNXV8RP/gXxdPUuM9LKlz2BzqGx9xFYNAK8yAEgbfZHs7P" crossorigin="anonymous"></script>
+<script src="/assets/js/player.js"></script>
+<script src="/assets/js/player-notes.js"></script>
+{% endblock %}

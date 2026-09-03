@@ -48,9 +48,10 @@
 
     var rows = res.data || [];
     if (!rows.length) {
+      // No link to /player/character/ yet -- that page is still being built,
+      // and a button to a 404 is worse than no button.
       listEl.innerHTML =
-        '<p class="entry-empty">No hero yet.</p>' +
-        '<p><a class="btn btn--primary" href="/player/character/">Create one</a></p>';
+        '<p class="entry-empty">No hero recorded yet. The character page lands shortly.</p>';
       return;
     }
 

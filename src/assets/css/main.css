@@ -1009,3 +1009,177 @@ html.daybreak .entry:hover { background: rgba(20, 22, 28, 0.03); }
   border-radius: var(--radius);
 }
 .nav__signout:hover { color: var(--dawn); background: rgba(255,122,24,0.09); }
+
+/* ── Messages and notes: list beside detail ─────────────────────── */
+
+.msg, .notes {
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  margin-bottom: 4rem;
+}
+
+.msg-pane, .notes-pane {
+  background: var(--slate);
+  border: 1px solid var(--asphalt);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  max-height: 32rem;
+  overflow-y: auto;
+}
+.msg-pane--thread { padding: 0; background: none; border: 0; max-height: none; overflow: visible; }
+
+.msg-list, .notes-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; }
+
+.msg-convo, .notes-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 0.4rem;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-left: 2px solid transparent;
+  padding: 0.55rem 0.6rem;
+  cursor: pointer;
+  color: var(--bone);
+  font: inherit;
+  border-radius: var(--radius);
+}
+.msg-convo:hover, .notes-item:hover { background: var(--slate-hi); }
+.msg-convo.is-open, .notes-item.is-open { border-left-color: var(--dawn); background: var(--slate-hi); }
+
+.msg-convo__name, .notes-item__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.msg-convo__time, .notes-item__date {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--smoke);
+}
+.msg-convo__preview {
+  grid-column: 1 / -1;
+  font-size: 0.82rem;
+  color: var(--bone-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── The thread ─────────────────────────────────────────────────── */
+
+.msg-thread {
+  background: var(--slate);
+  border: 1px solid var(--asphalt);
+  border-top: 2px solid var(--signal);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem 1.1rem;
+}
+.msg-thread__who {
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 0.9rem;
+}
+
+.msg-bubbles {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+  max-height: 26rem;
+  overflow-y: auto;
+}
+
+.msg-bubble {
+  justify-self: start;
+  max-width: 80%;
+  background: var(--slate-hi);
+  border: 1px solid var(--asphalt);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.7rem;
+  font-size: 0.94rem;
+}
+/* Your own messages lean on the dawn accent and sit right, so a thread can be
+   read at a glance without checking every name. */
+.msg-bubble.is-mine {
+  justify-self: end;
+  background: rgba(255, 122, 24, 0.12);
+  border-color: rgba(255, 122, 24, 0.35);
+}
+.msg-bubble__body { display: block; }
+.msg-bubble__time {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--smoke);
+}
+
+.msg-send { display: grid; grid-template-columns: 1fr auto; gap: 0.5rem; }
+
+/* ── The notes editor ───────────────────────────────────────────── */
+
+.notes-new { width: 100%; justify-content: center; margin-bottom: 0.5rem; }
+
+.notes-editor {
+  background: var(--slate);
+  border: 1px solid var(--asphalt);
+  border-top: 2px solid var(--sodium);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem 0.85rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.notes-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--asphalt);
+  color: var(--bone);
+  padding: 0.2rem 0 0.4rem;
+}
+.notes-title:focus { outline: none; border-bottom-color: var(--dawn); }
+
+.notes-body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 18rem;
+  resize: vertical;
+  background: var(--night);
+  color: var(--bone);
+  border: 1px solid var(--asphalt);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.8rem;
+}
+.notes-body:focus { outline: none; border-color: var(--dawn); }
+
+.notes-bar { display: flex; align-items: center; justify-content: space-between; }
+.notes-status { font-family: var(--font-mono); font-size: 0.7rem; color: var(--smoke); }
+.notes-delete {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--smoke);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.4rem;
+  border-radius: var(--radius);
+}
+.notes-delete:hover { color: var(--blood); background: rgba(255, 51, 85, 0.08); }
+
+@media (max-width: 46rem) {
+  .msg, .notes { grid-template-columns: 1fr; }
+  .msg-pane, .notes-pane { max-height: 14rem; }
+}
