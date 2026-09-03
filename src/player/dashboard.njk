@@ -5,22 +5,28 @@ permalink: /player/dashboard/
 ---
 <div class="wrap">
   <header class="page-head">
-    <h1 class="page-title">Player area</h1>
+    <h1 class="page-title">Your desk</h1>
+    <p class="page-lead" id="dash-greeting">Signing you in…</p>
   </header>
 
-  {% if meta.playerArea.enabled %}
-  <div id="player-root"></div>
-  {% else %}
-  <div class="play-state">
-    <span class="play-dot play-dot--other" aria-hidden="true"></span>
-    <p class="play-state__title">Not connected yet</p>
-    <p class="play-state__body">
-      Characters, notes and messages will live here. They share one account with
-      {% if meta.sister %}{{ meta.sister.label }}{% else %}the other setting{% endif %} —
-      one sign-in, both cities — which is why this waits on the database being
-      set up rather than launching with its own separate logins.
-    </p>
-    <p class="play-state__note">Your GM will say when it opens.</p>
-  </div>
-  {% endif %}
+  <section class="section">
+    <h2 class="section__title">Your hero</h2>
+    <div id="dash-characters"><p class="entry-empty">Loading…</p></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section__title">Elsewhere</h2>
+    <ul class="cat-grid" role="list">
+      <li><a class="cat-card" href="/player/notes/"           style="--cat: #FFC145"><h3 class="cat-card__name">Notes</h3><p class="cat-card__desc">What you wrote down, and meant to remember.</p></a></li>
+      <li><a class="cat-card" href="/player/messages/"        style="--cat: #33E1ED"><h3 class="cat-card__name">Messages</h3><p class="cat-card__desc">Between you and the GM.</p></a></li>
+      <li><a class="cat-card" href="/player/hall-of-heroes/"  style="--cat: #FF7A18"><h3 class="cat-card__name">The roster</h3><p class="cat-card__desc">Everyone else on the team.</p></a></li>
+      <li><a class="cat-card" href="/play/"                   style="--cat: #A78BFA"><h3 class="cat-card__name">Play</h3><p class="cat-card__desc">Is the game running right now?</p></a></li>
+    </ul>
+  </section>
 </div>
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.108.1/dist/umd/supabase.min.js" integrity="sha384-UQ9Ztz63gzT2JZCuDRkNXV8RP/gXxdPUuM9LKlz2BzqGx9xFYNAK8yAEgbfZHs7P" crossorigin="anonymous"></script>
+<script src="/assets/js/player.js"></script>
+<script src="/assets/js/player-dashboard.js"></script>
+{% endblock %}

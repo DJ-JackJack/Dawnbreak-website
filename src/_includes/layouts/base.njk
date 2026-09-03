@@ -19,6 +19,9 @@
   <meta name="generator" content="Eleventy">
   <meta name="supabase-url" content="{{ meta.supabase.url }}">
   <meta name="supabase-anon-key" content="{{ meta.supabase.anonKey }}">
+  {# Which campaign's rows this site owns. Both settings share one database;
+     player.js reads this and every scoped query filters on it. #}
+  <meta name="campaign" content="{{ meta.playerArea.campaign }}">
   <meta name="theme-color" content="#0A0D14">
 
   {#
@@ -83,6 +86,12 @@
         </a></li>
         <li hidden id="nav-play-item"><a href="/play/">Play</a></li>
         <li><a href="/player/dashboard/" class="nav__player-link">Player</a></li>
+        <li><a href="/player/messages/" class="nav__player-link">
+          Messages<span class="nav-badge" id="nav-msg-badge" hidden aria-label="unread messages"></span>
+        </a></li>
+        <li hidden id="nav-signout-item">
+          <button class="nav__signout" id="nav-signout" type="button">Sign out</button>
+        </li>
         <li class="nav__theme-item">
           {# Not "light mode". The city is dark; this is the sun coming up on it. #}
           <button class="nav__theme-toggle" id="theme-toggle" type="button"

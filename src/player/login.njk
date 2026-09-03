@@ -1,0 +1,36 @@
+---
+layout: base
+title: Sign in
+permalink: /player/login/
+---
+<div class="wrap">
+  <div class="auth">
+    <h1 class="auth__title">Sign in</h1>
+    <p class="auth__lead">
+      One account covers Dawnbreak City and {{ meta.sister.label }} — the same
+      email works on both.
+    </p>
+
+    <form class="auth__form" id="login-form">
+      <label class="auth__label" for="email">Email</label>
+      <input class="auth__input" type="email" id="email" name="email"
+             autocomplete="email" required>
+
+      <label class="auth__label" for="password">Password</label>
+      <input class="auth__input" type="password" id="password" name="password"
+             autocomplete="current-password" required>
+
+      <button class="btn btn--primary auth__submit" type="submit" id="login-submit">Sign in</button>
+      <button class="auth__alt" type="button" id="signup-toggle">Create an account</button>
+
+      <p class="auth__error" id="login-error" hidden role="alert"></p>
+      <p class="auth__ok" id="login-ok" hidden role="status"></p>
+    </form>
+  </div>
+</div>
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.108.1/dist/umd/supabase.min.js" integrity="sha384-UQ9Ztz63gzT2JZCuDRkNXV8RP/gXxdPUuM9LKlz2BzqGx9xFYNAK8yAEgbfZHs7P" crossorigin="anonymous"></script>
+<script src="/assets/js/player.js"></script>
+<script src="/assets/js/player-login.js"></script>
+{% endblock %}

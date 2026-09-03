@@ -26,8 +26,8 @@ module.exports = {
    * table; `scripts/supabase-schema.sql` sets those policies up.
    */
   supabase: {
-    url: "",
-    anonKey: "",
+    url: "https://fbfqeijisvckwmkqzjtd.supabase.co",
+    anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZiZnFlaWppc3Zja3dta3F6anRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA3OTI4MzMsImV4cCI6MjA5NjM2ODgzM30.UzGAdE12QnFEKvsTsuA2UiiV-1qUu0f0b_VQUMCdXnI",
   },
 
   /**
@@ -58,7 +58,7 @@ module.exports = {
    * Flip `enabled` to true once the migration has run.
    */
   playerArea: {
-    enabled: false,
+    enabled: true,
     /** Which campaign's rows this site owns, once the column exists. */
     campaign: "dawnbreak",
   },

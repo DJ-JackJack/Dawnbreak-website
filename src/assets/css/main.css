@@ -913,3 +913,99 @@ html.daybreak .entry:hover { background: rgba(20, 22, 28, 0.03); }
 
 .play-state--live  { border-color: rgba(255, 122, 24, 0.4); }
 .play-state--other { border-color: rgba(255, 193, 69, 0.3); }
+
+/* ================================================================
+   Player area
+   ================================================================ */
+
+.auth {
+  max-width: 24rem;
+  margin: clamp(2.5rem, 8vw, 5rem) auto;
+  background: var(--slate);
+  border: 1px solid var(--asphalt);
+  border-top: 2px solid var(--dawn);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem 1.5rem;
+}
+.auth__title { margin: 0 0 0.5rem; font-size: 1.5rem; }
+.auth__lead { color: var(--bone-dim); font-size: 0.94rem; margin: 0 0 1.5rem; }
+.auth__form { display: grid; gap: 0.35rem; }
+
+.auth__label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  margin-top: 0.6rem;
+}
+
+.auth__input {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.55rem 0.7rem;
+  background: var(--night);
+  color: var(--bone);
+  border: 1px solid var(--asphalt-hi);
+  border-radius: var(--radius);
+}
+.auth__input:focus { border-color: var(--dawn); outline: none; box-shadow: 0 0 0 2px rgba(255,122,24,0.25); }
+
+.auth__submit { justify-content: center; margin-top: 1.1rem; }
+
+.auth__alt {
+  margin-top: 0.6rem;
+  background: none;
+  border: 0;
+  color: var(--bone-dim);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+.auth__alt:hover { color: var(--dawn); }
+
+.auth__error, .auth__ok {
+  margin: 0.9rem 0 0;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+}
+.auth__error { background: rgba(255,51,85,0.1);  border: 1px solid rgba(255,51,85,0.35);  color: var(--blood); }
+.auth__ok    { background: rgba(255,193,69,0.09); border: 1px solid rgba(255,193,69,0.35); color: var(--sodium); }
+
+/* The unread badge on the nav's Messages link. */
+.nav-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.05rem;
+  height: 1.05rem;
+  margin-left: 0.3rem;
+  padding: 0 0.25rem;
+  border-radius: 999px;
+  background: var(--blood);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.nav__signout {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--bone-dim);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.55rem;
+  border-radius: var(--radius);
+}
+.nav__signout:hover { color: var(--dawn); background: rgba(255,122,24,0.09); }
