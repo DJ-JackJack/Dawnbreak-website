@@ -1,15 +1,22 @@
 # What Krys needs to do
 
-Everything that could be built without you is built. This is what's left, in
-order. Each step says what it unblocks, so you can stop at any point and the
-site is still in a working state.
+**Steps 0 through 4 are done. One optional step is left: step 5.**
 
-**Nothing here is urgent and nothing is risky except step 4**, which touches the
-live database and is flagged accordingly.
+The site is live at <https://dawnbreak.ahvantir.world>, it deploys on every
+push, the world switcher works both ways, and the player area — sign-in,
+dashboard, notes, messages, your hero, and the roster — runs on your existing
+Ahvantir account. One login, both settings.
+
+What's left is step 5, the Foundry status worker, which only affects whether
+the play page can say "the game is live right now". Everything else works
+without it.
+
+The completed steps are kept below rather than deleted: each one records a trap
+worth remembering if you ever set this up again.
 
 ---
 
-## 0. Land the deploy workflow — 30 seconds
+## 0. Land the deploy workflow — DONE
 
 Unblocks: **everything below.** Without it nothing deploys at all.
 
@@ -35,7 +42,7 @@ gh auth refresh -s workflow
 
 ---
 
-## 1. Turn on GitHub Pages — 1 minute
+## 1. Turn on GitHub Pages — DONE
 
 Unblocks: **seeing the site on a real URL.**
 
@@ -56,7 +63,7 @@ at it in step 2.
 
 ---
 
-## 2. Point the subdomain at it — 2 minutes
+## 2. Point the subdomain at it — DONE
 
 Unblocks: **`dawnbreak.ahvantir.world`**, and both Ahvantir pull requests.
 
@@ -120,7 +127,7 @@ deploys. Give DNS ten minutes before worrying about anything.
 
 ---
 
-## 3. Merge the two Ahvantir pull requests — 2 minutes
+## 3. Merge the two Ahvantir pull requests — DONE
 
 Unblocks: **the world switcher, and one login across both sites.**
 
@@ -134,7 +141,7 @@ stored — nobody currently logged in gets signed out.
 
 ---
 
-## 4. The database migration — 10 minutes, and the one to be careful with
+## 4. The database migration — DONE (the one that needed care)
 
 Unblocks: **the player area** — characters, notes, messages, shared across both
 settings with one account.
@@ -154,8 +161,8 @@ Nothing in the migration drops or rewrites anything, but take the backup anyway.
 4. **Auth → URL Configuration → Redirect URLs**: add
    `https://dawnbreak.ahvantir.world/**`
    Without this, sign-in emails bounce to the wrong site.
-5. Tell me, and I'll build the player pages against the new column and flip
-   `playerArea.enabled` to `true`.
+5. ~~Tell me, and I'll build the player pages.~~ Built: `/player/character/`,
+   `/player/hall-of-heroes/`, `/player/notes/`, `/player/messages/`.
 
 While you're in there with a backup already taken, this is also the right moment
 for the three deferred hardening items — see
@@ -163,7 +170,7 @@ for the three deferred hardening items — see
 
 ---
 
-## 5. Deploy the Foundry status worker — 5 minutes
+## 5. Deploy the Foundry status worker — 5 minutes, and the only one left
 
 Unblocks: **the play page telling players whether the game is actually live.**
 
@@ -181,8 +188,8 @@ This one is genuinely optional. Everything else works without it.
 
 ## The order, if you want it in one line
 
-**0 → 1 → 2 → tell me → 3 → 5**, and **4** whenever you're ready to give the player
-area a session's attention.
+Only **5** is left, and it is optional. The rest is done.
+
 
 ---
 
