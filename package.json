@@ -12,7 +12,8 @@
     "new": "node scripts/lint-articles.js --new",
     "test:auth": "node scripts/test-auth-storage.js",
     "test:timeline": "node scripts/test-timeline-year.js",
-    "test": "npm run lint:articles && npm run test:auth && npm run test:timeline"
+    "test": "npm run lint:articles && npm run lint:scope && npm run test:auth && npm run test:timeline",
+    "lint:scope": "node scripts/lint-campaign-scope.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
