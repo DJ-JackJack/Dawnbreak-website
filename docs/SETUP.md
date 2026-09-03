@@ -41,17 +41,18 @@ Unblocks: **seeing the site on a real URL.**
 
 1. Go to <https://github.com/DJ-JackJack/Dawnbreak-website/settings/pages>
 2. Under **Build and deployment → Source**, choose **GitHub Actions**
-3. Save
+3. **Leave "Custom domain" empty.** Nothing goes in that box until step 2.
 
-That's it. Once step 0 has landed the workflow, the site builds and publishes on
-every push, and appears at:
+> The box is a trap, and I walked into it once already by writing the site's
+> address next to this step. A custom domain is a **bare hostname** —
+> `dawnbreak.ahvantir.world`. Not a full URL, no `https://`, no path. Anything
+> else is rejected with a red banner, which is harmless: GitHub refuses to save
+> it rather than half-applying it. Dismiss the banner and carry on.
 
-```
-https://dj-jackjack.github.io/Dawnbreak-website/
-```
-
-Have a look. It will keep working at that address forever, so there's no rush
-on step 2.
+Once step 0 has landed the workflow, the site builds and publishes on every
+push. GitHub will then serve it at its own default address — you don't type
+that anywhere, it just is where the site lives until the subdomain is pointed
+at it in step 2.
 
 ---
 
