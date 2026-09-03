@@ -1,0 +1,69 @@
+---
+layout: base
+title: Play
+permalink: /play/
+---
+<div class="wrap">
+  <header class="page-head">
+    <h1 class="page-title">Play</h1>
+    <p class="page-lead">Dawnbreak City runs on Foundry VTT. This page is the door.</p>
+  </header>
+</div>
+
+<div class="play" id="play">
+
+  {# Checking. The first state everyone sees, and it must not look broken. #}
+  <div class="play-state" id="play-checking">
+    <span class="play-pulse" aria-hidden="true"></span>
+    <p class="play-state__title">Checking the city</p>
+    <p class="play-state__body">Looking for a live game.</p>
+  </div>
+
+  {# Foundry is up and running OUR system. #}
+  <div class="play-state play-state--live" id="play-live" hidden>
+    <span class="play-dot play-dot--live" aria-hidden="true"></span>
+    <p class="play-state__title">The game is live</p>
+    <p class="play-state__body" id="play-live-detail"></p>
+    <a class="btn btn--primary" id="play-join" href="{{ meta.site.foundry }}" target="_blank" rel="noopener">
+      Join the session
+    </a>
+    <p class="play-state__note">Opens Foundry in a new tab.</p>
+  </div>
+
+  {# Up, but the other campaign is loaded. The state this page exists for. #}
+  <div class="play-state play-state--other" id="play-other" hidden>
+    <span class="play-dot play-dot--other" aria-hidden="true"></span>
+    <p class="play-state__title">A different game is running</p>
+    <p class="play-state__body">
+      The server is up, but it is not Dawnbreak City right now.
+      {% if meta.sister and meta.sister.url %}
+      That will be <a href="{{ meta.sister.url }}play/">{{ meta.sister.label }}</a>.
+      {% endif %}
+    </p>
+  </div>
+
+  {# Nothing there. #}
+  <div class="play-state play-state--dark" id="play-dark" hidden>
+    <span class="play-dot play-dot--dark" aria-hidden="true"></span>
+    <p class="play-state__title">No signal</p>
+    <p class="play-state__body">
+      The server is off. It goes up when a session starts — your GM will say when.
+    </p>
+  </div>
+
+  {# Foundry is genuinely unusable on a phone, so say so rather than let
+     someone discover it mid-session. #}
+  <div class="play-state play-state--mobile" id="play-mobile" hidden>
+    <span class="play-dot play-dot--other" aria-hidden="true"></span>
+    <p class="play-state__title">Desktop required</p>
+    <p class="play-state__body">
+      Foundry needs a laptop or desktop. This page will tell you whether the
+      game is live either way.
+    </p>
+  </div>
+
+</div>
+
+{% block scripts %}
+<script src="/assets/js/play.js" defer></script>
+{% endblock %}

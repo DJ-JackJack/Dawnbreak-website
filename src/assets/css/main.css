@@ -859,3 +859,57 @@ html.daybreak .entry:hover { background: rgba(20, 22, 28, 0.03); }
    turn the index into a long scroll of nothing. */
 .section--empty { padding-top: 1.5rem; padding-bottom: 0.5rem; }
 .section--empty .entry-empty { margin: 0; font-size: 0.92rem; }
+
+/* ================================================================
+   Play — is my game running?
+   ================================================================ */
+
+.play { max-width: var(--max-w); margin: 0 auto 5rem; padding-inline: clamp(1rem, 4vw, 2.5rem); }
+
+.play-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: clamp(2.5rem, 8vw, 4.5rem) 1.5rem;
+  background: var(--slate);
+  border: 1px solid var(--asphalt);
+  border-radius: var(--radius);
+}
+.play-state[hidden] { display: none; }
+
+.play-state__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0.35rem 0 0;
+}
+.play-state__body { margin: 0; color: var(--bone-dim); max-width: 28rem; }
+.play-state__note { margin: 0.25rem 0 0; font-size: 0.8rem; color: var(--smoke); }
+.play-state .btn { margin-top: 0.9rem; }
+
+.play-dot { width: 10px; height: 10px; border-radius: 50%; }
+.play-dot--live  { background: var(--dawn);   box-shadow: 0 0 12px var(--dawn); }
+.play-dot--other { background: var(--sodium); box-shadow: 0 0 12px rgba(255, 193, 69, 0.6); }
+.play-dot--dark  { background: var(--asphalt-hi); }
+
+/* The checking state animates, because a still page during a network wait
+   reads as broken. */
+.play-pulse {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--sodium);
+  animation: play-pulse 1.6s ease-in-out infinite;
+}
+@keyframes play-pulse {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50%      { opacity: 1;    transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .play-pulse { animation: none; opacity: 0.8; }
+}
+
+.play-state--live  { border-color: rgba(255, 122, 24, 0.4); }
+.play-state--other { border-color: rgba(255, 193, 69, 0.3); }

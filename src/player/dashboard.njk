@@ -1,0 +1,26 @@
+---
+layout: base
+title: Player
+permalink: /player/dashboard/
+---
+<div class="wrap">
+  <header class="page-head">
+    <h1 class="page-title">Player area</h1>
+  </header>
+
+  {% if meta.playerArea.enabled %}
+  <div id="player-root"></div>
+  {% else %}
+  <div class="play-state">
+    <span class="play-dot play-dot--other" aria-hidden="true"></span>
+    <p class="play-state__title">Not connected yet</p>
+    <p class="play-state__body">
+      Characters, notes and messages will live here. They share one account with
+      {% if meta.sister %}{{ meta.sister.label }}{% else %}the other setting{% endif %} —
+      one sign-in, both cities — which is why this waits on the database being
+      set up rather than launching with its own separate logins.
+    </p>
+    <p class="play-state__note">Your GM will say when it opens.</p>
+  </div>
+  {% endif %}
+</div>

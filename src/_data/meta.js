@@ -45,6 +45,24 @@ module.exports = {
     url: "https://ahvantir.world/",
   },
 
+  /**
+   * The player area is off until the shared Supabase project is ready.
+   *
+   * It is gated rather than half-built on purpose. Both sites will read ONE
+   * project, and until `scripts/supabase-migration.sql` has added the
+   * `campaign` column, a working-looking player area would query rows with no
+   * campaign to filter on -- and show Dawnbreak players their Ahvantir
+   * characters. A page that says "not yet" is strictly better than a page that
+   * quietly shows the wrong campaign's data.
+   *
+   * Flip `enabled` to true once the migration has run.
+   */
+  playerArea: {
+    enabled: false,
+    /** Which campaign's rows this site owns, once the column exists. */
+    campaign: "dawnbreak",
+  },
+
   site: {
     title: "Dawnbreak City",
     /**
