@@ -1,0 +1,62 @@
+---
+layout: base
+title: Your hero
+permalink: /player/character/
+---
+<div class="wrap">
+  <header class="page-head">
+    <h1 class="page-title" id="char-title">Your hero</h1>
+    <p class="page-lead">
+      Who they are, not what they roll — the numbers live in Foundry.
+    </p>
+  </header>
+
+  <div class="char" id="char-root" hidden>
+    <form class="char-form" id="char-form">
+      {#
+        Rendered from src/_data/character.js, the same definition the Heroes
+        article template uses. Adding a field there adds it here, and to any
+        article that graduates out of this page, with no second decision about
+        what a hero is made of.
+      #}
+      {%- for group in character.GROUPS %}
+      <fieldset class="char-group">
+        <legend class="char-group__name">{{ group }}</legend>
+        {%- for f in character.FIELDS %}{% if f.group == group %}
+        <div class="char-field char-field--{{ f.type }}">
+          <label class="char-label" for="f-{{ f.key }}">{{ f.label }}</label>
+          {%- if f.type == "select" %}
+          <select class="auth__input" id="f-{{ f.key }}" data-field="{{ f.key }}">
+            <option value=""></option>
+            {%- for opt in f.options %}<option value="{{ opt }}">{{ opt }}</option>{% endfor %}
+          </select>
+          {%- elif f.type == "textarea" %}
+          <textarea class="auth__input char-textarea" id="f-{{ f.key }}" data-field="{{ f.key }}" rows="3"></textarea>
+          {%- else %}
+          <input class="auth__input" type="text" id="f-{{ f.key }}" data-field="{{ f.key }}">
+          {%- endif %}
+          {%- if f.note %}<p class="char-note">{{ f.note }}</p>{% endif %}
+        </div>
+        {% endif %}{% endfor %}
+      </fieldset>
+      {%- endfor %}
+
+      <div class="char-bar">
+        <label class="char-public">
+          <input type="checkbox" id="char-public">
+          Show on the roster
+        </label>
+        <span class="notes-status" id="char-status">Saved</span>
+        <button class="notes-delete" type="button" id="char-delete">Delete</button>
+      </div>
+    </form>
+  </div>
+
+  <p class="entry-empty" id="char-loading">Loading…</p>
+</div>
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.108.1/dist/umd/supabase.min.js" integrity="sha384-UQ9Ztz63gzT2JZCuDRkNXV8RP/gXxdPUuM9LKlz2BzqGx9xFYNAK8yAEgbfZHs7P" crossorigin="anonymous"></script>
+<script src="/assets/js/player.js"></script>
+<script src="/assets/js/player-character.js"></script>
+{% endblock %}

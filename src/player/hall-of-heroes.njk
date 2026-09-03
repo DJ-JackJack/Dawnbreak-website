@@ -1,0 +1,24 @@
+---
+layout: base
+title: The roster
+permalink: /player/hall-of-heroes/
+---
+<div class="wrap">
+  <header class="page-head">
+    <h1 class="page-title">The roster</h1>
+    <p class="page-lead">
+      Everyone who has put their hero on the board. Yours appears here once you
+      tick <em>Show on the roster</em> on your own page.
+    </p>
+  </header>
+
+  <div id="roster-root">
+    <p class="entry-empty">Loading…</p>
+  </div>
+</div>
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.108.1/dist/umd/supabase.min.js" integrity="sha384-UQ9Ztz63gzT2JZCuDRkNXV8RP/gXxdPUuM9LKlz2BzqGx9xFYNAK8yAEgbfZHs7P" crossorigin="anonymous"></script>
+<script src="/assets/js/player.js"></script>
+<script src="/assets/js/player-hall-of-heroes.js"></script>
+{% endblock %}
