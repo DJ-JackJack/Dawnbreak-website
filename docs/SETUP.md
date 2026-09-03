@@ -96,15 +96,24 @@ symptom is a TLS error that looks like a GitHub fault and isn't.
 
 So:
 
-1. **Add the record grey** (click the cloud so it goes grey — "DNS only").
-2. Go to the repo's **Settings → Pages → Custom domain**, type
-   `dawnbreak.ahvantir.world` — bare hostname, nothing else — and save.
+1. **In Cloudflare**, add the record with the cloud **grey** (click it so it
+   goes grey — "DNS only"). Then you are finished with Cloudflare.
+2. **On GitHub — a different website** —
+   <https://github.com/DJ-JackJack/Dawnbreak-website/settings/pages>, put
+   `dawnbreak.ahvantir.world` in **Custom domain** and save. Bare hostname,
+   nothing else. This is the same box that rejected a full URL earlier; it
+   accepts this one.
 3. Wait for GitHub to say the certificate is issued. Minutes, usually.
-4. **Then** switch the cloud back to orange, to match your other records.
+4. **Back in Cloudflare**, switch the cloud to orange, matching your other
+   records.
 
-If you would rather not fuss with step 4, leaving it grey forever is a
-perfectly good outcome. It just means Cloudflare stops caching that one
-subdomain.
+> These are **two different sites doing two different jobs.** Cloudflare owns
+> the signpost — where the name points. GitHub owns the answer — what the site
+> replies when someone arrives under that name. Both are needed and neither can
+> do the other's half.
+
+If step 4 feels like fuss, leaving it grey forever is a perfectly good outcome.
+It just means Cloudflare stops caching that one subdomain.
 
 Then tell me, and I'll add the `CNAME` file to the repo so it survives future
 deploys. Give DNS ten minutes before worrying about anything.
