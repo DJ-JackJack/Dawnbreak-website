@@ -95,6 +95,14 @@ try {
     }
     Write-Log "Node   : $(& node --version 2>&1)"
 
+    # -- 2b. Read native output as UTF-8 --------------------------------------
+    # PowerShell 5.1 decodes a native command's stdout using the console's
+    # active codepage, which here is Windows-1252. Node writes UTF-8, so the
+    # first test run logged "ΓåÉ" where the converter had printed "←" -- and a
+    # note filed under a title with an em-dash or an accent would arrive in the
+    # log just as unreadable. Set it before anything is captured.
+    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
     # -- 3. Run the converter -------------------------------------------------
 
     Write-Log "Running obsidian-to-md.js ..."
