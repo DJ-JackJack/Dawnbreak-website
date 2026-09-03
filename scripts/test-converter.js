@@ -14,8 +14,8 @@
  * be there AND the thing that should be gone.
  */
 
-const { convert, buildFrontmatter, stripInlineTags, convertWarnings, convertNotes, slugify } =
-  require("./obsidian-to-md.js");
+const { convert, buildFrontmatter, stripInlineTags, convertWarnings, convertNotes, slugify,
+        missingCategoryFolders } = require("./obsidian-to-md.js");
 
 let pass = 0, fail = 0;
 
@@ -186,6 +186,36 @@ eq(stripInlineTags("## Heading"), "## Heading", "a markdown heading is not a tag
 eq(slugify("The Old Financial District"), "the-old-financial-district", "slug: spaces to hyphens");
 eq(slugify("Krys' Bar"), "krys-bar", "slug: apostrophes are dropped, not hyphenated");
 eq(slugify("H-Day: The Morning After"), "h-day-the-morning-after", "slug: punctuation collapses");
+
+/* ------------------------------------------------- is this the right vault? */
+
+/* The failure this exists to catch is silent: a sync pointed at the wrong
+   folder finds nothing, says "No article changed", and exits 0 — identical to
+   a healthy run. Ahvantir's OBSIDIAN_VAULT_PATH sat on a scratch folder for two
+   months that way. */
+
+const DAWNBREAK = ["01 - Heroes", "02 - Villains", "03 - Organizations",
+                   "04 - Locations", "05 - Events"];
+/* The real Ahvantir vault's folders. It is next door on disk, has the same
+   _Templates/_Meta shape, and is the mix-up actually available to be made. */
+const AHVANTIR = ["01 - History", "02 - Aru'Mas (City)", "03 - Districts",
+                  "_Templates", "_Meta"];
+
+const present = (list) => (dir) => list.includes(dir);
+
+eq(missingCategoryFolders(present(DAWNBREAK)).length, 0, "the real vault passes");
+eq(missingCategoryFolders(present(AHVANTIR)).length, 5,
+   "the Ahvantir vault fails on all five — the mix-up that is actually possible");
+eq(missingCategoryFolders(present([])).length, 5, "an empty folder fails");
+
+/* Names the specific missing folder, so the message can say what to fix. */
+eq(missingCategoryFolders(present(DAWNBREAK.filter(d => d !== "05 - Events"))).join(""),
+   "05 - Events", "one tidied-away folder is reported by name");
+
+/* Size-independent, which is the whole point: a count-based floor would fail
+   this vault today, since it holds one article by design. */
+eq(missingCategoryFolders(present(DAWNBREAK)).length, 0,
+   "passing does not depend on how many notes the vault holds");
 
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

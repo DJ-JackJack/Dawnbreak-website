@@ -154,6 +154,16 @@ finished article read as an unpublished stub.
 **"OBSIDIAN_VAULT_PATH is not set."** Copy `.env.example` to `.env`. It is
 gitignored; this is a public repo and the path is a local detail.
 
+**"This does not look like the Dawnbreak vault."** The sync checks for the five
+category folders before converting anything, and stops if they are not there.
+Either `OBSIDIAN_VAULT_PATH` points somewhere else, or the folders were tidied
+away — `npm run vault:init` recreates them and touches no notes.
+
+This guard exists because the silent version of that failure is expensive: a
+sync reading the wrong folder finds nothing, reports "No article changed", and
+exits 0, which is indistinguishable from a healthy run. Ahvantir's vault path sat
+on a three-note scratch folder for two months exactly that way.
+
 **A note is filed in the wrong folder.** The sync refuses it rather than
 publishing into a category the folder disagrees with. Move the note, or fix the
 `category` field.

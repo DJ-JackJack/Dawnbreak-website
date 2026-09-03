@@ -212,6 +212,30 @@ function convert(raw, relDir, preserved) {
   return { slug: slugify(title), content, title };
 }
 
+/* ------------------------------------------------------- is this the vault? */
+
+/**
+ * The category folders this vault must have, and which of them are missing.
+ *
+ * A sync pointed at the wrong folder finds no notes, reports "No article
+ * changed", and exits 0. That is indistinguishable from a healthy sync with
+ * nothing new — which is exactly how Ahvantir's `OBSIDIAN_VAULT_PATH` sat
+ * pointing at a three-note scratch folder from July to September while the
+ * job went green every week.
+ *
+ * Ahvantir's cure was a floor on the note count. That will not work here: this
+ * vault holds one article by design and would fail such a check on day one.
+ * The size-independent signal is the folder names, which are specific to this
+ * vault — Ahvantir's are "01 - History", "02 - Aru'Mas (City)" and so on, so a
+ * vault mix-up scores zero matches whether either vault holds 1 note or 300.
+ *
+ * @param {(dir: string) => boolean} hasDir tests one folder, relative to the vault
+ * @returns {string[]} the missing folders; empty means this looks like the vault
+ */
+function missingCategoryFolders(hasDir) {
+  return FOLDERS.map((f) => f.dir).filter((dir) => !hasDir(dir));
+}
+
 /* -------------------------------------------------------------------- main */
 
 function listNotes(vault) {
@@ -230,6 +254,20 @@ function listNotes(vault) {
 
 function main() {
   const vault = vaultPath();
+
+  const missing = missingCategoryFolders((dir) => fs.existsSync(path.join(vault, dir)));
+  if (missing.length) {
+    console.error(
+      `This does not look like the Dawnbreak vault:\n  ${vault}\n\n` +
+      `Missing ${missing.length} of ${FOLDERS.length} category folders:\n` +
+      missing.map((d) => `  ${d}`).join("\n") +
+      `\n\nEither OBSIDIAN_VAULT_PATH in .env points somewhere else, or the\n` +
+      `folders were tidied away. \`npm run vault:init\` recreates them and\n` +
+      `touches no notes. Nothing has been converted.`
+    );
+    process.exit(1);
+  }
+
   const notes = listNotes(vault);
   console.log(`Vault: ${vault}`);
   console.log(`${notes.length} note${notes.length === 1 ? "" : "s"} found${DRY ? "  (dry run)" : ""}\n`);
@@ -340,4 +378,5 @@ function reportUnwrittenLinks() {
 
 if (require.main === module) main();
 
-module.exports = { convert, buildFrontmatter, stripInlineTags, convertWarnings, convertNotes, slugify };
+module.exports = { convert, buildFrontmatter, stripInlineTags, convertWarnings, convertNotes, slugify,
+  missingCategoryFolders };
