@@ -235,9 +235,16 @@ exit $exitCode
   Run this once in an Administrator PowerShell.
 ================================================================================
 
-schtasks /Create /TN "Dawnbreak Weekly Lore Sync" /TR "powershell.exe -NonInteractive -ExecutionPolicy Bypass -File \"C:\Users\klfal\Desktop\Claude_Directory\Dawnbreak-website\scripts\dawnbreak-weekly-sync.ps1\"" /SC WEEKLY /D SUN /ST 21:15 /RU "klfal" /F
+schtasks --% /Create /TN "Dawnbreak Weekly Lore Sync" /TR "powershell.exe -NonInteractive -ExecutionPolicy Bypass -File \"C:\Users\klfal\Desktop\Claude_Directory\Dawnbreak-website\scripts\dawnbreak-weekly-sync.ps1\"" /SC WEEKLY /D SUN /ST 21:15 /RU klfal /F
+
+  The --% is load-bearing. Without it PowerShell treats the \" inside /TR as
+  an ordinary quote, /TR swallows the rest of the line, and schtasks reports
+  "Mandatory option 'sc' is missing". --% passes the remainder verbatim.
 
   Verify:   schtasks /Query /TN "Dawnbreak Weekly Lore Sync" /FO LIST
+            Status should be Ready, not Disabled, and Next Run Time should
+            name a Sunday. A task can register and sit there disabled.
+  Enable:   schtasks /Change /TN "Dawnbreak Weekly Lore Sync" /ENABLE
   Test run: schtasks /Run /TN "Dawnbreak Weekly Lore Sync"
   Remove:   schtasks /Delete /TN "Dawnbreak Weekly Lore Sync" /F
 

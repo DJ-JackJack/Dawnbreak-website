@@ -76,6 +76,17 @@ registered yet.
 
 Log: `Desktop\Claude_Directory\dawnbreak-sync-log.txt`.
 
+Worth checking once after you register it, and once in a while after that:
+
+```bash
+schtasks /Query /TN "Dawnbreak Weekly Lore Sync" /FO LIST
+```
+
+`Status: Ready` and a Sunday in `Next Run Time` mean it is armed. A task can
+register successfully and then sit `Disabled`, in which case the vault simply
+stops reaching the site with nothing to announce it — which is what happened
+to the Ahvantir sync, quietly, at the end of June.
+
 **If an article fails validation the sync stops before committing.** The
 converted files are still written, so you can see what went wrong in the diff,
 but nothing reaches the live site.

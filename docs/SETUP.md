@@ -198,11 +198,30 @@ The vault is built and the sync works. This only puts it on a timer. In an
 **Administrator** PowerShell:
 
 ```
-schtasks /Create /TN "Dawnbreak Weekly Lore Sync" /TR "powershell.exe -NonInteractive -ExecutionPolicy Bypass -File \"C:\Users\klfal\Desktop\Claude_Directory\Dawnbreak-website\scripts\dawnbreak-weekly-sync.ps1\"" /SC WEEKLY /D SUN /ST 21:15 /RU "klfal" /F
+schtasks --% /Create /TN "Dawnbreak Weekly Lore Sync" /TR "powershell.exe -NonInteractive -ExecutionPolicy Bypass -File \"C:\Users\klfal\Desktop\Claude_Directory\Dawnbreak-website\scripts\dawnbreak-weekly-sync.ps1\"" /SC WEEKLY /D SUN /ST 21:15 /RU klfal /F
 ```
 
 Sunday 21:15 — fifteen minutes after the Ahvantir sync, so the two never push
 at the same moment.
+
+> The `--%` is load-bearing. Without it PowerShell reads the `\"` inside
+> `/TR` as an ordinary quote, the `/TR` value swallows everything after it,
+> and schtasks answers `Mandatory option 'sc' is missing`. `--%` hands the
+> rest of the line to schtasks verbatim, which is the only way cmd-style
+> escaping survives a PowerShell prompt.
+
+Then confirm it is actually armed — a registered task can sit there disabled:
+
+```
+schtasks /Query /TN "Dawnbreak Weekly Lore Sync" /FO LIST
+```
+
+`Status` should say **Ready** and `Next Run Time` should name a Sunday. If it
+says `Disabled`, re-enable it with:
+
+```
+schtasks /Change /TN "Dawnbreak Weekly Lore Sync" /ENABLE
+```
 
 See `docs/VAULT.md` for how the vault works and what the sync does to a note.
 
