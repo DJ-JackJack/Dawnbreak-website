@@ -163,12 +163,11 @@ function skeleton(category, title) {
     "One short paragraph. Who or what this is, and why the city knows it.",
     "Assume the reader has read nothing else.",
     "",
+    // No open-questions block, visible or commented. An article states what is
+    // there and stops; telling the reader what to wonder about is the writer's
+    // job leaking onto the page. Invented detail is still flagged so it stays
+    // overrulable, in a companion notes file beside the article.
     ...def.sections.flatMap(s => [`## ${s}`, "", "", ""]),
-    "<!-- OPEN QUESTIONS",
-    "- Invented: ",
-    "- Unresolved: ",
-    "-->",
-    "",
   ].join("\n");
 }
 

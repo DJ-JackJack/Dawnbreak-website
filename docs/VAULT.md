@@ -41,7 +41,9 @@ Start at `_Meta/Home.md`.
    the allowed values where there are any.
 4. Write the body. **Do not add, remove, rename or reorder the `##` headings.**
    Content may be short; the heading still appears.
-5. Flag anything you invented in the `OPEN QUESTIONS` comment at the foot.
+5. Record anything you invented in `_Meta/Open Questions.md`, not in the note
+   itself. An article states what is there and lets the reader decide what else
+   they want to know.
 6. When it should go live, change `vault_status: stub` to `vault_status: ready`.
 
 A note stays invisible to the site until it says `ready`. Half-written notes can

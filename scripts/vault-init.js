@@ -103,12 +103,11 @@ function template(slug) {
     "One short paragraph. Who or what this is, and why the city knows it.",
     "Assume the reader has read nothing else.",
     "",
+    // No open-questions block. An article states what is there and stops;
+    // telling the reader what to wonder about is the writer's job leaking onto
+    // the page. Invented detail goes in _Meta/Open Questions.md instead, where
+    // it stays overrulable without riding along inside the article.
     ...def.sections.flatMap((s) => [`## ${s}`, "", "", ""]),
-    "<!-- OPEN QUESTIONS",
-    "- Invented: ",
-    "- Unresolved: ",
-    "-->",
-    "",
   ].join("\n");
 }
 
@@ -140,7 +139,7 @@ function metaHome() {
     "3. Fill the frontmatter. Every field appears in every article — `—` is a",
     "   real answer, and an awkward field is usually where the characterization is.",
     "4. Leave the section headings exactly as they are. Content may be short.",
-    "5. Flag anything you invented in the `OPEN QUESTIONS` comment at the foot.",
+    "5. Record anything you invented in [[Open Questions]], not in the note.",
     "6. Set `vault_status: ready` when it should go live.",
     "",
     "See [[How this vault works]] for the voice and the sync.",
@@ -213,9 +212,10 @@ function metaOpenQuestions() {
   return [
     "# Open questions",
     "",
-    "Things invented in articles that Krys has not ruled on, and things the",
-    "canon does not settle. Each article also carries its own `OPEN QUESTIONS`",
-    "comment at the foot; this is the standing list.",
+    "Things invented in notes that have not been ruled on, and things the canon",
+    "does not settle. Articles carry none of this themselves: an article states",
+    "what is there and lets the reader decide what else they want to know. This",
+    "is where the uncertainty lives instead.",
     "",
     "## Unresolved",
     "",

@@ -74,9 +74,11 @@ Lifted from your own `pantheon-bio-template.md`, because they were right there.
   reframe and imply. It may not state something canon says is false, unless it
   is explicitly reporting a claim someone else made — in which case it is
   attributed.
-- **Invented details are flagged**, every time, in the article's own
-  `Open questions` block, so they stay easy for you to overrule. This is the
-  habit already visible in `dawnbreak-harriers.md` and it should not be lost.
+- **No article carries an open-questions section.** An article states what is
+  there and stops. It does not tell the reader what to wonder about, because
+  deciding what is worth asking next is the reader's to do and not the writer's.
+- **Invented details are still flagged**, every time, so they stay easy to
+  overrule. They go in a companion `<article>-notes.md`, never in the article.
 - **`record: draft` until you say otherwise.** Nothing becomes canon by being
   written down and forgotten about.
 - **Never invent named first-generation heroes.** Canon is explicit: there was
@@ -301,22 +303,26 @@ status: ""                    # resolved | ongoing | unresolved | annual
 
 ---
 
-## Open questions
+## Where the open questions went
 
-Every article ends with this block, or omits it if there is genuinely nothing.
-It does not render in the published article — it is authoring scaffolding, and
-it is the mechanism that keeps invented detail overrulable.
+Articles used to end with an `OPEN QUESTIONS` HTML comment. They no longer do.
 
-```markdown
-<!-- OPEN QUESTIONS
-- Invented: the Cross's naming-rights contract detail. Overrule freely.
-- Unresolved: does the DCPD still staff the Aldergate courthouse post-2038?
--->
+An article is an in-world artifact. It records what is there and leaves the
+reader to decide what, if anything, they want to know more about. A list of the
+writer's own uncertainties, even one that never renders, is the writing process
+showing through the page.
+
+Invented detail still has to stay overrulable, so the flagging moved rather than
+disappeared. It lives in a companion file beside the article:
+
+```
+src/articles/the-old-financial-district.md         the article
+notes/the-old-financial-district-notes.md          what was invented, what is unresolved
 ```
 
-An HTML comment, so it survives in the source, travels with the article, and
-never reaches the page. Note that it DOES reach the public repo — so it holds
-"what I made up", never "what the players must not know".
+The companion carries what the comment used to: what was made up, what has not
+been decided, and what a ruling would change. It holds "what I made up", never
+"what the players must not know", since both repos are public.
 
 ---
 
