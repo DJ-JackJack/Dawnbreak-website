@@ -155,7 +155,18 @@ try {
     Push-Location $RepoPath
     try {
 
-        $gitStatus     = & git status --porcelain 2>&1
+        # ONLY src/articles. This job's output is converted articles and
+        # nothing else, so that is all it may commit.
+        #
+        # It used to be `git status --porcelain` and `git add -A`, which meant
+        # it committed whatever happened to be dirty. A test run proved the
+        # point immediately by sweeping up an unrelated edit to this very file
+        # and pushing it under the message "Weekly lore sync". Unattended on a
+        # Sunday night, that is half-finished work published without anyone
+        # present to notice.
+        $Scope = "src/articles"
+
+        $gitStatus     = & git status --porcelain -- $Scope 2>&1
         $gitStatusExit = $LASTEXITCODE
 
         if ($gitStatusExit -ne 0) {
@@ -165,23 +176,35 @@ try {
 
         $changedLines = @($gitStatus | Where-Object { $_.ToString().Trim() -ne "" })
 
+        # Anything dirty outside the scope is reported and left exactly alone,
+        # so it is visible in the log rather than silently carried along.
+        # Porcelain is "XY path", so anchor on the path rather than searching
+        # the whole line -- otherwise a file like docs/src/articles-notes.md
+        # would match and go unreported.
+        $otherDirty = @(& git status --porcelain 2>&1 |
+            Where-Object { $_.ToString().Trim() -ne "" -and $_.ToString() -notmatch '^..\s*src/articles/' })
+        if ($otherDirty.Count -gt 0) {
+            Write-Log "$($otherDirty.Count) file(s) dirty outside $Scope -- left untouched:" WARN
+            Write-LogBlock -Lines ($otherDirty | ForEach-Object { $_.ToString() }) -Prefix "  [skip] "
+        }
+
         if ($changedLines.Count -eq 0) {
             Add-Content -Path $LogFile -Value "=== Dawnbreak Lore Sync -- $(Get-Date -Format 'yyyy-MM-dd HH:mm') ===" -Encoding UTF8
-            Add-Content -Path $LogFile -Value "No changes -- nothing to commit." -Encoding UTF8
+            Add-Content -Path $LogFile -Value "No article changes -- nothing to commit." -Encoding UTF8
             Add-Content -Path $LogFile -Value "===" -Encoding UTF8
-            Write-Log "Dawnbreak weekly lore sync -- complete (no changes)"
+            Write-Log "Dawnbreak weekly lore sync -- complete (no article changes)"
             exit 0
         }
 
-        $addOut  = & git add -A 2>&1
+        $addOut  = & git add -- $Scope 2>&1
         if ($LASTEXITCODE -ne 0) {
-            Write-Log "git add -A failed: $addOut" ERROR
+            Write-Log "git add $Scope failed: $addOut" ERROR
             exit 1
         }
-        Write-Log "git add -A -- OK"
+        Write-Log "git add $Scope -- OK"
 
         # Summarise what changed, from the staged index.
-        $diffOut  = & git diff --name-status --cached 2>&1
+        $diffOut  = & git diff --name-status --cached -- $Scope 2>&1
         $runStamp = Get-Date -Format "yyyy-MM-dd HH:mm"
         $newFiles = @()
         $modFiles = @()
