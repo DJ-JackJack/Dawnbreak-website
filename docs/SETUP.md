@@ -60,22 +60,54 @@ at it in step 2.
 
 Unblocks: **`dawnbreak.ahvantir.world`**, and both Ahvantir pull requests.
 
-In **Cloudflare → ahvantir.world → DNS → Add record**:
+### What a DNS record actually is
 
-| Field | Value |
-| --- | --- |
-| Type | `CNAME` |
-| Name | `dawnbreak` |
-| Target | `dj-jackjack.github.io` |
-| Proxy status | **DNS only** (grey cloud, not orange) |
-| TTL | Auto |
+A signpost. It says "when someone asks for **this name**, send them **here**."
 
-> **The grey cloud matters.** Orange-clouded (proxied) records in front of
-> GitHub Pages break its certificate issuance, and the symptom is a TLS error
-> that looks like a GitHub problem.
+You already have three of them. `ahvantir.world`, `www.ahvantir.world` and
+`play-tunnel.ahvantir.world` are all signposts you have set up before —
+`play-tunnel` points at the Foundry tunnel, the other two at GitHub. You are
+adding a fourth of exactly the same kind.
 
-Then tell me, and I'll add the `CNAME` file to the repo so Pages answers on the
-new name. Give DNS ten minutes or so before worrying.
+### Doing it
+
+**Cloudflare → pick `ahvantir.world` → DNS → Records → Add record.** Five
+fields:
+
+| Field | What to put | Why |
+| --- | --- | --- |
+| **Type** | `CNAME` | "point this name at another name" (an `A` record points at a numeric address instead — not what we want) |
+| **Name** | `dawnbreak` | just that word. Cloudflare adds `.ahvantir.world` itself |
+| **Target** | `dj-jackjack.github.io` | where GitHub serves from. **No `https://`, no trailing slash, no repo name** |
+| **Proxy status** | **grey cloud** to begin with — see below | |
+| **TTL** | Auto | |
+
+Save.
+
+### The cloud toggle, and why grey first
+
+Your other three records are all **orange** (proxied through Cloudflare), and
+that works fine. So the end state for this one is orange too.
+
+But get the certificate issued *first*. GitHub has to prove it owns the name
+before it can serve HTTPS on it, and it does that by being reached directly.
+With Cloudflare proxying in the way, that check sometimes stalls — and the
+symptom is a TLS error that looks like a GitHub fault and isn't.
+
+So:
+
+1. **Add the record grey** (click the cloud so it goes grey — "DNS only").
+2. Go to the repo's **Settings → Pages → Custom domain**, type
+   `dawnbreak.ahvantir.world` — bare hostname, nothing else — and save.
+3. Wait for GitHub to say the certificate is issued. Minutes, usually.
+4. **Then** switch the cloud back to orange, to match your other records.
+
+If you would rather not fuss with step 4, leaving it grey forever is a
+perfectly good outcome. It just means Cloudflare stops caching that one
+subdomain.
+
+Then tell me, and I'll add the `CNAME` file to the repo so it survives future
+deploys. Give DNS ten minutes before worrying about anything.
 
 ---
 
