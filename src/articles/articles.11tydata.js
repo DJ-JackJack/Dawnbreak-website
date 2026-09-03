@@ -24,6 +24,37 @@ module.exports = {
       return cat ? cat.color : "#FF7A18";
     },
 
+    /**
+     * The year this article belongs at on the city's timeline.
+     *
+     * Ahvantir's inherited `timeline` collection reads a single
+     * `timeline_year` field. Dawnbreak has no such field and should not gain
+     * one: every category already carries the date that matters FOR THAT
+     * CATEGORY, and forcing authors to restate it in a second field is how
+     * two sources of truth start disagreeing.
+     *
+     * So each category contributes through its own most meaningful date, and
+     * the timeline assembles itself out of events, foundings and debuts —
+     * which is a truer picture of how a city's history is actually made than
+     * a list of events alone.
+     *
+     * A field may legitimately hold something that is not a year at all —
+     * `built: "Pre-H-Day"` is the documented answer where nobody has bothered
+     * to find out. Those articles simply do not appear on the timeline, which
+     * is correct: the timeline cannot place them.
+     */
+    timelineYear: (data) => {
+      const source = {
+        events: data.date,
+        organizations: data.founded,
+        heroes: data.active_since,
+        villains: data.first_recorded,
+        locations: data.built,
+      }[data.category];
+      const match = String(source ?? "").match(/\b(\d{4})\b/);
+      return match ? Number(match[1]) : null;
+    },
+
     dossierRows: (data) => {
       const def = CATEGORIES[data.category];
       if (!def) return [];

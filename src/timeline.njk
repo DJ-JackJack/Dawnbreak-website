@@ -1,0 +1,33 @@
+---
+layout: base
+title: Timeline
+permalink: /timeline/
+---
+<div class="wrap">
+  <header class="page-head">
+    <h1 class="page-title">Timeline</h1>
+    <p class="page-lead">
+      The city measures time from <strong>11 June 2028</strong>. Everything here is
+      before that day or after it.
+    </p>
+  </header>
+
+  {% if collections.timeline.length %}
+  <ol class="timeline" role="list">
+    {%- for item in collections.timeline %}
+    <li class="tl-entry" style="--cat: {{ item.data.catColor }}">
+      <span class="tl-year">{{ item.data.timelineYear }}</span>
+      <div class="tl-body">
+        <a class="tl-title" href="{{ item.url }}">{{ item.data.title }}</a>
+        <p class="tl-summary">{{ item.data.summary }}</p>
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+  {% else %}
+  <p class="entry-empty">
+    Nothing datable yet. An article joins the timeline through its own category's
+    date — an event's date, an organization's founding, a hero's debut.
+  </p>
+  {% endif %}
+</div>

@@ -724,3 +724,138 @@ html.daybreak .hero {
 h2:hover > .header-anchor,
 h3:hover > .header-anchor,
 .header-anchor:focus-visible { opacity: 0.85; }
+
+/* ================================================================
+   Index pages — articles, timeline, recent, search
+   ================================================================ */
+
+.page-head { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--asphalt); margin-bottom: 1rem; }
+.page-title { margin: 0 0 0.5rem; }
+.page-lead { font-size: 1.1rem; color: var(--bone-dim); margin: 0; max-width: var(--measure); }
+
+.section__title--cat {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--cat);
+  border-bottom-color: var(--cat);
+}
+.section__icon { font-size: 0.9rem; }
+.section__count {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--smoke);
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.entry-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; }
+
+.entry {
+  padding: 0.75rem 0 0.75rem 0.9rem;
+  border-left: 2px solid var(--asphalt);
+  transition: border-color 0.15s, background 0.15s;
+}
+.entry:hover { border-left-color: var(--cat); background: rgba(255, 255, 255, 0.02); }
+html.daybreak .entry:hover { background: rgba(20, 22, 28, 0.03); }
+
+.entry__link {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--bone);
+  text-decoration: none;
+}
+.entry__link:hover { color: var(--cat); }
+
+.entry__record,
+.entry__date {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--smoke);
+  margin-left: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.entry__summary { margin: 0.2rem 0 0; font-size: 0.94rem; color: var(--bone-dim); max-width: var(--measure); }
+
+.entry-empty { color: var(--smoke); font-style: italic; max-width: var(--measure); }
+
+/* ── Timeline ───────────────────────────────────────────────────────
+   A single lit spine down the page, because the city keeps one date and
+   measures everything against it. */
+.timeline {
+  list-style: none;
+  margin: 2rem 0 4rem;
+  padding: 0 0 0 5.5rem;
+  position: relative;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 4.4rem; top: 0.4rem; bottom: 0.4rem;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--asphalt-hi) 8%, var(--asphalt-hi) 92%, transparent);
+}
+
+.tl-entry { position: relative; padding: 0.85rem 0; }
+
+.tl-year {
+  position: absolute;
+  left: -5.5rem;
+  top: 0.95rem;
+  width: 3.4rem;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--smoke);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The marker on the spine, in the article's own category colour. */
+.tl-entry::before {
+  content: "";
+  position: absolute;
+  left: -1.16rem;
+  top: 1.25rem;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--cat);
+  box-shadow: 0 0 0 3px var(--night);
+}
+
+.tl-title { font-family: var(--font-display); font-weight: 700; color: var(--bone); text-decoration: none; }
+.tl-title:hover { color: var(--cat); }
+.tl-summary { margin: 0.2rem 0 0; font-size: 0.92rem; color: var(--bone-dim); max-width: var(--measure); }
+
+@media (max-width: 34rem) {
+  .timeline { padding-left: 1.4rem; }
+  .timeline::before { left: 0.3rem; }
+  .tl-entry::before { left: 0.05rem; }
+  .tl-year { position: static; display: block; width: auto; text-align: left; margin-bottom: 0.15rem; }
+}
+
+/* ── Pagefind ───────────────────────────────────────────────────────
+   Themed through Pagefind's own variables rather than by overriding its
+   internals, so a Pagefind upgrade cannot silently un-style the page. */
+.pagefind-search {
+  margin: 2rem 0 4rem;
+  --pagefind-ui-scale: 0.9;
+  --pagefind-ui-primary: var(--dawn);
+  --pagefind-ui-text: var(--bone);
+  --pagefind-ui-background: var(--night);
+  --pagefind-ui-border: var(--asphalt);
+  --pagefind-ui-tag: var(--slate);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 3px;
+  --pagefind-ui-font: var(--font-body);
+}
+
+/* An empty category still gets its heading -- a section with nothing under it
+   is a prompt, not a mistake, and the site will be mostly empty for a while.
+   But it does not get the full section rhythm, or four unfilled categories
+   turn the index into a long scroll of nothing. */
+.section--empty { padding-top: 1.5rem; padding-bottom: 0.5rem; }
+.section--empty .entry-empty { margin: 0; font-size: 0.92rem; }

@@ -144,8 +144,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("timeline", function (api) {
     return api
       .getFilteredByGlob("src/articles/**/*.md")
-      .filter((p) => p.data.timeline_year != null)
-      .sort((a, b) => a.data.timeline_year - b.data.timeline_year);
+      // `timelineYear` is computed per category in articles.11tydata.js --
+      // an event's date, an organization's founding, a hero's debut. Ahvantir's
+      // single `timeline_year` field does not exist here, and an article whose
+      // date cannot be resolved to a year is simply absent rather than placed
+      // wrongly.
+      .filter((p) => p.data.timelineYear != null)
+      .sort((a, b) => a.data.timelineYear - b.data.timelineYear);
   });
 
   // Backlinks — mutate page.data before render

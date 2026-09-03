@@ -5,12 +5,14 @@
   "private": true,
   "scripts": {
     "build": "eleventy",
-    "build:prod": "npm run lint:articles && npm run test:auth && eleventy && pagefind --site _site",
+    "build:prod": "npm test && eleventy && pagefind --site _site",
     "start": "eleventy --serve",
     "dev": "eleventy --serve --incremental",
     "lint:articles": "node scripts/lint-articles.js",
     "new": "node scripts/lint-articles.js --new",
-    "test:auth": "node scripts/test-auth-storage.js"
+    "test:auth": "node scripts/test-auth-storage.js",
+    "test:timeline": "node scripts/test-timeline-year.js",
+    "test": "npm run lint:articles && npm run test:auth && npm run test:timeline"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",

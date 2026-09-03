@@ -1,0 +1,38 @@
+---
+layout: base
+title: Articles
+permalink: /articles/
+---
+<div class="wrap">
+  <header class="page-head">
+    <h1 class="page-title">The record</h1>
+    <p class="page-lead">
+      {{ collections.allArticles.length }} article{% if collections.allArticles.length != 1 %}s{% endif %},
+      filed by category.
+    </p>
+  </header>
+
+  {%- for cat in meta.categories %}
+  {%- set items = collections.allArticles | inCategory(cat.slug) %}
+  <section class="section{% if not items.length %} section--empty{% endif %}" id="{{ cat.slug }}" style="--cat: {{ cat.color }}">
+    <h2 class="section__title section__title--cat">
+      <span class="section__icon" aria-hidden="true">{{ cat.icon }}</span>
+      {{ cat.label }}
+      <span class="section__count">{{ items.length }}</span>
+    </h2>
+    {% if items.length %}
+    <ul class="entry-list" role="list">
+      {%- for item in items %}
+      <li class="entry">
+        <a class="entry__link" href="{{ item.url }}">{{ item.data.title }}</a>
+        {% if item.data.record != "canon" %}<span class="entry__record">{{ item.data.record }}</span>{% endif %}
+        <p class="entry__summary">{{ item.data.summary }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+    {% else %}
+    <p class="entry-empty">Nothing filed here yet.</p>
+    {% endif %}
+  </section>
+  {%- endfor %}
+</div>

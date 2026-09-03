@@ -1,0 +1,25 @@
+---
+layout: base
+title: Recent
+permalink: /recently-added/
+---
+<div class="wrap">
+  <header class="page-head">
+    <h1 class="page-title">Recently added</h1>
+    <p class="page-lead">The most recent additions to the record.</p>
+  </header>
+
+  {% if collections.allArticlesByDateAdded.length %}
+  <ul class="entry-list" role="list">
+    {%- for item in collections.allArticlesByDateAdded %}
+    <li class="entry" style="--cat: {{ item.data.catColor }}">
+      <a class="entry__link" href="{{ item.url }}">{{ item.data.title }}</a>
+      <span class="entry__date">{{ item.data.date_added }}</span>
+      <p class="entry__summary">{{ item.data.summary }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+  {% else %}
+  <p class="entry-empty">Nothing added yet.</p>
+  {% endif %}
+</div>
