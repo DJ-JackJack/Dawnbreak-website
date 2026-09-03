@@ -234,8 +234,8 @@ function skeleton(category, title) {
     ...def.fields.map(line),
     "---",
     "",
-    `# ${title}`,
-    "",
+    // No `# Title` here: the article layout renders the H1 from frontmatter,
+    // so repeating it in the body prints the title twice on the page.
     "One short paragraph. Who or what this is, and why the city knows it.",
     "Assume the reader has read nothing else.",
     "",

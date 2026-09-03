@@ -1,0 +1,78 @@
+---
+layout: base
+---
+<div class="wrap">
+<article class="article" style="--cat: {{ catColor }}"
+  data-pagefind-body
+  {% if category %}data-pagefind-filter="category:{{ category | capitalize }}"{% endif %}>
+  {# Pagefind metadata — one element per key; duplicate attributes on a single
+     element are dropped by the HTML parser. #}
+  <span hidden data-pagefind-meta="title:{{ title }}"></span>
+  {% if tags %}<span hidden data-pagefind-meta="tags:{{ tags | join(', ') }}"></span>{% endif %}
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span aria-hidden="true">›</span>
+    <a href="/articles/">Articles</a>
+    {% if category %}
+    <span aria-hidden="true">›</span>
+    <a href="/articles/#{{ category }}">{{ category | capitalize }}</a>
+    {% endif %}
+  </nav>
+
+  <header class="article-header">
+    {% if record == "draft" %}
+    <p class="record-banner record-banner--draft">
+      <strong>Draft</strong> <span>Not yet canon. Overrulable in full.</span>
+    </p>
+    {% elif record == "contested" %}
+    <p class="record-banner record-banner--contested">
+      <strong>Contested</strong> <span>The city does not agree about this.</span>
+    </p>
+    {% endif %}
+
+    <h1 class="article-title">{{ title }}</h1>
+
+    {% if summary %}<p class="article-lead">{{ summary }}</p>{% endif %}
+
+    <div class="article-meta">
+      {% if category %}<a href="/articles/#{{ category }}" class="category-badge">{{ category | capitalize }}</a>{% endif %}
+      {% for tag in tags %}<a href="/articles/#tag-{{ tag | toSlug }}" class="tag">{{ tag }}</a>{% endfor %}
+    </div>
+  </header>
+
+  <div class="article-layout">
+    <div class="article-body">
+      {{ content | safe }}
+    </div>
+
+    <aside class="article-sidebar" aria-label="Article details">
+
+      {% if dossierRows and dossierRows.length %}
+      <section class="dossier">
+        <h2 class="dossier__title">{{ category | capitalize }} record</h2>
+        <dl class="dossier__list">
+          {%- for row in dossierRows %}
+          <dt>{{ row.label }}</dt>
+          {% if row.value %}<dd>{{ row.value }}</dd>
+          {% else %}<dd class="is-empty">not recorded</dd>{% endif %}
+          {%- endfor %}
+        </dl>
+      </section>
+      {% endif %}
+
+      {% if backlinks and backlinks.length %}
+      <section class="sidebar-section">
+        <h2 class="sidebar-title">Mentioned in</h2>
+        <ul class="backlinks-list" role="list">
+          {% for link in backlinks %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+    </aside>
+  </div>
+
+  <a href="/articles/" class="back-link"><span aria-hidden="true">←</span> All articles</a>
+</article>
+</div>

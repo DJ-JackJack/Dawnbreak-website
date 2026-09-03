@@ -13,8 +13,6 @@ h_day: ground zero
 operator: City of Dawnbreak
 ---
 
-# The Old Financial District
-
 The district where H-Day happened. Twelve years on it is fully rebuilt, fully
 occupied and fully functional, and it is still the cheapest real estate in
 Dawnbreak City — a gap between what a place is and what people are willing to

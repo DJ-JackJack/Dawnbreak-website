@@ -1,0 +1,726 @@
+/* ================================================================
+   Dawnbreak City
+
+   The city at night, and the light coming up on it.
+
+   The palette is not decoration and it is not "neon" for its own sake.
+   The city is called Dawnbreak, so the ground is night and the accent is
+   first light — warm, low, and coming from the horizon rather than from
+   everywhere at once. Cold civic cyan plays support and never leads; that
+   is what keeps this off the cyan-and-magenta look every dark site ends up
+   wearing.
+
+   Night is the default. The toggle is not "light mode", it is DAYBREAK —
+   the same city with the sun up.
+   ================================================================ */
+
+:root {
+  /* ── Ground. Never pure black: a city sky has light pollution in it, and
+        #000 reads as absence rather than as night. ────────────────── */
+  --night:      #0A0D14;
+  --slate:      #141A26;   /* raised surfaces, cards */
+  --slate-hi:   #1B2333;   /* hover, wells */
+  --asphalt:    #273043;   /* borders */
+  --asphalt-hi: #3A4560;   /* borders, emphasised */
+
+  /* ── Light. Dawn leads; sodium is the streetlight beside it. ────── */
+  --dawn:       #FF7A18;
+  --dawn-soft:  #FF9B4D;
+  --dawn-deep:  #C4560A;
+  --sodium:     #FFC145;
+
+  /* ── Cold. Support only. ──────────────────────────────────────── */
+  --signal:     #33E1ED;
+  --signal-dim: #1B8E97;
+
+  /* ── Alarm. ───────────────────────────────────────────────────── */
+  --blood:      #FF3355;
+
+  /* ── Type. ────────────────────────────────────────────────────── */
+  --bone:       #E6E8EE;   /* body text */
+  --bone-dim:   #A8B0C0;   /* secondary */
+  --smoke:      #8A94AB;   /* tertiary, metadata -- 4.5:1 on --slate */
+
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Spectral", Georgia, "Times New Roman", serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* ── Measure and rhythm. ──────────────────────────────────────── */
+  --max-w:     72rem;
+  --measure:   38rem;      /* ~68 characters at the body size */
+  --nav-h:     3.25rem;
+  --radius:    3px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 18px rgba(0, 0, 0, 0.55);
+
+  /* Default for a card with no category. Overridden per card by an inline
+     `--cat`, written from meta.js so the colours live in ONE place and this
+     file never has to restate them. */
+  --cat: var(--dawn);
+}
+
+/* ── Daybreak ───────────────────────────────────────────────────────
+   Not an inversion. Dawn light on a pale sky: the accent survives
+   unchanged because a sunrise orange works on both grounds, and only the
+   surfaces and type flip. */
+html.daybreak {
+  --night:      #F2EFE9;
+  --slate:      #FFFFFF;
+  --slate-hi:   #F7F3EC;
+  --asphalt:    #DAD3C6;
+  --asphalt-hi: #B9AF9C;
+
+  --dawn-soft:  #A8490A;   /* darker than the night value: 4.5:1 on the pale ground */
+  --signal:     #10707A;
+  --signal-dim: #0C5A62;
+  --blood:      #C21232;
+
+  --bone:       #14161C;
+  --bone-dim:   #454C5C;
+  --smoke:      #5C6478;   /* 4.5:1 on the pale ground, not just on white */
+
+  --shadow-sm: 0 1px 3px rgba(20, 22, 28, 0.10);
+  --shadow-md: 0 4px 18px rgba(20, 22, 28, 0.14);
+}
+
+/* ================================================================
+   Base
+   ================================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--bone);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin: 2.25rem 0 0.75rem;
+}
+h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; }
+h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); }
+h3 { font-size: 1.1rem; letter-spacing: 0.01em; }
+
+p { margin: 0 0 1.15rem; }
+strong { font-weight: 600; color: var(--bone); }
+
+a { color: var(--dawn-soft); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--dawn); }
+
+:focus-visible {
+  outline: 2px solid var(--dawn);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+hr { border: 0; border-top: 1px solid var(--asphalt); margin: 2.5rem 0; }
+
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--slate-hi);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.15rem 0 0.15rem 1.15rem;
+  border-left: 3px solid var(--cat);
+  color: var(--bone-dim);
+  font-style: italic;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--dawn);
+  color: #14161C;
+  padding: 0.6rem 1rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+/* Fine grain over the whole page. A flat dark field reads as a screen; a
+   grained one reads as a photograph of a place. Pure CSS, no asset.
+
+   The speckle colour is FIXED white, not `var(--bone)`. Token-derived it
+   inverts with the theme: in Daybreak `--bone` is near-black, so grain meant
+   to lift a dark photograph instead multiplied black over every light
+   surface. Cards computed as #FFFFFF and rendered mid-grey, which is the
+   kind of bug that survives a code review and dies instantly to a screenshot.
+
+   Grain is a property of the night image anyway. Daylight does not want it. */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: repeating-radial-gradient(
+    circle at 0 0, transparent 0, #FFFFFF 1px, transparent 2px, transparent 4px);
+  mix-blend-mode: overlay;
+}
+html.daybreak .grain { display: none; }
+
+.wrap { max-width: var(--max-w); margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2.5rem); }
+
+/* ================================================================
+   Header
+   ================================================================ */
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  background: var(--night);
+  /* The horizon: a single lit rule under the masthead, the same light the
+     home page shows in full. */
+  border-bottom: 1px solid var(--asphalt);
+  box-shadow: 0 1px 0 rgba(255, 122, 24, 0.22);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding: 0.4rem clamp(1rem, 4vw, 2.5rem);
+  min-height: var(--nav-h);
+}
+
+.nav__home {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: var(--bone);
+  flex-shrink: 0;
+}
+
+/* A rising sun over a flat horizon, drawn rather than lettered. */
+.nav__mark {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: linear-gradient(to top, var(--dawn) 0%, var(--sodium) 100%);
+  box-shadow: 0 0 10px rgba(255, 122, 24, 0.55);
+  flex-shrink: 0;
+}
+
+.nav__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 0.25rem 0.1rem;
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+
+.nav__links a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.55rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--bone-dim);
+  border-radius: var(--radius);
+  transition: color 0.15s, background 0.15s;
+}
+.nav__links a:hover { color: var(--dawn); background: rgba(255, 122, 24, 0.09); }
+
+.nav__theme-toggle {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: 0;
+  color: var(--bone-dim);
+  cursor: pointer;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius);
+}
+.nav__theme-toggle:hover { color: var(--sodium); background: rgba(255, 193, 69, 0.1); }
+.nav__theme-toggle .icon-moon { display: none; }
+html.daybreak .nav__theme-toggle .icon-sun  { display: none; }
+html.daybreak .nav__theme-toggle .icon-moon { display: block; }
+
+/* ── World switcher ─────────────────────────────────────────────────
+   The one control that also exists on Ahvantir. Deliberately the same
+   OBJECT — same geometry, same proportions, same behaviour — wearing this
+   site's tokens. It is the seam between two worlds, not a stray link.
+
+   A segmented pair, not a link: a link says where you could go, a segment
+   says where you are. The current world is a span, with nowhere to lead. */
+.world-switch {
+  display: inline-flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  margin-left: 0.6rem;
+  border: 1px solid var(--asphalt-hi);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.world-switch__current,
+.world-switch__other {
+  display: flex;
+  align-items: center;
+  padding: 0.42rem 0.6rem;
+  white-space: nowrap;
+}
+
+/* The chip's background is the dawn gradient, which Daybreak does NOT
+   change — so its text colour must not come from a token that does, or it
+   goes light-on-light the moment the toggle is used. Fixed dark ink is
+   correct precisely because the surface behind it never changes. */
+.world-switch__current {
+  background: linear-gradient(to top, var(--dawn-deep), var(--dawn));
+  color: #14161C;
+  font-weight: 700;
+}
+
+.world-switch__other {
+  color: var(--bone-dim);
+  text-decoration: none;
+  transition: color 0.15s, background 0.15s;
+}
+.world-switch__other:hover { color: var(--dawn); background: rgba(255, 122, 24, 0.1); }
+
+/* ================================================================
+   Home
+   ================================================================ */
+
+/* Dawn breaks at the HORIZON, so the light comes from the bottom of the
+   hero where the skyline would be — not from the top, and not from
+   everywhere. That single decision is most of why this reads as a place
+   rather than as a dark theme. */
+.hero {
+  position: relative;
+  padding: clamp(4.5rem, 12vw, 8rem) 0 clamp(3rem, 8vw, 5rem);
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 65% at 50% 118%, rgba(255, 122, 24, 0.42) 0%,
+                                          rgba(255, 122, 24, 0.13) 42%,
+                                          transparent 72%),
+    linear-gradient(to bottom, #070910 0%, var(--night) 100%);
+}
+html.daybreak .hero {
+  background:
+    radial-gradient(120% 65% at 50% 118%, rgba(255, 122, 24, 0.30) 0%,
+                                          rgba(255, 193, 69, 0.12) 42%,
+                                          transparent 72%),
+    linear-gradient(to bottom, #FFFFFF 0%, var(--night) 100%);
+}
+
+/* The horizon itself. */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--dawn) 35%, var(--sodium) 50%, var(--dawn) 65%, transparent);
+  opacity: 0.75;
+}
+
+.hero__inner { position: relative; z-index: 2; max-width: var(--max-w); margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2.5rem); }
+
+.hero__eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--sodium);
+  margin: 0 0 1rem;
+}
+
+.hero__title {
+  font-size: clamp(2.75rem, 9vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin: 0 0 0.85rem;
+  line-height: 0.94;
+}
+
+.hero__motto {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  color: var(--bone-dim);
+  margin: 0 auto 2rem;
+  max-width: 34rem;
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.7rem 1.35rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: transform 0.12s, background 0.15s, color 0.15s;
+}
+.btn:hover { transform: translateY(-1px); }
+
+/* Same fixed-ink reasoning as the switcher chip. */
+.btn--primary { background: linear-gradient(to top, var(--dawn-deep), var(--dawn)); color: #14161C; }
+.btn--primary:hover { background: linear-gradient(to top, var(--dawn), var(--sodium)); color: #14161C; }
+
+.btn--ghost { border-color: var(--asphalt-hi); color: var(--bone); }
+.btn--ghost:hover { border-color: var(--dawn); color: var(--dawn); background: rgba(255, 122, 24, 0.07); }
+
+/* ── Section furniture ──────────────────────────────────────────── */
+
+.section { padding: clamp(2.75rem, 7vw, 4.5rem) 0; }
+
+.section__title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--asphalt);
+}
+
+/* ── Category cards ─────────────────────────────────────────────── */
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cat-card {
+  position: relative;
+  display: block;
+  background: var(--slate);
+  border: 1px solid var(--asphalt);
+  /* The category's own colour, as a lit edge. Set inline from meta.js. */
+  border-left: 3px solid var(--cat);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s, border-color 0.15s, transform 0.12s;
+}
+.cat-card:hover {
+  background: var(--slate-hi);
+  border-color: var(--asphalt-hi);
+  border-left-color: var(--cat);
+  transform: translateY(-2px);
+}
+
+.cat-card__icon { color: var(--cat); font-size: 1.1rem; line-height: 1; }
+
+.cat-card__name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0.5rem 0 0.35rem;
+}
+
+.cat-card__desc { font-size: 0.92rem; color: var(--bone-dim); margin: 0 0 0.6rem; }
+
+.cat-card__count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--smoke);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ================================================================
+   Article
+   ================================================================ */
+
+.article { padding: 2rem 0 4rem; }
+
+.breadcrumb {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--smoke);
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.breadcrumb a { color: var(--smoke); text-decoration: none; }
+.breadcrumb a:hover { color: var(--dawn); }
+
+.article-header { margin-bottom: 2rem; }
+
+.article-title { margin: 0 0 0.6rem; }
+
+.article-lead {
+  font-size: 1.15rem;
+  color: var(--bone-dim);
+  max-width: var(--measure);
+  margin: 0 0 1.1rem;
+}
+
+.article-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+
+.category-badge {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cat);
+  border: 1px solid var(--cat);
+  border-radius: var(--radius);
+  padding: 0.22rem 0.5rem;
+  text-decoration: none;
+}
+.category-badge:hover { background: var(--cat); color: #14161C; }
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--bone-dim);
+  background: var(--slate);
+  border: 1px solid var(--asphalt);
+  border-radius: var(--radius);
+  padding: 0.2rem 0.45rem;
+  text-decoration: none;
+}
+.tag:hover { border-color: var(--cat); color: var(--cat); }
+
+/* ── The record banner ──────────────────────────────────────────────
+   `draft` and `contested` are honest states for a living setting and
+   neither should be embarrassing, so they are stated plainly rather than
+   hidden. `canon` says nothing, because that is the unremarkable case. */
+.record-banner {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+}
+.record-banner strong { font-family: var(--font-display); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.7rem; }
+.record-banner--draft     { background: rgba(255, 193, 69, 0.09); border: 1px solid rgba(255, 193, 69, 0.35); color: var(--sodium); }
+.record-banner--contested { background: rgba(255, 51, 85, 0.08);  border: 1px solid rgba(255, 51, 85, 0.32);  color: var(--blood); }
+
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 17rem;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.article-body { max-width: var(--measure); }
+.article-body h2 {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--asphalt);
+}
+.article-body h2:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
+.article-body ul, .article-body ol { padding-left: 1.2rem; }
+.article-body li { margin-bottom: 0.4rem; }
+
+.article-body em { color: var(--bone-dim); }
+
+/* Wiki links read as part of the prose, marked but not shouted. */
+.wikilink {
+  color: var(--bone);
+  text-decoration: none;
+  border-bottom: 1px solid var(--asphalt-hi);
+}
+.wikilink:hover { color: var(--dawn); border-bottom-color: var(--dawn); }
+
+/* ── The dossier ────────────────────────────────────────────────────
+   Rendered from the category's schema, so every field the template
+   requires has a visible slot whether or not it was filled. An empty
+   field shows as a gap on the page. That is deliberate: the fastest way
+   to keep a template honoured is to make skipping it look like an
+   omission rather than a shortcut. */
+.dossier {
+  background: var(--slate);
+  border: 1px solid var(--asphalt);
+  border-top: 2px solid var(--cat);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dossier__title {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  margin: 0 0 0.75rem;
+}
+
+.dossier__list { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 0.9rem; }
+
+.dossier__list dt {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--smoke);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.dossier__list dd { margin: 0; font-size: 0.88rem; color: var(--bone); }
+.dossier__list dd.is-empty { color: var(--smoke); font-style: italic; }
+
+.article-sidebar { position: sticky; top: 1.5rem; display: grid; gap: 1.5rem; }
+
+.sidebar-section { border-top: 1px solid var(--asphalt); padding-top: 0.9rem; }
+.sidebar-title {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  margin: 0 0 0.6rem;
+}
+.sidebar-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.backlinks-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; font-size: 0.9rem; }
+.backlinks-list a { color: var(--bone-dim); text-decoration: none; }
+.backlinks-list a:hover { color: var(--dawn); }
+
+.back-link {
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--bone-dim);
+}
+.back-link:hover { color: var(--dawn); }
+
+/* ================================================================
+   Footer
+   ================================================================ */
+
+.site-footer {
+  border-top: 1px solid var(--asphalt);
+  box-shadow: inset 0 1px 0 rgba(255, 122, 24, 0.14);
+  padding: 2.5rem clamp(1rem, 4vw, 2.5rem) 3rem;
+  text-align: center;
+}
+
+.site-footer__motto {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--dawn);
+  margin: 0 0 0.5rem;
+}
+
+.site-footer__tagline { font-size: 0.88rem; color: var(--smoke); margin: 0; }
+
+/* ================================================================
+   Responsive
+   ================================================================ */
+
+@media (max-width: 60rem) {
+  .article-layout { grid-template-columns: 1fr; gap: 1.75rem; }
+  .article-sidebar { position: static; }
+}
+
+@media (max-width: 30rem) {
+  body { font-size: 1rem; }
+  .world-switch { margin-left: 0; font-size: 0.6rem; }
+  .world-switch__current, .world-switch__other { padding: 0.35rem 0.45rem; }
+  .nav__links a { padding: 0.35rem 0.4rem; font-size: 0.68rem; }
+  .dossier__list { grid-template-columns: 1fr; gap: 0.15rem 0; }
+  .dossier__list dd { margin-bottom: 0.5rem; }
+}
+
+@media print {
+  .site-header, .site-footer, .article-sidebar, .grain, .back-link { display: none; }
+  body { background: #fff; color: #000; }
+}
+
+/* Heading anchors from markdown-it-anchor. Present in the markup so a
+   section can be linked to, but out of the way until the heading is hovered
+   or the link itself is focused — a column of pilcrows down the page reads
+   as debris. */
+.header-anchor {
+  color: var(--cat);
+  text-decoration: none;
+  opacity: 0;
+  margin-left: 0.35em;
+  font-size: 0.7em;
+  vertical-align: middle;
+  transition: opacity 0.12s;
+}
+h2:hover > .header-anchor,
+h3:hover > .header-anchor,
+.header-anchor:focus-visible { opacity: 0.85; }

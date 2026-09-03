@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {#
+    Built from meta.js rather than hardcoded, so adding the Supabase project
+    later does not mean remembering to widen the policy by hand -- the symptom
+    of forgetting would be a player area that silently cannot reach its own
+    backend.
+  #}
+  {%- set connectSrc = "'self' https://fonts.googleapis.com https://fonts.gstatic.com " + meta.site.foundry -%}
+  {%- if meta.supabase.url -%}
+    {%- set connectSrc = connectSrc + " " + meta.supabase.url + " " + meta.supabase.url | replace("https://", "wss://") -%}
+  {%- endif -%}
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src https: data: blob:; connect-src {{ connectSrc }}; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src {{ meta.site.foundry }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} — {% endif %}{{ meta.site.title }}</title>
+  <meta name="description" content="{{ (summary or meta.site.description) | stripWikilinks }}">
+  <meta name="generator" content="Eleventy">
+  <meta name="supabase-url" content="{{ meta.supabase.url }}">
+  <meta name="supabase-anon-key" content="{{ meta.supabase.anonKey }}">
+  <meta name="theme-color" content="#0A0D14">
+
+  {#
+    Must be in <head> and must NOT be deferred -- the player templates put
+    their own script tags in the page content, so anything creating a Supabase
+    client runs while the body is still parsing. See auth-storage.js.
+  #}
+  <script src="/assets/js/auth-storage.js"></script>
+
+  {#
+    Set the theme before first paint. Without this, a reader who chose Daybreak
+    gets a flash of the night palette on every navigation, which on a site this
+    dark is not subtle.
+  #}
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("dawnbreak-theme") === "daybreak") {
+          document.documentElement.classList.add("daybreak");
+        }
+      } catch (e) { /* storage blocked; night is the default anyway */ }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  {# Fine grain over the whole page. A flat dark field reads as a screen; a
+     grained one reads as a photograph of a place. #}
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/" class="nav__home" aria-label="{{ meta.site.title }} home">
+        <span class="nav__mark" aria-hidden="true"></span>
+        <span class="nav__title">{{ meta.site.title }}</span>
+      </a>
+
+      {% if meta.sister and meta.sister.url %}
+      {# The one control that also exists on Ahvantir. Same object, same
+         geometry, this site's tokens. #}
+      <div class="world-switch" role="group" aria-label="Switch world">
+        <span class="world-switch__current" aria-current="true">Dawnbreak</span>
+        <a class="world-switch__other" href="{{ meta.sister.url }}">{{ meta.sister.label }}</a>
+      </div>
+      {% endif %}
+
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/timeline/">Timeline</a></li>
+        <li><a href="/recently-added/">Recent</a></li>
+        <li><a href="/search/" class="nav__search-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Search
+        </a></li>
+        <li hidden id="nav-play-item"><a href="/play/">Play</a></li>
+        <li><a href="/player/dashboard/" class="nav__player-link">Player</a></li>
+        <li class="nav__theme-item">
+          {# Not "light mode". The city is dark; this is the sun coming up on it. #}
+          <button class="nav__theme-toggle" id="theme-toggle" type="button"
+                  aria-label="Switch to Daybreak" title="Daybreak">
+            <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="1.5" x2="12" y2="3.5"/><line x1="12" y1="20.5" x2="12" y2="22.5"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1.5" y1="12" x2="3.5" y2="12"/><line x1="20.5" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
+            <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__motto">{{ meta.site.subtitle }}</p>
+    <p class="site-footer__tagline">
+      A record of Dawnbreak City, kept current to <strong>2040</strong>.
+    </p>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

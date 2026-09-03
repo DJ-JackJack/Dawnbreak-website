@@ -1,0 +1,35 @@
+---
+layout: base
+title: false
+---
+<section class="hero">
+  <div class="hero__inner">
+    <p class="hero__eyebrow">The record of</p>
+    <h1 class="hero__title">Dawnbreak City</h1>
+    <p class="hero__motto">{{ meta.site.subtitle }}</p>
+    <div class="hero__actions">
+      <a href="/articles/" class="btn btn--primary">Browse the record</a>
+      <a href="/timeline/" class="btn btn--ghost">Timeline</a>
+      <a href="/search/" class="btn btn--ghost">Search</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="section">
+    <h2 class="section__title">The record</h2>
+    <ul class="cat-grid" role="list">
+      {%- for cat in meta.categories %}
+      {%- set count = collections.allArticles | inCategory(cat.slug) | length %}
+      <li>
+        <a class="cat-card" href="/articles/#{{ cat.slug }}" style="--cat: {{ cat.color }}">
+          <span class="cat-card__icon" aria-hidden="true">{{ cat.icon }}</span>
+          <h3 class="cat-card__name">{{ cat.label }}</h3>
+          <p class="cat-card__desc">{{ cat.description }}</p>
+          <span class="cat-card__count">{{ count }} article{% if count != 1 %}s{% endif %}</span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+</div>

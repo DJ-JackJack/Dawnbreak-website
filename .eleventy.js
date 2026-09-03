@@ -276,6 +276,13 @@ module.exports = function (eleventyConfig) {
       day: "numeric",
     });
   });
+  /* Nunjucks' own `selectattr` takes a single attribute name, not a dotted
+     path, so `selectattr("data.category", ...)` matches nothing and fails
+     SILENTLY -- the home page counted every category as zero while an article
+     sat in one of them. This does the filtering in JS where the path works. */
+  eleventyConfig.addFilter("inCategory", (items, slug) =>
+    (items || []).filter((item) => item.data && item.data.category === slug));
+
   eleventyConfig.addFilter("keys", (obj) => Object.keys(obj || {}));
   eleventyConfig.addFilter("values", (obj) => Object.values(obj || {}));
 
