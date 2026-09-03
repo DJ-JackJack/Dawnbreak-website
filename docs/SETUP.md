@@ -1,15 +1,18 @@
 # What Krys needs to do
 
-**Steps 0 through 4 are done. One optional step is left: step 5.**
+**Steps 0 through 4 are done. Two optional steps are left: 5 and 6.**
 
 The site is live at <https://dawnbreak.ahvantir.world>, it deploys on every
 push, the world switcher works both ways, and the player area — sign-in,
 dashboard, notes, messages, your hero, and the roster — runs on your existing
 Ahvantir account. One login, both settings.
 
-What's left is step 5, the Foundry status worker, which only affects whether
-the play page can say "the game is live right now". Everything else works
-without it.
+What is left is optional: step 5, the Foundry status worker, which only
+affects whether the play page can say "the game is live right now"; and step
+6, putting the lore sync on a weekly timer. Everything works without either.
+
+The Obsidian vault the site draws its articles from is built and wired up —
+see `docs/VAULT.md`.
 
 The completed steps are kept below rather than deleted: each one records a trap
 worth remembering if you ever set this up again.
@@ -170,7 +173,7 @@ for the three deferred hardening items — see
 
 ---
 
-## 5. Deploy the Foundry status worker — 5 minutes, and the only one left
+## 5. Deploy the Foundry status worker — 5 minutes, optional
 
 Unblocks: **the play page telling players whether the game is actually live.**
 
@@ -186,20 +189,44 @@ This one is genuinely optional. Everything else works without it.
 
 ---
 
+## 6. Register the weekly lore sync — 1 minute, optional
+
+Unblocks: **the vault publishing itself.** Without it you run `npm run sync`
+by hand, which is fine.
+
+The vault is built and the sync works. This only puts it on a timer. In an
+**Administrator** PowerShell:
+
+```
+schtasks /Create /TN "Dawnbreak Weekly Lore Sync" /TR "powershell.exe -NonInteractive -ExecutionPolicy Bypass -File \"C:\Users\klfal\Desktop\Claude_Directory\Dawnbreak-website\scripts\dawnbreak-weekly-sync.ps1\"" /SC WEEKLY /D SUN /ST 21:15 /RU "klfal" /F
+```
+
+Sunday 21:15 — fifteen minutes after the Ahvantir sync, so the two never push
+at the same moment.
+
+See `docs/VAULT.md` for how the vault works and what the sync does to a note.
+
+---
+
 ## The order, if you want it in one line
 
-Only **5** is left, and it is optional. The rest is done.
+Only **5** and **6** are left, and both are optional. The rest is done.
 
 
 ---
 
 ## What I've done that you might want to look at
 
+- **`docs/VAULT.md`** — the Obsidian vault, how to write in it, and what the
+  sync does to a note. Read this one first; it is where the articles come from.
 - **`docs/ARTICLE-TEMPLATES.md`** — the five article templates. Worth reading
   once before you write anything, since it's the thing that keeps a few hundred
   articles reading as one work.
 - **`docs/CANON-NOTES.md`** — the City of Changes, with its open questions
   deliberately unanswered.
-- `npm run new heroes "Coldstreak"` writes a correct skeleton to start from.
-- `npm test` checks articles, auth and the timeline mapping. CI runs it too, so
-  a broken article fails the build rather than shipping.
+- `npm run sync` publishes the vault. `npm run sync:dry` says what it would do.
+- `npm run new heroes "Coldstreak"` writes a skeleton straight into the site,
+  for the rare article you would rather not keep in the vault.
+- `npm test` checks articles, campaign scoping, auth, the timeline mapping and
+  the vault converter. CI runs it too, so a broken article fails the build
+  rather than shipping.

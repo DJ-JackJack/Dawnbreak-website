@@ -3,10 +3,10 @@ title: "The Old Financial District"
 category: locations
 summary: "Ground zero for H-Day, rebuilt within a decade and still the cheapest place to live in Dawnbreak City."
 record: draft
-date_added: 2026-09-02
+date_added: "2026-09-02"
 tags: [district, h-day, bev-131, ground-zero]
 place_type: district
-district: "—"
+district: —
 status: rebuilt
 built: Pre-H-Day
 h_day: ground zero
