@@ -9,6 +9,32 @@ live database and is flagged accordingly.
 
 ---
 
+## 0. Land the deploy workflow — 30 seconds
+
+Unblocks: **everything below.** Without it nothing deploys at all.
+
+GitHub refuses to let my token create `.github/workflows/` — that needs a
+`workflow` scope mine does not have, and it is a deliberate GitHub protection
+rather than something to route around. The file is written and sitting in your
+working tree, untracked.
+
+Two ways. Either commit it yourself, which needs nothing from me:
+
+```bash
+cd /c/Users/klfal/Desktop/Claude_Directory/Dawnbreak-website
+git add .github/workflows/deploy.yml
+git commit -m "Add the build and deploy workflow"
+git push
+```
+
+Or grant the scope once and tell me, and I'll push it:
+
+```bash
+gh auth refresh -s workflow
+```
+
+---
+
 ## 1. Turn on GitHub Pages — 1 minute
 
 Unblocks: **seeing the site on a real URL.**
@@ -17,8 +43,8 @@ Unblocks: **seeing the site on a real URL.**
 2. Under **Build and deployment → Source**, choose **GitHub Actions**
 3. Save
 
-That's it. The workflow is already committed, so it builds and publishes on the
-next push. The site appears at:
+That's it. Once step 0 has landed the workflow, the site builds and publishes on
+every push, and appears at:
 
 ```
 https://dj-jackjack.github.io/Dawnbreak-website/
