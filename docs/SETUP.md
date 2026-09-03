@@ -113,7 +113,7 @@ This one is genuinely optional. Everything else works without it.
 
 ## The order, if you want it in one line
 
-**1 → 2 → tell me → 3 → 5**, and **4** whenever you're ready to give the player
+**0 → 1 → 2 → tell me → 3 → 5**, and **4** whenever you're ready to give the player
 area a session's attention.
 
 ---
