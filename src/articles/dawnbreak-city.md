@@ -58,10 +58,16 @@ named for what it is.
 The city's answer is the Harborworks programme, begun in 2031 and still
 building. Its centrepiece is a floodwall along the harbor frontage, tied into
 raised roadway and pumping stations, and by the standards of the engineering it
-works. What the wall protects is the harbor, the Old Financial District and New
-Haven. It stops at the Grid Row line in one direction and at the Tidewater
-Commons boundary in the other. Fenmoor Flats and Cape Crooked lie outside it,
-scheduled for a later phase that has been rescheduled twice.
+works. What the wall protects is the harbor frontage, the Old Financial
+District, New Haven, and the generating station and freight terminal in
+[[Grid Row]]. It turns inland at the Tidewater Commons boundary. Fenmoor Flats
+and Cape Crooked lie outside it, scheduled for a later phase that has been
+rescheduled twice.
+
+The route through Grid Row follows the substations rather than the streets.
+Residents there have noticed, and say so at every hearing. The city's position
+is that the wall was drawn to keep the lights on for everybody, which is
+accurate and is not quite an answer to the question being asked.
 
 New Haven was raised on engineered ground before a single tower went up on it,
 which is why it stayed dry through the 2036 surge and the district it replaced
