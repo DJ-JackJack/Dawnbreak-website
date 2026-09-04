@@ -116,7 +116,7 @@ const CATEGORIES = {
     label: "Locations",
     fields: [
       { key: "place_type", label: "Type", required: true,
-        enum: ["district", "landmark", "building", "infrastructure", "institution"] },
+        enum: ["city", "district", "landmark", "building", "infrastructure", "institution"] },
       { key: "district", label: "District", required: true, note: 'Parent district, or "—" for a district itself.' },
       { key: "status", label: "Status", required: true,
         enum: ["standing", "rebuilt", "condemned", "levelled", "lost"] },
