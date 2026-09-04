@@ -1277,3 +1277,23 @@ html.daybreak .entry:hover { background: rgba(20, 22, 28, 0.03); }
   font-size: 0.8rem;
   color: var(--smoke);
 }
+
+/* --- City map ------------------------------------------------------------ */
+.citymap { margin: 0 0 2.5rem; }
+.citymap a { display: block; line-height: 0; }
+.citymap img {
+  width: 100%; height: auto; border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--sodium) 25%, transparent);
+  box-shadow: 0 0 0 1px rgba(0,0,0,.4), 0 18px 50px -30px var(--dawn);
+}
+.citymap__caption {
+  margin-top: .6rem; font-size: .85rem; font-style: italic; opacity: .7;
+}
+.citymap__heading {
+  font-size: 1rem; letter-spacing: .12em; text-transform: uppercase;
+  opacity: .8; margin: 0 0 .8rem;
+}
+.citymap__districts {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: .45rem .9rem; padding: 0; margin: 0; list-style: none;
+}

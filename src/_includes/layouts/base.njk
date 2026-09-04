@@ -12,7 +12,7 @@
   {%- if meta.supabase.url -%}
     {%- set connectSrc = connectSrc + " " + meta.supabase.url + " " + meta.supabase.url | replace("https://", "wss://") -%}
   {%- endif -%}
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src https: data: blob:; connect-src {{ connectSrc }}; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src {{ meta.site.foundry }}">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' https: data: blob:; connect-src {{ connectSrc }}; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src {{ meta.site.foundry }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if title %}{{ title }} — {% endif %}{{ meta.site.title }}</title>
   <meta name="description" content="{{ (summary or meta.site.description) | stripWikilinks }}">
@@ -79,6 +79,7 @@
       <ul class="nav__links" id="nav-links" role="list">
         <li><a href="/articles/">Articles</a></li>
         <li><a href="/timeline/">Timeline</a></li>
+        <li><a href="/map/">Map</a></li>
         <li><a href="/recently-added/">Recent</a></li>
         <li><a href="/search/" class="nav__search-link">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
