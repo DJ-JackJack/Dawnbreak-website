@@ -92,6 +92,11 @@ The rest of the working population is corporate and professional: finance,
 insurance, media, law, and the service businesses that exist because those
 people need lunch.
 
+New Haven has a civic league on paper. Its meetings are attended in single
+figures, which the city treats as a district that has not organised itself and
+which residents of older districts read as a place nobody considers themselves
+to be from.
+
 ## Incidents
 
 *No incidents recorded yet. This section fills as other articles are written.*
@@ -105,26 +110,13 @@ project went up rather than afterwards.
 Occupancy, assessed values and the tax abatements offered to the firms that
 relocated are on record with the city. The abatements were substantial, they
 were granted openly, and they are the subject of a recurring argument at budget
-time that has never changed anybody's vote.
+time that has never changed anybody's vote. The same argument surfaces at every
+hearing on Harborworks phasing, where the point made is that New Haven was
+raised while the city was still deciding whether it could afford a wall at all.
 
 Arkon Media is a public company and files accordingly. What Pantheon costs to
 operate appears in those filings, folded into a line item that does not separate
 it out.
-
-## Contested / unconfirmed
-
-**Whether New Haven is a district or a campus.** It has a civic league, on
-paper. The league's meetings are attended in single figures, which the city
-treats as a district that has not organised itself and which residents of other
-districts treat as evidence that nobody here regards the place as somewhere they
-are from.
-
-**What the district cost the rest of the city.** New Haven was raised at the
-same time the city was arguing about whether it could afford a floodwall at all,
-and the money came from different places. Whether it could have come from the
-same place, and gone elsewhere, is asked at every hearing on Harborworks
-phasing. The city's answer has been consistent and has convinced nobody who was
-not already convinced.
 
 ## Related
 

@@ -65,7 +65,7 @@ const CATEGORIES = {
     ],
     sections: [
       "June 11, 2028", "The Decision", "Capabilities", "In the City",
-      "The Public Record", "Contested / unconfirmed", "Related",
+      "The Public Record", "Related",
     ],
   },
 
@@ -87,7 +87,7 @@ const CATEGORIES = {
     ],
     sections: [
       "Emergence", "Method", "Capabilities", "Encounters", "Custody",
-      "The Public Record", "Contested / unconfirmed", "Related",
+      "The Public Record", "Related",
     ],
   },
 
@@ -108,7 +108,7 @@ const CATEGORIES = {
     ],
     sections: [
       "Founding", "Structure", "Operations", "In the City",
-      "The Public Record", "Contested / unconfirmed", "Related",
+      "The Public Record", "Related",
     ],
   },
 
@@ -128,7 +128,7 @@ const CATEGORIES = {
     ],
     sections: [
       "The Place", "H-Day and After", "Who's There", "Incidents",
-      "The Public Record", "Contested / unconfirmed", "Related",
+      "The Public Record", "Related",
     ],
   },
 
@@ -147,7 +147,7 @@ const CATEGORIES = {
     ],
     sections: [
       "What Happened", "The Response", "Aftermath", "How It's Remembered",
-      "The Public Record", "Contested / unconfirmed", "Related",
+      "The Public Record", "Related",
     ],
   },
 };

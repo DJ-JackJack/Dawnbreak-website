@@ -76,18 +76,12 @@ Property values have not followed. The gap between the district's documented
 condition and its market value is the most legible fact about the place, and no
 explanation the city has offered for it has satisfied anyone.
 
-## Contested / unconfirmed
-
-**Rare mutation cases still surface among former residents and workers.** They
-have never been proven and never been debunked. The cases are individually
-plausible and collectively unverified; no study has settled the question, and
-there is no official position beyond the observation that BEV-131 is not
-considered to remain active in the environment.
-
-This is the district's defining ambiguity. It is not recorded here as a rumour,
-because the cases are real and documented as cases. It is not recorded as fact,
-because the connection to the district has never been established. Residents
-generally do not discuss it. People who do not live here discuss it constantly.
+Mutation cases still surface among former residents and workers, rarely and at
+intervals. They have never been proven and never been debunked. Individually the
+cases are plausible. Collectively they remain unverified, no study has settled
+the question, and the only official position is that BEV-131 is not considered
+to remain active in the environment. Residents generally do not discuss it.
+People who do not live here discuss it constantly.
 
 ## Related
 

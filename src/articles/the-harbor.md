@@ -55,6 +55,15 @@ The Harbor Tunnel carries the southern highway under the channel to
 [[Grid Row]] and by truck through everywhere else, which is why the roads here
 are in the condition they are in.
 
+The district is widely held to be the easiest way into Dawnbreak for a person or
+an object that would rather not be recorded arriving. Customs holds that the
+port is controlled and that its seizure rate matches any east coast facility of
+this size. People who work here treat the reputation as a plain description of
+what a working port is, and do not regard saying so as an accusation against
+anybody in particular. Both accounts have been consistent for decades, and no
+inquiry has ever been held, because no specific allegation has ever required
+one.
+
 ## H-Day and After
 
 The port did not stop.
@@ -95,26 +104,6 @@ logged and the log is public, as are the four dates on which the port has shut.
 Employment figures are collected by the port authority and by the union
 separately, and the two sets do not quite agree, which both organisations
 attribute to how casual shifts are counted.
-
-## Contested / unconfirmed
-
-**The unofficial traffic.** The Harbor is widely held to be the easiest way into
-Dawnbreak for a person or an object that would rather not be recorded arriving.
-Customs holds that the port is controlled, that its seizure rate is comparable
-to any east coast facility of the size, and that the reputation is folklore.
-People who work the district treat the reputation as a straightforward
-description of what a working port is, and do not regard saying so as an
-accusation against anybody in particular.
-
-Both accounts have been consistent for decades. No inquiry has been held,
-because no specific allegation has ever been made that would require one.
-
-**What comes through for the metahuman trade.** It is assumed in several
-quarters that material of interest to people with abilities moves through this
-district, and the assumption is old enough to have hardened into something
-people state as fact. Nothing has been demonstrated. The seizure record shows
-the ordinary run of a port and nothing that would support the stronger version
-of the claim.
 
 ## Related
 

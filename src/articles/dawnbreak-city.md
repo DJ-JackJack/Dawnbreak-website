@@ -120,7 +120,8 @@ spent a great deal of money on both.
 Around 258,000 people, a figure that has moved very little in twenty years and
 conceals a good deal of movement inside it. The city loses households to the
 suburbs and gains them from much further away, which is roughly what it was
-built to do.
+built to do. Several people who work with the numbers consider the count too
+stable for a city with this much churn.
 
 Metahumans live here in numbers nobody has counted accurately. Registration with
 [[The Cleaners]] exists and is poorly subscribed. What Dawnbreak has instead of a
@@ -154,19 +155,6 @@ The city's account of itself has not changed in a century: Dawnbreak was built t
 be a place people could arrive at, and it still is. Nothing in the public record
 contradicts that. What the record holds instead is a long series of ordinary
 decisions about where to spend money, each of them defensible on its own.
-
-## Contested / unconfirmed
-
-**Whether the Harborworks phasing follows the engineering.** The city holds that
-the wall went where the water arrives first and the assets sit thickest, which is
-true. Residents of the deferred districts observe that the water arrives at them
-too, that it always has, and that their phase keeps moving. Both positions cite
-the same survey.
-
-**Whether the population figure is real.** The count has been stable for two
-decades, which several people who work with the numbers consider too stable for a
-city with this much churn. There is no agreement about who is going uncounted, or
-why.
 
 ## Related
 

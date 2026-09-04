@@ -76,7 +76,10 @@ The [[The Undercity|Undercity]] is denser beneath Grid Row than anywhere else,
 because this is where the infrastructure is. Power runs, freight tunnels and
 storm drainage all converge under these streets, some of it dating to the
 original terminal works. The city describes the access points as utilities,
-maintains them, and does not publish a map of them.
+maintains them, and does not publish a map of them. The entrances are locked and
+monitored and are supposed to see no traffic but utility crews. People who live
+above them describe a good deal more than that, and nobody has ever produced a
+photograph.
 
 ## H-Day and After
 
@@ -133,18 +136,6 @@ objected to it, and the objections are recorded accurately in the minutes.
 Fire company rolls, including the 2028 losses, are public. The credit union
 files like any other credit union. The benevolent association files nothing
 because it is not required to.
-
-## Contested / unconfirmed
-
-**Whether the wall was routed for the substations or against the houses.** The
-engineering case for protecting the power supply is sound and nobody in the
-district disputes it. What is disputed is whether an alignment protecting both
-was ever costed, and the city has not produced one.
-
-**How sealed the Undercity access points are.** The city maintains that the
-entrances beneath Grid Row are locked, monitored and used only by utility crews.
-People who live above them describe a good deal of traffic for a system that is
-supposed to see none, and no one has ever produced a photograph.
 
 ## Related
 
