@@ -6,8 +6,8 @@ record: draft
 date_added: "2026-09-11"
 tags: [cin, new-haven, grid-row, corporate, medical]
 org_type: corporation
-founded: Pre-H-Day
-founded_by: The Dietrich family
+founded: "1952"
+founded_by: Rennick J. Cross Sr.
 headquarters: "Cross Idea Network tower, New Haven"
 leadership: "David Dietrich, Chief Executive; Helena Marsh, Chief Operating Officer"
 parent: —
@@ -22,9 +22,15 @@ door are the same company, and so is the workshop that machines the parts.
 
 ## Founding
 
-It is a family firm and it predates [[H-Day]]. The company came to David
-Dietrich from his late uncle Rennick, and Dietrich has held it since, as owner
-and chief executive.
+Rennick J. Cross Sr. started the company in 1952. The Cross in Cross Idea
+Network is his, and the name is a surname before it is a description of anything
+the company does, which is not obvious from outside and is regularly misread.
+
+He handed it to his son, Rennick J. Cross Jr., in 1994. It is still a family
+company and there is no longer a Cross at the head of it. The company passed
+from Cross Jr. to his nephew, David Dietrich, who owns it now and runs it as
+chief executive. Three owners in eighty-eight years, and the same name on the
+building for all of them.
 
 Helena Marsh has been chief operating officer for eleven years and runs the
 business day to day. The arrangement is not unusual for a company of this size
