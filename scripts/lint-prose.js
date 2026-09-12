@@ -37,6 +37,7 @@ const fs = require("fs");
 const path = require("path");
 
 const DIR = path.join(__dirname, "..", "src", "articles");
+const NOTES = path.join(__dirname, "..", "notes");
 
 /** Body prose: frontmatter and the Related link list both dropped. */
 function prose(raw) {
@@ -118,7 +119,8 @@ let errors = 0;
 let warnings = 0;
 
 for (const file of files) {
-  const text = prose(fs.readFileSync(path.join(DIR, file), "utf8"));
+  const raw = fs.readFileSync(path.join(DIR, file), "utf8");
+  const text = prose(raw);
   const found = [];
 
   for (const rule of ERRORS) {
@@ -133,6 +135,22 @@ for (const file of files) {
     const n = (text.match(rule.re) || []).length;
     if (n <= rule.limit) continue;
     found.push({ level: "warn", text: rule.msg(n) });
+    warnings++;
+  }
+
+  /*
+   * An article promoted to canon should say what was invented in it.
+   * ARTICLE-TEMPLATES.md has always required the companion file; nothing
+   * checked, and thirteen articles reached the site without one. A draft is
+   * exempt, because a draft is still being argued with.
+   */
+  const record = (raw.match(/^record:\s*(\w+)/m) || [])[1];
+  const slug = file.replace(/\.md$/, "");
+  if (record === "canon" && !fs.existsSync(path.join(NOTES, `${slug}-notes.md`))) {
+    found.push({
+      level: "warn",
+      text: `marked canon with no notes/${slug}-notes.md recording what was invented`,
+    });
     warnings++;
   }
 

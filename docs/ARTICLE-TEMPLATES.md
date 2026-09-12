@@ -417,8 +417,10 @@ runs the same command.
   legal value.
 - **`lint:prose`** — voice. Em dashes in prose, first person, the article
   referring to itself, hollow intensifiers, and telling the reader what to
-  think, all of which fail the build. Two densities warn without failing, since
-  one instance is the register and a habit is not.
+  think, all of which fail the build. Three things warn without failing: two
+  densities, since one instance is the register and a habit is not, and an
+  article marked `canon` with no companion notes file. A draft is exempt from
+  the last; a draft is still being argued with.
 - **`test:docs`** — this file against `schema.js`. The two disagreed once, with
   the doc recommending a section the linter rejected, and the writer caught in
   between.
