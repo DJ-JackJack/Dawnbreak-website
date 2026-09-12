@@ -101,7 +101,7 @@ hero team in the country, and her employer owns the news.
 
 ## The Public Record
 
-There is none, and that is the measure of the thing.
+There is none, in this city or any other.
 
 No government recognises the Society. No filing names it. No journalist has
 published on it. Across the whole run of Dawnbreak's newspapers, its broadcast

@@ -34,8 +34,6 @@ a given person will get. What is established is that BEV-131 does not select. It
 has no preference and picks no one. Outcomes track exposure time, and the longer
 someone stood in it the more likely it changed them.
 
-Most of what the day did to the city follows from that one fact.
-
 ## The Response
 
 Every emergency service in Dawnbreak went into the district, along with the
@@ -83,8 +81,6 @@ silence, there is coverage, and most of the city goes to work. For people who
 were in the district, and for the families of the dead, it is a day to get
 through rather than a day to observe. Round-numbered anniversaries draw more
 attention. 2040 is the twelfth and a quieter one than 2038 was.
-
-Two things sit awkwardly under all of it.
 
 The anniversary coverage is produced by [[Arkon Media]], whose hero team's entire
 public origin is that morning. The commemoration and the brand are the same

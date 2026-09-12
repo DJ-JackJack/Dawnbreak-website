@@ -78,15 +78,31 @@ never been obliged to choose between them out loud.
 
 ### The statue
 
-A fourteen-foot statue of DeVito stands in the courtyard, depicting him as Frank
-Reynolds in the character's Trashman persona. It stands a good deal taller than
-he did.
+There is a statue of DeVito in the courtyard. It is fourteen feet tall, it
+depicts him as Frank Reynolds in the Trashman costume from *It's Always Sunny in
+Philadelphia*, and it shows him head to foot in garbage with his arms up. A
+group of students built it as a class project in 2036 and titled it *A Hero
+Nonetheless*. It was not a city commission and no public money went into it.
 
-A group of students built it as a class project in 2036 and titled it *A Hero
-Nonetheless*. The role was not chosen at random and nobody at the school has
-pretended otherwise.
+They chose the role because it was funny, which the school has never dressed up
+into anything more respectable. *Always Sunny* had been running since long
+before any of them were born, Frank was the part their generation knew him for,
+and the Trashman is the most undignified thing in thirty years of a deliberately
+undignified show. Building it fourteen feet tall was the joke working as
+intended. He was four foot ten.
 
-The city had nothing to do with it.
+Nobody in the building has the same DeVito. The staff who signed off on it grew
+up with *Matilda*, which he directed as well as played the villain in, and with
+Phil in *Hercules*. Their parents had the Penguin. Dawnbreak residents old
+enough to remember network television have Louie De Palma from *Taxi*, a part he
+played for five years and won an Emmy for. He worked for sixty years and left a
+different favourite behind in every decade of it, so a building this size holds
+several hundred slightly different reasons to be fond of him. The students who
+built the statue were born decades after most of it and were fond of him
+anyway.
+
+Students touch it on the way in to auditions. Nobody instituted that and each
+year picks it up from the one above.
 
 ## Who's There
 
@@ -105,7 +121,7 @@ is not an honour the city has ever explained in writing.
 
 ## Incidents
 
-Nothing has happened here that the city has had to write down.
+Nothing has happened at the school that the city has had to record.
 
 ## The Public Record
 
