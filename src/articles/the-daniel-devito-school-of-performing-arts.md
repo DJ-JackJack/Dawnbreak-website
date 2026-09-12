@@ -16,8 +16,9 @@ operator: City of Dawnbreak
 The Daniel DeVito School of Performing Arts is a public high school on the
 northern edge of [[Tidewater Commons]], a few hundred yards from the civic
 auditorium and within sight of the stadium. It takes students from across
-[[Dawnbreak City]] by audition. It is named for a man who had no connection to
-the city, no training in emergency response, and no superpowers.
+[[Dawnbreak City]] by audition. It is named for an actor who never set foot in
+the city, and who died three thousand miles away doing something nobody had
+asked him to do.
 
 ## The Place
 
@@ -37,18 +38,20 @@ is informal and has held for nine years.
 
 ### The name
 
-Daniel DeVito died in Los Angeles in June 2031. He was eighty-six years old and
-he was an actor, which is the whole of his qualification for what he did.
+Daniel DeVito died in Los Angeles in June 2031. He was eighty-six, sixty years
+into a career that had made him one of the best-loved actors in the country,
+and he was standing on a hot street with a bad heart.
 
 A municipal refuse truck lost its brakes on a hill and ran down it toward a
 crowd of high school students. DeVito had been feeling chest discomfort and an
-irregular heartbeat through a hot afternoon, and he appears to have concluded
-that what he was feeling was the onset of latent abilities. On that
-understanding he stepped into the road, set himself, and tried to stop the
-truck.
+irregular heartbeat all afternoon, and he concluded that what he was feeling
+was the onset of powers. In 2031 that was not a foolish thing for a man to
+think. People were still changing, it still arrived without warning, and he had
+as much reason as anyone to believe it had reached him. On that understanding
+he stepped into the road, set himself, and tried to stop the truck.
 
-He did not have latent abilities. What he had was heat and high blood pressure
-and a heart going into an arrhythmia it did not come out of.
+What he had was heat and high blood pressure and a heart going into an
+arrhythmia it did not come out of.
 
 The truck did not stop. The crowd did. A man walking into the road and planting
 himself in front of an oncoming vehicle is the most legible warning a crowd can
