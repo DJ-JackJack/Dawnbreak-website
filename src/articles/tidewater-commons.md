@@ -42,7 +42,9 @@ Dawnbreak holds that nobody outside the city has heard of.
 
 The arena is smaller, newer, and in use most nights. The courts and the civic
 auditorium sit at the northern edge where the ground rises slightly toward
-Aldergate. The fairground has been a fairground since before the city bought it.
+Aldergate, and the [[The Daniel DeVito School of Performing Arts|DeVito School]]
+was built alongside them in 2031. The fairground has been a fairground since
+before the city bought it.
 
 ### The water
 
