@@ -27,28 +27,28 @@ the team that Dawnbreak actually sees from day to day.
 
 Oracle has no June 11.
 
-Every other member of Pantheon can be placed in the
-[[The Old Financial District|Old Financial District]] that morning, and the
-team's public meaning rests on that. Oracle is the exception, and
-[[Arkon Media]] has never tried to write it into the day. Whatever the company's
-broadcast automation was doing in 2028, it was not this.
+Every other member of Pantheon can be placed in the [[The Old Financial
+District|Old Financial District]] that morning, and the team's public meaning
+rests on that. Oracle is the exception, and [[Arkon Media]] has let it stand as
+one. Whatever the company's broadcast automation was doing in 2028, it was not
+this.
 
 ## The Decision
 
 There was not one. The rest of the roster made a choice about what to do with
-what had happened to them, and in every one of those cases the choice came after
-the event that forced it; Oracle was built, and Arkon then decided what to point
-it at.
+what had happened to them, and in every one of those cases the choice came
+after the event that forced it; Oracle was built, and Arkon then decided what
+to point it at.
 
-The company has never dressed this up. Oracle is Arkon property, made for
+The company is straightforward about it. Oracle is Arkon property, made for
 Arkon's purposes, and it joined a team Arkon pays for.
 
 ## Capabilities
 
-Oracle began as a broadcast system. It was an automated operator for film shoots
-and news coverage, a machine for deciding where to point, when to cut, and how
-to frame a face so that it read the way the studio wanted it to read. Everything
-it now does in the field grew out of that work.
+Oracle began as a broadcast system. It was an automated operator for film
+shoots and news coverage, a machine for deciding where to point, when to cut,
+and how to frame a face so that it read the way the studio wanted it to read.
+Everything it now does in the field grew out of that work.
 
 The All Seeing Eyes are the same lineage. They carried cameras first and have
 carried combat capability since they were refitted for hero work, and Oracle
@@ -56,24 +56,23 @@ operates them in the hundreds simultaneously. This is the capability that
 matters most in practice: a Pantheon response can begin before anyone has
 called anyone, because something was already watching.
 
-Prime itself is a terminal rather than a location. The drones go on working when
-the body is not present, and the body has been rebuilt before. Arkon does not
-treat its destruction as a loss of the same kind that losing a person would be,
-and has not pretended otherwise.
+Prime itself is a terminal rather than a location. The drones go on working
+when the body is not present, and the body has been rebuilt before. Arkon
+treats its destruction as a repair rather than a death, and says so.
 
 ## In the City
 
-Arkon presents Oracle as female, warm and maternal, watching over the whole city
-and ready to send help. The stated aim of the campaign is to make her familiar
-to Dawnbreak, and Arkon named this one itself, which it rarely does. The city
-usually supplies the names. It had not met Oracle in the way it had met the
-others.
+Arkon presents Oracle as female, warm and maternal, watching over the whole
+city and ready to send help. The stated aim of the campaign is to make her
+familiar to Dawnbreak, and Arkon named this one itself, which it rarely does.
+The city usually supplies the names. It had not met Oracle in the way it had
+met the others.
 
 The campaign has worked. Twelve years of metahuman violence and the standing
 possibility of another outbreak have left a city that wants very much to be
-looked after, and an attentive presence overhead at all hours is a direct answer
-to that. For a great many people in Dawnbreak the drones are reassuring in a way
-no amount of published crime statistics has managed.
+looked after, and an attentive presence overhead at all hours is a direct
+answer to that. For a great many people in Dawnbreak the drones are reassuring
+in a way no amount of published crime statistics has managed.
 
 They are also, unavoidably, cameras. They belong to a media company and they
 operate continuously over a city that company reports on, and both of those
@@ -82,14 +81,14 @@ less often.
 
 ## The Public Record
 
-Arkon states plainly that Oracle is an artificial intelligence and never has
-done otherwise. It is the acknowledged exception in a roster the company
-otherwise presents as the work of the virus.
+Arkon states plainly that Oracle is an artificial intelligence and always has.
+It is the acknowledged exception in a roster the company otherwise presents as
+the work of the virus.
 
 How Oracle actually works is not published. Arkon has released no meaningful
 technical account of it, and the people who could give one are company
-employees. [[Witchmark]] is credited as one of its designers, which is as far as
-the public record goes on the question of who built it and how.
+employees. [[Witchmark]] is credited as one of its designers, which is as far
+as the public record goes on the question of who built it and how.
 
 ## Related
 

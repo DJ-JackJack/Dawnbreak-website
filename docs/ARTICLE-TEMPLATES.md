@@ -60,6 +60,68 @@ to say about what.
 
 ---
 
+### What goes wrong anyway
+
+Everything above was already written down when the articles below were drafted,
+and the same faults kept appearing. These are the ones that recur, each with the
+article that produced it.
+
+- **Emphasis is earned, never asserted.** A one-line paragraph should carry a
+  fact. `The city had nothing to do with it.` carries none: it performs weight
+  by sitting alone. The test is deletion. Cut the line; if nothing is lost, it
+  was never content. *(DeVito school)*
+
+- **Density turns a device into a tic.** `X has never said / explained /
+  written` is in voice — the record withholds rather than hedges, and that is
+  the effect. One or two of them per article is the register. Nine of them in
+  one article reads as an arch narrator doing a bit, and a reader noticed before
+  any tooling did. `lint:prose` warns above two. *(DeVito school, Oracle Prime)*
+
+- **Point the dryness at institutions, never at people.** Dawnbreak attaching
+  itself to a dead actor's news cycle is fair game. The actor is not. `he was an
+  actor, which is the whole of his qualification for what he did` is a sneer
+  wearing the house register, and it shipped. *(DeVito school)*
+
+- **Take the subject's reasoning seriously.** A man with an irregular heartbeat
+  concluding he was developing powers is not deluded in a city where that
+  happens to people. Written as a misapprehension he is a punchline; written as
+  a reasonable inference the same paragraph is tragic. Nothing was added to make
+  that turn, only granted. *(DeVito school)*
+
+- **Do not explain the joke.** A detail that lands, or a title like *A Hero
+  Nonetheless*, does its own work. A sentence telling the reader what it is
+  getting at replaces the effect with a description of the effect.
+  *(DeVito school)*
+
+- **A heading is not a reason to write.** An article whose subject has no
+  connection to H-Day has nothing to put under that heading, and `there is no
+  H-Day history here` is a section spent saying so. `schema.js` lets a section
+  declare `omitWhen`; the dossier already carries the fact in a line.
+  *(DeVito school)*
+
+- **Repeat the right word rather than varying it.** Encyclopedic prose repeats
+  proper nouns by design, and a type-token ratio near 0.40 is normal at length
+  for this corpus. Reaching for synonyms to lift a number produces thesaurus
+  prose, which reads far worse than repetition.
+
+### Measure against this corpus, not a general standard
+
+Every number here came from the articles themselves and is worth re-measuring as
+the corpus grows, because the baseline moves.
+
+| | across the articles |
+|---|---|
+| em dashes in prose | none, anywhere |
+| negation density | 3.9 to 15.8 per 1,000 words |
+| sentence-length standard deviation | 9.3 to 11.2 |
+| type-token ratio | 0.39 to 0.48, falling as an article lengthens |
+
+Structure carries further than vocabulary. Every fault found so far passed the
+word-level checks and failed on shape: a drumroll of short declaratives, a
+negation split across two sentences, one construction used nine times.
+
+---
+
 ## Rules that apply to every article
 
 Lifted from your own `pantheon-bio-template.md`, because they were right there.
@@ -97,8 +159,11 @@ stay in `dawnbreak-canon.md` on your machine and never enter the repo.
 This is not a limitation to work around. It is the setting: the public record
 is thin and partly wrong in exactly the places that matter, and an article that
 says *"the attribution has never been independently verified"* is both true and
-spoiler-free. Where you want the reader to feel a gap, the
-`Contested / unconfirmed` section is the tool.
+spoiler-free. Where you want the reader to feel a gap, state the dispute where
+it is relevant and leave it standing. The Old Financial District's unproven
+mutation cases sit in its public record; the Harbor's smuggling reputation sits
+with the people who work the port. Disputes are setting material and belong in
+the body of the article, never gathered into a section of their own.
 
 ---
 
@@ -166,9 +231,7 @@ first_recorded: ""            # first confirmed public appearance, YYYY-MM-DD
    relationships, often three different answers.
 6. **The Public Record** — what has actually been published about them, by whom,
    and where it is thin. Arkon roster copy is quoted here with attribution.
-7. **Contested / unconfirmed** — what the city argues about. Omit the section
-   only if there is genuinely nothing, which is rare for anyone famous.
-8. **Related** — wiki links, grouped: people, places, events.
+7. **Related** — wiki links, grouped: people, places, events.
 
 ---
 
@@ -201,8 +264,7 @@ associated: []                # [[organizations]] and other individuals
    `status` is `at large`, this section says how long and why.
 7. **The Public Record** — how they have been reported, and by whom. A villain
    Arkon finds useful is covered differently from one it does not.
-8. **Contested / unconfirmed**
-9. **Related**
+8. **Related**
 
 ---
 
@@ -234,8 +296,7 @@ members: []                   # wiki links, for teams and rosters
 5. **In the City** — standing, reputation, and who it answers to. For anything
    Arkon owns, the gap between the brand and the operation lives here.
 6. **The Public Record**
-7. **Contested / unconfirmed**
-8. **Related**
+7. **Related**
 
 ---
 
@@ -267,9 +328,7 @@ operator: ""                  # who runs it — city, corporation, nobody
    blocks, this section fills itself.
 6. **The Public Record** — property values, official designations, the things
    the city says on paper about a place everyone knows better.
-7. **Contested / unconfirmed** — the Old Financial District's unproven mutation
-   cases are the model: never proven, never debunked, and load-bearing.
-8. **Related**
+7. **Related**
 
 ---
 
@@ -298,8 +357,7 @@ status: ""                    # resolved | ongoing | unresolved | annual
    with the version that stuck. June 11 is the model and canon already treats
    the anniversary as its own subject.
 6. **The Public Record**
-7. **Contested / unconfirmed**
-8. **Related**
+7. **Related**
 
 ---
 
@@ -326,12 +384,45 @@ been decided, and what a ruling would change. It holds "what I made up", never
 
 ---
 
+## Writing one
+
+1. **Read `dawnbreak-canon.md` first**, then `open-questions.md`. The second
+   matters as much as the first: an entry on that list is something Krys has
+   deliberately left undecided, and an article that answers one has invented
+   canon rather than recorded it.
+2. **Generate the skeleton** — `npm run new <category> "<Title>"` — so the
+   frontmatter and headings start correct instead of being corrected.
+3. **Draft in the vault**, never in `src/articles/`. The next `npm run sync`
+   overwrites anything written there.
+4. **Check what the article may know.** Both repos are public. A fact that is
+   true in canon but unknown to the city is either attributed to whoever claims
+   it, or left out.
+5. **`npm run sync && npm test`.** Shape, voice, scope and docs all run.
+6. **Read it back before committing**, against the habits above. The linter
+   catches words and counts. Nobody has automated whether a paragraph earns its
+   emphasis or whether a line sneers at its subject, and those are the two
+   faults that have actually reached the site.
+7. **Record invented detail** in the companion `notes/<article>-notes.md`, so it
+   stays easy to overrule.
+
+---
+
 ## Enforcement
 
-`npm run lint:articles` checks every file in `src/articles/` against the
-category it declares: required frontmatter present, no unknown fields, section
-headings present and in order, `summary` a single sentence, `record` a legal
-value. It fails the build in CI.
+`npm test` runs four checks over the articles and their documentation, and CI
+runs the same command.
+
+- **`lint:articles`** — shape. Required frontmatter present, no unknown fields,
+  section headings present and in order, `summary` a single sentence, `record` a
+  legal value.
+- **`lint:prose`** — voice. Em dashes in prose, first person, the article
+  referring to itself, hollow intensifiers, and telling the reader what to
+  think, all of which fail the build. Two densities warn without failing, since
+  one instance is the register and a habit is not.
+- **`test:docs`** — this file against `schema.js`. The two disagreed once, with
+  the doc recommending a section the linter rejected, and the writer caught in
+  between.
+- **`lint:scope`** — every player-area database query filtered to this campaign.
 
 That is the actual difference between a template and a good intention. Ahvantir
 had good intentions.

@@ -52,5 +52,6 @@ Articles therefore contain only what the city could plausibly know. Campaign
 prep, GM-only truth and session material stay out of the repo entirely.
 
 This is less of a constraint than it sounds, because it is also the setting: the
-public record is thin and partly wrong in exactly the places that matter. Every
-category has a **Contested / unconfirmed** section for saying so out loud.
+public record is thin and partly wrong in exactly the places that matter. An
+article says so where it is relevant and leaves it standing, rather than
+collecting its doubts into a section.

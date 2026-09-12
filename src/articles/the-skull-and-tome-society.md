@@ -46,7 +46,7 @@ administrative detail for this organization in a way it is not for any other.
 
 The Library is also the hoard. What the Society has accumulated there is the
 magical knowledge of the world, gathered over a span nobody outside it can put a
-number to, and it is the reason the rest of this article is possible to write.
+number to, and it is the reason the Society has anything to bargain with.
 
 ## Operations
 

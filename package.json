@@ -12,13 +12,15 @@
     "new": "node scripts/lint-articles.js --new",
     "test:auth": "node scripts/test-auth-storage.js",
     "test:timeline": "node scripts/test-timeline-year.js",
-    "test": "npm run lint:articles && npm run lint:scope && npm run test:auth && npm run test:timeline && npm run test:converter",
+    "test": "npm run lint:articles && npm run lint:prose && npm run lint:scope && npm run test:docs && npm run test:auth && npm run test:timeline && npm run test:converter",
     "lint:scope": "node scripts/lint-campaign-scope.js",
     "check:links": "node scripts/check-links.js",
     "vault:init": "node scripts/vault-init.js",
     "sync": "node scripts/obsidian-to-md.js",
     "sync:dry": "node scripts/obsidian-to-md.js --dry-run",
-    "test:converter": "node scripts/test-converter.js"
+    "test:converter": "node scripts/test-converter.js",
+    "lint:prose": "node scripts/lint-prose.js",
+    "test:docs": "node scripts/test-docs.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
