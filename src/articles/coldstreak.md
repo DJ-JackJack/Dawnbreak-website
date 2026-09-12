@@ -2,7 +2,7 @@
 title: "Coldstreak"
 category: heroes
 summary: "The Pantheon speedster who was fourteen and skating in the Old Financial District when BEV-131 was released over it, and who did not put on a costume for another four years."
-record: draft
+record: canon
 date_added: "2026-09-11"
 tags: [pantheon, h-day, ground-zero, grid-row, second-generation]
 codename: Coldstreak

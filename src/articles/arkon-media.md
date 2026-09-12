@@ -2,7 +2,7 @@
 title: "Arkon Media"
 category: organizations
 summary: "The media company that followed Dawnbreak's founders out of New York in the 1920s and now owns both the city's primary news source and its most famous residents."
-record: draft
+record: canon
 date_added: "2026-09-11"
 tags: [arkon, media, corporate, new-haven, pantheon, founding]
 org_type: media

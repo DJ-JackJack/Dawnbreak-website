@@ -2,7 +2,7 @@
 title: "Witchmark"
 category: heroes
 summary: "Pantheon's field commander and its oldest member, an adept magician who was a software developer at an Arkon games studio in the financial district on H-Day."
-record: draft
+record: canon
 date_added: "2026-09-11"
 tags: [pantheon, h-day, ground-zero, occult, arkon]
 codename: Witchmark

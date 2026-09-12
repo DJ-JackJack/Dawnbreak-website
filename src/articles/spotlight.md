@@ -2,7 +2,7 @@
 title: "Spotlight"
 category: heroes
 summary: "The paramedic who had been living in Dawnbreak for less than a month when H-Day happened, and who has led Pantheon since the team was founded in 2038."
-record: draft
+record: canon
 date_added: "2026-09-11"
 tags: [pantheon, h-day, ground-zero, leadership, first-generation]
 codename: Spotlight

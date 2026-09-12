@@ -2,7 +2,7 @@
 title: "Oracle Prime"
 category: heroes
 summary: "Pantheon's artificial member, publicly the only one not made by BEV-131, who runs the All Seeing Eye drones and is the part of the team most of Dawnbreak actually sees."
-record: draft
+record: canon
 date_added: "2026-09-11"
 tags: [pantheon, arkon, oracle, drones, new-haven]
 codename: Oracle Prime

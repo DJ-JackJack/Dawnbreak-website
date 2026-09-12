@@ -2,7 +2,7 @@
 title: "The Skull and Tome Society"
 category: organizations
 summary: "The order of magic users that exists to keep everyone else from finding out magic is real, and which has been losing ground since the morning BEV-131 put the strange on every screen in the country."
-record: draft
+record: canon
 date_added: "2026-09-12"
 tags: [magic, secrecy, skull-and-tome, black-guard, eternal-library]
 org_type: order

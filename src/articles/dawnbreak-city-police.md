@@ -2,7 +2,7 @@
 title: "Dawnbreak City Police"
 category: organizations
 summary: "The city's police force, which works alongside heroes as a matter of policy and has spent twelve years being measured against them."
-record: draft
+record: canon
 date_added: "2026-09-11"
 tags: [dcpd, aldergate, civic, metahuman, h-day]
 org_type: police

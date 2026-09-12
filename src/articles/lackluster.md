@@ -2,7 +2,7 @@
 title: "Lackluster"
 category: heroes
 summary: "The veteran who held a lobby and twenty-four civilians against rampaging mutations on H-Day with no powers at all, and who did not develop any until late that summer."
-record: draft
+record: canon
 date_added: "2026-09-11"
 tags: [pantheon, h-day, ground-zero, military, infiltration]
 codename: Lackluster

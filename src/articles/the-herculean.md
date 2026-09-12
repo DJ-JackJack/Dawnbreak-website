@@ -2,7 +2,7 @@
 title: "The Herculean"
 category: heroes
 summary: "The Dawnbreak firefighter who responded to ground zero on H-Day and came out of it changed, now the most visibly mutated member of Pantheon and one of the best-liked people in the city."
-record: draft
+record: canon
 date_added: "2026-09-11"
 tags: [pantheon, grid-row, h-day, first-responders, mutation]
 codename: The Herculean

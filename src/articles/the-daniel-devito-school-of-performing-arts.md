@@ -2,7 +2,7 @@
 title: "The Daniel DeVito School of Performing Arts"
 category: locations
 summary: "Dawnbreak's public performing arts high school, named for an actor who died in Los Angeles in 2031 trying to stop a runaway truck he had convinced himself he could stop."
-record: draft
+record: canon
 date_added: "2026-09-12"
 tags: [institution, tidewater-commons, schools, civic]
 place_type: institution

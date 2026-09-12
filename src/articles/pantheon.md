@@ -2,7 +2,7 @@
 title: "Pantheon"
 category: organizations
 summary: "Dawnbreak City's own hero team, six strong and sponsored by Arkon Media, which has not been out of the news since it was announced in 2038."
-record: draft
+record: canon
 date_added: "2026-09-11"
 tags: [pantheon, arkon, hero-team, corporate, new-haven]
 org_type: hero team

@@ -2,7 +2,7 @@
 title: "Cross Idea Network"
 category: organizations
 summary: "The engineering firm behind a good deal of Dawnbreak's medical hardware, which also runs the walk-in clinics and physical therapy practices that carry its name."
-record: draft
+record: canon
 date_added: "2026-09-11"
 tags: [cin, new-haven, grid-row, corporate, medical]
 org_type: corporation

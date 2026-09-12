@@ -2,7 +2,7 @@
 title: "H-Day"
 category: events
 summary: "The release of BEV-131 over the Old Financial District on June 11, 2028, which made Dawnbreak the epicentre of a virus that has since reached the rest of the world."
-record: draft
+record: canon
 date_added: "2026-09-11"
 tags: [h-day, bev-131, ground-zero, mutation, first-responders]
 event_type: attack
