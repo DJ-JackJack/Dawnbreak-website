@@ -21,19 +21,19 @@ the city, no training in emergency response, and no superpowers.
 
 ## The Place
 
-The building went up on the higher northern ground, alongside the courts and the
-auditorium, where the district puts the things it does not want standing in
+The building went up on the higher northern ground, alongside the courts and
+the auditorium, where the district puts the things it does not want standing in
 water. It is the newest of the civic buildings in the Commons and the only one
 of them that children are in every day.
 
 Theatre, music, dance and technical production. The technical programme is the
-largest and the least discussed, on the grounds that a school full of performers
-still needs somebody to run the lighting desk, and the graduates who work
-steadiest in the city are the ones who came out of it.
+largest and the least discussed, on the grounds that a school full of
+performers still needs somebody to run the lighting desk, and the graduates who
+work steadiest in the city are the ones who came out of it.
 
 The auditorium next door is a city building rather than a school one, and the
 school uses it for anything that will not fit in its own house. The arrangement
-is informal, has never been written down, and has held for nine years.
+is informal and has held for nine years.
 
 ### The name
 
@@ -62,47 +62,42 @@ the truck.
 ### Why Dawnbreak
 
 Dawnbreak had no claim on him. He had never lived here or worked here, and the
-city has never suggested otherwise.
+city says as much itself.
 
 What Dawnbreak had was a reputation as the place superheroes come from and the
-ground [[H-Day|BEV-131 was released over]], and a man had just died in another state on
-the belief that he had become one of the people this city is known for. The
-council's resolution called it an act of heroism by any standard Dawnbreak
-recognises, which is defensible and is not the whole account. A beloved actor's
-death was the largest story in the country that week. The city attached itself
-to it, and got a week of national coverage for a school it had already paid to
-build.
+ground [[H-Day|BEV-131 was released over]], and a man had just died in another
+state on the belief that he had become one of the people this city is known
+for. The council's resolution called it an act of heroism by any standard
+Dawnbreak recognises, which is defensible and is not the whole account. A
+beloved actor's death was the largest story in the country that week. The city
+attached itself to it, and got a week of national coverage for a school it had
+already paid to build.
 
-Both of those readings have been in circulation since 2031 and the city has
-never been obliged to choose between them out loud.
+Both readings have been in circulation since 2031 and the city has been content
+to leave them both standing.
 
 ### The statue
 
-There is a statue of DeVito in the courtyard. It is fourteen feet tall, it
-depicts him as Frank Reynolds in the Trashman costume from *It's Always Sunny in
-Philadelphia*, and it shows him head to foot in garbage with his arms up. A
-group of students built it as a class project in 2036 and titled it *A Hero
-Nonetheless*. It was not a city commission and no public money went into it.
+A fourteen-foot statue of DeVito stands in the courtyard. It shows him as Frank
+Reynolds in the Trashman costume from *It's Always Sunny in Philadelphia*, head
+to foot in garbage, arms raised. Students built it as a class project in 2036,
+paid for it themselves, and called it *A Hero Nonetheless*.
 
-They chose the role because it was funny, which the school has never dressed up
-into anything more respectable. *Always Sunny* had been running since long
-before any of them were born, Frank was the part their generation knew him for,
-and the Trashman is the most undignified thing in thirty years of a deliberately
-undignified show. Building it fourteen feet tall was the joke working as
-intended. He was four foot ten.
+They picked the Trashman because they thought it was the funniest thing he ever
+did. *Always Sunny* had been running since before any of them were born, Frank
+was their DeVito, and building him fourteen feet tall when the man stood four
+foot ten was most of the point.
 
-Nobody in the building has the same DeVito. The staff who signed off on it grew
-up with *Matilda*, which he directed as well as played the villain in, and with
-Phil in *Hercules*. Their parents had the Penguin. Dawnbreak residents old
-enough to remember network television have Louie De Palma from *Taxi*, a part he
-played for five years and won an Emmy for. He worked for sixty years and left a
-different favourite behind in every decade of it, so a building this size holds
-several hundred slightly different reasons to be fond of him. The students who
-built the statue were born decades after most of it and were fond of him
-anyway.
+Their teachers have a different DeVito. The ones who grew up in the nineties
+have *Matilda*, which he directed as well as played the villain in, and Phil
+from *Hercules*. Their parents have the Penguin. Anyone in Dawnbreak old enough
+to remember network television has Louie De Palma from *Taxi*, five seasons and
+an Emmy. He worked for sixty years and left a different favourite in every
+decade of it, which is how a courtyard ends up with a fourteen-foot statue put
+there by people born after he turned seventy.
 
-Students touch it on the way in to auditions. Nobody instituted that and each
-year picks it up from the one above.
+Students touch it on the way in to auditions. That started with one year and
+each one since has picked it up from the last.
 
 ## Who's There
 
@@ -115,9 +110,9 @@ Staff are a mix of career teachers and working performers, and the second group
 turns over faster than the first for the ordinary reason that the work is
 seasonal.
 
-The stadium hosts the graduations of every public high school in the city across
-four evenings each June. The DeVito School graduates on the first of them, which
-is not an honour the city has ever explained in writing.
+The stadium hosts the graduations of every public high school in the city
+across four evenings each June. The DeVito School graduates on the first of
+them.
 
 ## Incidents
 
@@ -127,13 +122,12 @@ Nothing has happened at the school that the city has had to record.
 
 The council resolution that named the school is public and the vote is recorded
 as unanimous. The honorary designation is on the city's books, carries no
-authority whatsoever in the way of most things Dawnbreak confers, and has not
-been conferred on anyone else before or since.
+authority, and belongs to him alone.
 
 What the city does not hold is the incident itself. The investigation, the
 vehicle inspection and the findings all belong to Los Angeles. Dawnbreak's
 record of the event its school is named for consists of news coverage and a
-resolution, and nobody here has ever treated that as a problem.
+resolution.
 
 ## Related
 
