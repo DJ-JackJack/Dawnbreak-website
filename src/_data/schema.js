@@ -95,7 +95,9 @@ const CATEGORIES = {
     label: "Organizations",
     fields: [
       { key: "org_type", label: "Type", required: true,
-        enum: ["hero team", "agency", "corporation", "police", "criminal", "civic", "media", "sports"] },
+        enum: ["hero team", "agency", "corporation", "police", "criminal", "civic", "media",
+               "sports", "order"],
+        note: '"order" is a body that governs by custom and leverage rather than law. "agency" implies a legal mandate.' },
       { key: "founded", label: "Founded", required: true },
       { key: "founded_by", label: "Founded by", required: true },
       { key: "headquarters", label: "Headquarters", required: true },
