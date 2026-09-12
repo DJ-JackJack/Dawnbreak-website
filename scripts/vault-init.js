@@ -30,7 +30,8 @@
 
 const fs = require("fs");
 const path = require("path");
-const { UNIVERSAL, CATEGORIES } = require("../src/_data/schema.js");
+const { UNIVERSAL, CATEGORIES, sectionNames } =
+  require("../src/_data/schema.js");
 const { vaultPath } = require("./vault-path.js");
 
 const DRY = process.argv.includes("--dry-run");
@@ -107,7 +108,7 @@ function template(slug) {
     // telling the reader what to wonder about is the writer's job leaking onto
     // the page. Invented detail goes in _Meta/Open Questions.md instead, where
     // it stays overrulable without riding along inside the article.
-    ...def.sections.flatMap((s) => [`## ${s}`, "", "", ""]),
+    ...sectionNames(slug).flatMap((s) => [`## ${s}`, "", "", ""]),
   ].join("\n");
 }
 
@@ -115,7 +116,7 @@ function template(slug) {
 
 function metaHome() {
   const rows = FOLDERS.map(
-    (f) => `| [[${CATEGORIES[f.slug].label}]] | \`${f.dir}/\` | ${CATEGORIES[f.slug].sections.length} fixed sections |`
+    (f) => `| [[${CATEGORIES[f.slug].label}]] | \`${f.dir}/\` | ${sectionNames(f.slug).length} fixed sections |`
   );
   return [
     "# Dawnbreak City — lore vault",

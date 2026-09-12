@@ -22,7 +22,8 @@
 
 const fs = require("fs");
 const path = require("path");
-const { UNIVERSAL, CATEGORIES } = require("../src/_data/schema.js");
+const { UNIVERSAL, CATEGORIES, sectionNames, requiredSections } =
+  require("../src/_data/schema.js");
 const { splitFrontmatter, parseFrontmatter } = require("./frontmatter.js");
 
 const ARTICLES = path.join(__dirname, "..", "src", "articles");
@@ -95,7 +96,17 @@ function checkArticle(file, raw) {
   // --- sections, present and in order
   const headings = [...split.body.matchAll(/^##\s+(.+?)\s*$/gm)].map(m => m[1].trim());
   let cursor = 0;
-  for (const want of def.sections) {
+  /*
+   * Order is checked across the sections this article must carry PLUS any
+   * optional one it chose to include, so omitting a permitted section is fine
+   * and misplacing one is still caught.
+   */
+  const present = new Set(headings);
+  const required = new Set(requiredSections(category, data));
+  const wantedSections = sectionNames(category)
+    .filter((n) => required.has(n) || present.has(n));
+
+  for (const want of wantedSections) {
     const at = headings.indexOf(want, cursor);
     if (at === -1) {
       problems.push(headings.includes(want)
@@ -106,7 +117,7 @@ function checkArticle(file, raw) {
     }
   }
   for (const got of headings) {
-    if (!def.sections.includes(got)) {
+    if (!sectionNames(category).includes(got)) {
       problems.push(`unexpected section "## ${got}" — the ${category} template's headings are fixed`);
     }
   }
@@ -167,7 +178,7 @@ function skeleton(category, title) {
     // there and stops; telling the reader what to wonder about is the writer's
     // job leaking onto the page. Invented detail is still flagged so it stays
     // overrulable, in a companion notes file beside the article.
-    ...def.sections.flatMap(s => [`## ${s}`, "", "", ""]),
+    ...sectionNames(category).flatMap(s => [`## ${s}`, "", "", ""]),
   ].join("\n");
 }
 

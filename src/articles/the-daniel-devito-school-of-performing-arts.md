@@ -1,7 +1,7 @@
 ---
 title: "The Daniel DeVito School of Performing Arts"
 category: locations
-summary: "Dawnbreak's public performing arts high school, built in 2031 and named for an actor who died that June trying to stop a garbage truck with his bare hands."
+summary: "Dawnbreak's public performing arts high school, named for an actor who died in Los Angeles in 2031 trying to stop a runaway truck he had convinced himself he could stop."
 record: draft
 date_added: "2026-09-12"
 tags: [institution, tidewater-commons, schools, civic]
@@ -35,18 +35,51 @@ The auditorium next door is a city building rather than a school one, and the
 school uses it for anything that will not fit in its own house. The arrangement
 is informal, has never been written down, and has held for nine years.
 
-## H-Day and After
+### The name
 
-The school has no H-Day history. It did not exist. It is one of the few civic
-buildings in Dawnbreak that can say so, and it was built in the stretch of years
-when the city was funding things again and looking for somewhere to put them.
+Daniel DeVito died in Los Angeles in June 2031. He was eighty-six years old and
+he was an actor, which is the whole of his qualification for what he did.
 
-What it has instead is a name that came from a different afternoon entirely.
+A municipal refuse truck lost its brakes on a hill and ran down it toward a
+crowd of high school students. DeVito had been feeling chest discomfort and an
+irregular heartbeat through a hot afternoon, and he appears to have concluded
+that what he was feeling was the onset of latent abilities. On that
+understanding he stepped into the road, set himself, and tried to stop the
+truck.
+
+He did not have latent abilities. What he had was heat and high blood pressure
+and a heart going into an arrhythmia it did not come out of.
+
+The truck did not stop. The crowd did. A man walking into the road and planting
+himself in front of an oncoming vehicle is the most legible warning a crowd can
+be given, and several hundred students who had not yet registered the noise
+turned, understood it, and moved. Nobody else was badly hurt. DeVito was
+pronounced dead at the scene.
+
+He was wrong about what was happening inside his chest. He was not wrong about
+the truck.
+
+### Why Dawnbreak
+
+Dawnbreak had no claim on him. He had never lived here or worked here, and the
+city has never suggested otherwise.
+
+What Dawnbreak had was a reputation as the place superheroes come from and the
+ground [[H-Day|BEV-131 was released over]], and a man had just died in another state on
+the belief that he had become one of the people this city is known for. The
+council's resolution called it an act of heroism by any standard Dawnbreak
+recognises, which is defensible and is not the whole account. A beloved actor's
+death was the largest story in the country that week. The city attached itself
+to it, and got a week of national coverage for a school it had already paid to
+build.
+
+Both of those readings have been in circulation since 2031 and the city has
+never been obliged to choose between them out loud.
 
 ## Who's There
 
 Around six hundred students, auditioned in from every district in the city,
-which makes the intake one of the few things in Dawnbreak that is not sorted by
+which makes the intake one of the few things in Dawnbreak not sorted by
 elevation. The Commons is the right district for that. Everybody comes here
 anyway.
 
@@ -55,49 +88,27 @@ turns over faster than the first for the ordinary reason that the work is
 seasonal.
 
 The stadium hosts the graduations of every public high school in the city across
-four evenings each June. The DeVito School graduates on the first of them,
-which is not an honour the city has ever explained in writing.
+four evenings each June. The DeVito School graduates on the first of them, which
+is not an honour the city has ever explained in writing.
 
 ## Incidents
 
-**The runaway garbage truck, June 2031.** A municipal refuse vehicle lost its
-brakes on the slope above the Commons during graduation week and ran downhill
-toward a crowd of high school students waiting outside the stadium.
-
-Daniel DeVito, the actor, was in Dawnbreak and in that crowd. He was eighty-six
-years old. He had been experiencing chest discomfort and an irregular heartbeat
-through a hot afternoon, and he appears to have concluded that what he was
-feeling was the onset of latent abilities. On that understanding he moved into
-the path of the truck, planted himself, and attempted to stop it.
-
-He did not have latent abilities. What he had was heat and high blood pressure
-and a heart going into an arrhythmia it did not come out of.
-
-The truck did not stop. The crowd did. A man walking into the road and setting
-himself against an oncoming vehicle is the single most legible warning a crowd
-can be given, and several hundred students who had not yet registered the noise
-turned, understood, and moved. Nobody else was seriously hurt. DeVito was
-pronounced dead at the scene.
-
-He was wrong about what was happening inside his chest. He was not wrong about
-the truck.
+Nothing has happened here that the city has had to write down.
 
 ## The Public Record
 
-The city's account of the incident is public and so is the vehicle inspection
-that followed it, which found the fault and produced a maintenance schedule the
-refuse fleet has been on since.
+The council resolution that named the school is public and the vote is recorded
+as unanimous. The honorary designation is on the city's books, carries no
+authority whatsoever in the way of most things Dawnbreak confers, and has not
+been conferred on anyone else before or since.
 
-Dawnbreak named DeVito an honorary superhero posthumously. The designation is
-civic and carries no authority whatsoever, in the way of most things the city
-confers. He remains the only person to hold it.
-
-The school was under construction at the time and had not been named. The
-council resolution that named it passed that August, and the vote is recorded as
-unanimous.
+What the city does not hold is the incident itself. The investigation, the
+vehicle inspection and the findings all belong to Los Angeles. Dawnbreak's
+record of the event its school is named for consists of news coverage and a
+resolution, and nobody here has ever treated that as a problem.
 
 ## Related
 
-**Places** — [[Tidewater Commons]], [[Dawnbreak City]], [[Aldergate]]
+**Places** — [[Tidewater Commons]], [[Dawnbreak City]]
 
 **Events** — [[H-Day]]

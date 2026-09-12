@@ -129,7 +129,16 @@ const CATEGORIES = {
       { key: "operator", label: "Operator", required: true, note: "City, corporation, or nobody." },
     ],
     sections: [
-      "The Place", "H-Day and After", "Who's There", "Incidents",
+      "The Place",
+      /*
+       * Omitted entirely by anything built after H-Day. A section heading is
+       * not a reason to mention an event the subject has no connection to, and
+       * an article that opens "this has no H-Day history" has spent a heading
+       * saying nothing. `h_day: postdates H-Day` already carries that fact in
+       * the dossier, where it costs a line instead of a section.
+       */
+      { name: "H-Day and After", omitWhen: { h_day: "postdates H-Day" } },
+      "Who's There", "Incidents",
       "The Public Record", "Related",
     ],
   },
@@ -154,4 +163,30 @@ const CATEGORIES = {
   },
 };
 
-module.exports = { UNIVERSAL, CATEGORIES };
+/** A section entry is a bare name, or `{ name, omitWhen }`. */
+const sectionName = (s) => (typeof s === "string" ? s : s.name);
+
+/** Every heading the template knows about, required or not. */
+function sectionNames(category) {
+  return (CATEGORIES[category]?.sections ?? []).map(sectionName);
+}
+
+/**
+ * The headings THIS article must carry, given its own frontmatter.
+ *
+ * `omitWhen: { field: value }` drops a section when the article's frontmatter
+ * matches. Omission is permitted, never forced: a location that postdates
+ * H-Day may still carry the section if it has something to say there, and the
+ * linter goes on checking its position.
+ */
+function requiredSections(category, front = {}) {
+  return (CATEGORIES[category]?.sections ?? [])
+    .filter((s) => {
+      const when = typeof s === "string" ? null : s.omitWhen;
+      if (!when) return true;
+      return !Object.entries(when).every(([k, v]) => front?.[k] === v);
+    })
+    .map(sectionName);
+}
+
+module.exports = { UNIVERSAL, CATEGORIES, sectionName, sectionNames, requiredSections };
