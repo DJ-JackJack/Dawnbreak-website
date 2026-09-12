@@ -76,6 +76,18 @@ build.
 Both of those readings have been in circulation since 2031 and the city has
 never been obliged to choose between them out loud.
 
+### The statue
+
+A fourteen-foot statue of DeVito stands in the courtyard, depicting him as Frank
+Reynolds in the character's Trashman persona. It stands a good deal taller than
+he did.
+
+A group of students built it as a class project in 2036 and titled it *A Hero
+Nonetheless*. The role was not chosen at random and nobody at the school has
+pretended otherwise.
+
+The city had nothing to do with it.
+
 ## Who's There
 
 Around six hundred students, auditioned in from every district in the city,
