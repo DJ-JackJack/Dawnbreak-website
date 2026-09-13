@@ -3,13 +3,25 @@
 What was invented in this article, so it stays easy to overrule. Open questions
 live in `open-questions.md` with the campaign material, not in this repo.
 
-Krys supplied the name in full on 2026-09-12 — **Seymour Harold Erroghastor**,
-with doctorates in bio-engineering, biochemistry, genetics, virology and
-psychology — and the framing that he is the world's first supervillain. Earlier
-canon supplies the release over the Old Financial District, BEV-131 and what the
-initials stand for, the uncontrolled spread and the exposure-duration rule, his
-capture and imprisonment, that he is still alive, and that he has never given a
+Krys supplied the name and credentials on 2026-09-12 — **Seymour Harold
+Erroghastor**, with doctorates in bio-engineering, biochemistry, genetics,
+virology and psychology — and the whole biography on 2026-09-13: Berat in 1966,
+the poverty, the violin at eleven and the piano at thirteen, his mother and
+sister dying of an unidentified disease when he was fifteen, his father's
+drinking and his own turn to virology, the doctorates and the reputation and the
+seminars by thirty, Nancy Dahl and the fast marriage contemporaries thought
+ill-advised, Ryan born in 1998 and named for Nancy's dead brother, the feral cat
+and the rabies in the Surry garden in 2010, and the collapse that followed.
+Earlier canon supplies the release, BEV-131, the exposure-duration rule, his
+capture and imprisonment, that he is alive, and that he has never given a
 motive.
+
+**The single most important constraint on this article: it does not supply the
+motive.** The biography makes the shape of one visible to any reader. Canon is
+explicit that Erroghastor has never explained himself and that no account has
+been given on his behalf, so the article reports that the connection is drawn
+constantly in print and has never been drawn by him. Anything firmer would be
+the article answering a question the man has spent twelve years refusing.
 
 - **The one field that needed care: `custody: Federal`.** Where he is actually
   held is an open question, and two campaign documents disagree about it. Naming
@@ -43,6 +55,23 @@ motive.
   science and could be reconstructed by others. It was invented to fill out the
   Capabilities section, and it would have set the setting's threat model and
   touched the designer-variant material. Left out deliberately.
+- **Invented in the biography:** "a family with no money and a son who kept
+  turning out to be good at things", the grades being as good as the music,
+  "teaching seminars on three continents" (Krys said across the globe), his
+  father sitting with Ryan through it, and "It was the second time he had been
+  made to watch", which is my formulation rather than canon's.
+- **Invented: "about sixty miles from that garden".** Surry is a real place and
+  Dawnbreak is not, so the distance between them is mine. It is the one line
+  that puts his son's death and his target on the same map, and it is the first
+  thing to cut if that proximity should not be implied.
+- **Added, and accurate: rabies being untreatable once symptomatic.** Real
+  medicine, not canon, and the reason the section works.
+- **Derived: the eighteen unaccounted years,** from 2010 to 2028.
+- **Invented: the documentation paragraph** in The Public Record — the academic
+  paper trail, the marriage to another public figure, the county death
+  certificate and the local newspaper.
+- **Removed as now false:** an earlier draft said his life before H-Day survived
+  only as a list of qualifications. The biography contradicts it.
 - **Deliberately not answered: where he is held.** The Related block originally
   linked Tartarus Sands Penitentiary, which would have implied the answer on the
   page regardless of what the prose said. Removed. Also absent: any organisation

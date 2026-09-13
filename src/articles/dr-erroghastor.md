@@ -1,7 +1,7 @@
 ---
 title: "Dr. Erroghastor"
 category: villains
-summary: "The bio-engineer who released BEV-131 over the Old Financial District on June 11, 2028, making him the first supervillain the world had and the reason most metahumans exist."
+summary: "The Albanian virologist who spent eighteen unaccounted years after his son's death and then released BEV-131 over the Old Financial District, making him the first supervillain the world had."
 record: canon
 date_added: "2026-09-13"
 tags: [bev-131, h-day, ground-zero, virology, custody]
@@ -24,11 +24,46 @@ custody since, and in twelve years he has never said why.
 
 ## Emergence
 
-He held doctorates in bio-engineering, biochemistry, genetics, virology and
-psychology. Four of them are the virus. The fifth built nothing.
+He was born in Berat, in Albania, in 1966, into a family with no money and a son
+who kept turning out to be good at things. He had the violin by eleven and the
+piano by thirteen. The grades were as good as the music and the household stayed
+poor throughout.
 
-Every account of him written since begins on the same morning. He is dated from
-June 11, 2028, and the life before it survives as a list of qualifications.
+In 1981, when he was fifteen, his mother and his older sister died of a disease
+nobody identified. He and his father watched it happen and neither could do
+anything about it. His father took to drink afterward. Seymour took to science,
+and what he came out of it with was virology and a determination to understand
+the human body in a degree of detail most people have no use for.
+
+It worked. By thirty he held several doctorates, had published across a number
+of well-regarded journals, was counted among the better minds in microbiology
+and genetics, and was teaching seminars on three continents. His doctorates are
+in bio-engineering, biochemistry, genetics, virology and psychology. Four of
+them are the virus. The fifth built nothing.
+
+He met **Nancy Dahl** at the end of that stretch, a chemist and an author, and
+by his own account the first person he had met whose mind he thought a match for
+his own. The romance was fast. People who knew them both said afterwards that it
+had looked ill-advised at the time, which is the kind of thing people say
+afterwards. They married inside a year. **Ryan Erroghastor** was born in 1998,
+named for Nancy's brother, who had died a few years before.
+
+### Surry, 2010
+
+The family kept a ranch house in Surry, Virginia. In 2010 Ryan was twelve, and a
+feral cat bit him in the back garden.
+
+It was rabies. Once the symptoms arrive rabies is untreatable and always fatal,
+and it takes its time. His father sat with him through it holding five
+doctorates in the relevant disciplines, and watched his son die anyway.
+
+It was the second time he had been made to watch.
+
+What followed took the rest of it. The career went, the marriage went, and the
+man went with them, out of public view entirely. He surfaces once more, over a
+district in a city about sixty miles from that garden, eighteen years later.
+
+Those eighteen years are unaccounted for.
 
 The word supervillain entered ordinary use with him. It arrived because
 something had happened that needed a word, and the man it was coined for could
@@ -81,14 +116,20 @@ unusual among people who have done what he did, since most are recorded by what
 they are called rather than by who they are. The alias is simply his surname
 with the title he earned.
 
+The life is documented to an unusual standard as well. A public academic career
+leaves paper, a marriage to another public figure leaves more, and a child's
+death in a Virginia county leaves a certificate and a local newspaper. Anybody
+can read the whole of it in an afternoon.
+
 The gap is the motive. Twelve years of custody and questioning have produced no
 explanation of the release, the choice of district, the timing, or the name he
 gave the thing he built. He has been asked by investigators, prosecutors,
 physicians and journalists. He has answered none of them, and the silence
 extends to everyone who might have spoken for him.
 
-That silence is the most examined thing about him, and it has outlasted every
-theory advanced to explain it.
+The connection between the garden in Surry and the airspace over Dawnbreak has
+been drawn in print more times than anyone has counted. It has never once been
+drawn by him.
 
 ## Related
 
