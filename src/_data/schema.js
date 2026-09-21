@@ -161,6 +161,53 @@ const CATEGORIES = {
       "The Public Record", "Related",
     ],
   },
+
+  /*
+   * People the city knows by name rather than by mask.
+   *
+   * Heroes and villains already have categories, and everyone else was landing
+   * inside whatever organization they worked for -- which is fine for a chief
+   * operating officer defined by her company, and wrong for anyone whose office
+   * is the least interesting thing about them.
+   *
+   * MUST STAY LAST. `vault-init.js` derives each folder's number from this
+   * object's key order, so inserting a category anywhere else renames every
+   * folder after it and orphans the notes already in them.
+   */
+  people: {
+    label: "Important People",
+    fields: [
+      { key: "full_name", label: "Full name", required: true,
+        note: "As the record has it. The article may well never use it again." },
+      { key: "known_as", label: "Known as", required: true,
+        note: 'What the city actually calls them. "—" when that is only their name.' },
+      { key: "role", label: "Role", required: true, note: "What they do, and who for." },
+      { key: "affiliation", label: "Affiliation", required: true, list: true,
+        note: "[] for the genuinely unattached, which is rarer than people think." },
+      { key: "born", label: "Born", required: true,
+        note: "Year. An age is a fact about a person the way a founding date is about a company." },
+      { key: "base", label: "Base", required: true, note: 'District, or "Citywide".' },
+      { key: "powered", label: "Powered", required: true,
+        enum: ["no", "undisclosed", "yes"],
+        note: 'The question this city asks about everybody. "undisclosed" is a real answer and is itself the fact.' },
+      { key: "h_day", label: "H-Day", required: true,
+        enum: ["present", "elsewhere", "postdates H-Day"],
+        note: '"present" means in the city on the day, whatever they were doing.' },
+      { key: "status", label: "Status", required: true,
+        enum: ["active", "retired", "missing", "deceased"] },
+    ],
+    sections: [
+      "Background",
+      /*
+       * Omitted only by someone who was not yet born. Everyone else has an
+       * answer, including the ones who were a thousand miles away -- where a
+       * person was on June 11 is a fact about them in this city.
+       */
+      { name: "June 11, 2028", omitWhen: { h_day: "postdates H-Day" } },
+      "The Work", "In the City",
+      "The Public Record", "Related",
+    ],
+  },
 };
 
 /** A section entry is a bare name, or `{ name, omitWhen }`. */

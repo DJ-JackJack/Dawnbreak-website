@@ -361,6 +361,49 @@ status: ""                    # resolved | ongoing | unresolved | annual
 
 ---
 
+## IMPORTANT PEOPLE
+
+For the people the city knows by name rather than by mask. Heroes and villains
+have their own categories; this is everyone else who matters — officials,
+executives, reporters, fixers, the coroner. Before this category existed they
+were landing inside whatever organization they worked for, which is right for
+someone defined by their employer and wrong for anyone whose office is the
+least interesting thing about them.
+
+```yaml
+full_name: ""                 # as the record has it. The article may well
+                              # never use it again.
+known_as: ""                  # what the city actually calls them.
+                              # "—" when that is only their name.
+role: ""                      # what they do, and who for
+affiliation: []               # wiki links. [] for the genuinely unattached,
+                              # which is rarer than people think.
+born: ""                      # year
+base: ""                      # district, or "Citywide"
+powered: ""                   # no | undisclosed | yes
+h_day: ""                     # present | elsewhere | postdates H-Day
+status: ""                    # active | retired | missing | deceased
+```
+
+**Sections, in order:**
+
+1. *(standfirst)* Who they are and why the city knows them, in one paragraph,
+   for someone who has never heard of them.
+2. **Background** — where they came from and how they got the job. Not a
+   biography; the parts that explain the person now.
+3. **June 11, 2028** — where they were and what it did to them. Omitted
+   entirely by anyone born after it, which `h_day: postdates H-Day` already
+   says in the dossier. Everyone else has an answer, including the ones who
+   were a thousand miles away.
+4. **The Work** — what they actually do, day to day, and what they are unusually
+   good at. This is the section that earns the article.
+5. **In the City** — how Dawnbreak encounters them: reputation, who deals with
+   them, who avoids them, and what people get wrong about them.
+6. **The Public Record**
+7. **Related**
+
+---
+
 ## Where the open questions went
 
 Articles used to end with an `OPEN QUESTIONS` HTML comment. They no longer do.

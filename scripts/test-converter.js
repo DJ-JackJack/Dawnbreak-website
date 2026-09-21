@@ -195,7 +195,7 @@ eq(slugify("H-Day: The Morning After"), "h-day-the-morning-after", "slug: punctu
    months that way. */
 
 const DAWNBREAK = ["01 - Heroes", "02 - Villains", "03 - Organizations",
-                   "04 - Locations", "05 - Events"];
+                   "04 - Locations", "05 - Events", "06 - Important People"];
 /* The real Ahvantir vault's folders. It is next door on disk, has the same
    _Templates/_Meta shape, and is the mix-up actually available to be made. */
 const AHVANTIR = ["01 - History", "02 - Aru'Mas (City)", "03 - Districts",
@@ -204,9 +204,11 @@ const AHVANTIR = ["01 - History", "02 - Aru'Mas (City)", "03 - Districts",
 const present = (list) => (dir) => list.includes(dir);
 
 eq(missingCategoryFolders(present(DAWNBREAK)).length, 0, "the real vault passes");
-eq(missingCategoryFolders(present(AHVANTIR)).length, 5,
-   "the Ahvantir vault fails on all five — the mix-up that is actually possible");
-eq(missingCategoryFolders(present([])).length, 5, "an empty folder fails");
+/* Counted off DAWNBREAK rather than written out, so adding a category to the
+   schema does not fail two tests that were never about how many there are. */
+eq(missingCategoryFolders(present(AHVANTIR)).length, DAWNBREAK.length,
+   "the Ahvantir vault fails on every one — the mix-up that is actually possible");
+eq(missingCategoryFolders(present([])).length, DAWNBREAK.length, "an empty folder fails");
 
 /* Names the specific missing folder, so the message can say what to fix. */
 eq(missingCategoryFolders(present(DAWNBREAK.filter(d => d !== "05 - Events"))).join(""),

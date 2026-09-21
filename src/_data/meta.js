@@ -119,5 +119,12 @@ module.exports = {
       color: "#A78BFA",
       description: "H-Day, the anniversaries, and everything the city still measures time by",
     },
+    {
+      slug: "people",
+      label: "Important People",
+      icon: "◉",
+      color: "#6EE7A0",
+      description: "The ones the city knows by name rather than by mask",
+    },
   ],
 };
