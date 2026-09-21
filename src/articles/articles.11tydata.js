@@ -50,6 +50,13 @@ module.exports = {
         heroes: data.active_since,
         villains: data.first_recorded,
         locations: data.built,
+        /*
+         * `people` contributes nothing, deliberately. The only date the
+         * category carries is `born`, and a birth year is a fact about a
+         * person rather than a moment in the city's history, which is what
+         * this timeline is for. Give the category an "arrived" or "took
+         * office" field and that would be the one to read here instead.
+         */
       }[data.category];
       const match = String(source ?? "").match(/\b(\d{4})\b/);
       return match ? Number(match[1]) : null;
