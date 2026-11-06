@@ -1,0 +1,387 @@
+---
+permalink: /spectre/elysium/
+title: "NIOS: Elysium"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+    This page does not use the site layout, so it carries its own policy.
+
+    It is tighter than the site-wide one in base.njk on purpose. The page has
+    no scripts at all, so script-src is 'none'; and the reservation form is a
+    prop whose button never submits, so form-action is 'none' as well. That
+    second one is the load-bearing line: the form asks a visitor for a name and
+    an email, and 'none' means the browser refuses to send them anywhere even
+    if the button is later wired up by mistake.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'none'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data:; form-action 'none'; base-uri 'self'; object-src 'none'">
+
+  <title>NIOS: Elysium — Spectre Technologies</title>
+  <meta name="description" content="An advertisement from Spectre Technologies, 2040, kept as part of the record of Dawnbreak City.">
+  <meta name="theme-color" content="#0A0C0F">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Inter and Sora are Spectre's. JetBrains Mono is the record's, and is used
+       only by the strip at the top, so the two voices never share a typeface. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <style>
+    /* Spectre's accent. The artboard offers #E8D9B5 and #A9C4FF as alternates;
+       changing this one value re-tints the whole page. */
+    :root { --accent: #8EE0D6; }
+
+    body { margin: 0; background: #0A0C0F; }
+    a { color: #EDEFF1; }
+    a:hover { color: #FFFFFF; }
+
+    /* ── The record's strip ───────────────────────────────────────────
+       Everything below this bar is Spectre talking. The site's convention
+       for an in-world publication is that it gets quoted with attribution
+       and never speaks in the record's voice, so the bar names the
+       publisher and gives the reader the way back. It uses the site's
+       night palette and mono face rather than Spectre's, because it has
+       to read as a different object from the page it sits on. */
+    .record-strip {
+      margin: 0;
+      background: #0A0D14;
+      border-bottom: 1px solid #273043;
+      font-family: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+    .record-strip__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px 20px;
+    }
+    .record-strip__home {
+      color: #E6E8EE;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+    }
+    .record-strip__home:hover { color: #FF7A18; }
+    .record-strip__arrow { color: #FF7A18; }
+    .record-strip__note { margin: 0; color: #8A94AB; }
+
+    /* The page is one long column of flex rows that already wrap, so the only
+       thing narrow screens need is for the strip to stack rather than squeeze. */
+    @media (max-width: 560px) {
+      .record-strip__inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<!-- Every indexed page on this site carries data-pagefind-body (see
+     _includes/layouts/article.njk), which means Pagefind indexes those pages
+     and no others. This page is therefore already absent from site search by
+     omission; data-pagefind-ignore states the intent outright so that a later
+     change to how search is wired cannot quietly surface it. -->
+<body data-pagefind-ignore>
+
+<aside class="record-strip">
+  <div class="record-strip__inner">
+    <a class="record-strip__home" href="/">
+      <span class="record-strip__arrow" aria-hidden="true">&#8592;</span>
+      Dawnbreak City
+    </a>
+    <p class="record-strip__note">Advertisement &middot; Spectre Technologies &middot; 2040</p>
+  </div>
+</aside>
+
+<div style="background: #0A0C0F; color: #EDEFF1; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh">
+
+<header style="border-bottom: 1px solid #1E242B">
+<div style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="text-decoration: none; display: flex; align-items: center; gap: 12px">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="12" stroke="var(--accent)" stroke-width="1.5"></circle><circle cx="14" cy="14" r="4.5" fill="var(--accent)"></circle></svg>
+<span style="font-family: Sora, sans-serif; font-weight: 600; letter-spacing: 0.22em; font-size: 13px; color: #EDEFF1">SPECTRE TECHNOLOGIES</span>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 14px">
+<a href="#health" style="text-decoration: none; color: #AEB7C0">Health</a>
+<a href="#everyday" style="text-decoration: none; color: #AEB7C0">Everyday</a>
+<a href="#recall" style="text-decoration: none; color: #AEB7C0">Recall</a>
+<a href="#faq" style="text-decoration: none; color: #AEB7C0">FAQ</a>
+<a href="#reserve" style="text-decoration: none; color: #0A0C0F; background: var(--accent); padding: 10px 18px; border-radius: 999px; font-weight: 600; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Reserve access</a>
+</nav>
+</div>
+</header>
+
+<section id="top" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 80px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
+<div style="flex: 1 1 480px; min-width: 0">
+<p style="margin: 0 0 20px; font-size: 13px; letter-spacing: 0.18em; color: var(--accent); font-weight: 600">GAMMA RELEASE &middot; NOW OPEN TO DAWNBREAK CITY</p>
+<h1 style="margin: 0 0 12px; font-family: Sora, sans-serif; font-weight: 300; font-size: clamp(44px, 6vw, 76px); line-height: 1.05; letter-spacing: -0.02em">NIOS: Elysium</h1>
+<p style="margin: 0 0 28px; font-family: Sora, sans-serif; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.3; color: #D4DAE0">See everything. Carry nothing.</p>
+<p style="margin: 0 0 40px; font-size: 18px; color: #AEB7C0; max-width: 560px">Elysium is a neural operating system delivered in a single injection. It watches over your health, places the world in your field of view, and remembers every moment so you never have to. After two private trials, Elysium is now available to every resident of Dawnbreak City.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<a href="#reserve" style="text-decoration: none; background: var(--accent); color: #0A0C0F; font-weight: 600; padding: 14px 26px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">Reserve your appointment</a>
+<a href="#how" style="text-decoration: none; border: 1px solid #39424C; color: #EDEFF1; padding: 14px 26px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">See how it works</a>
+</div>
+</div>
+
+<div style="flex: 1 1 400px; min-width: 0; display: flex; justify-content: center">
+<div style="width: 100%; max-width: 460px; background: #10141A; border: 1px solid #242B33; border-radius: 28px; padding: 28px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; justify-content: space-between; font-size: 12px; letter-spacing: 0.16em; color: #9AA4AE">
+<span>ELYSIUM</span>
+<span>07:42 &middot; TIDEWATER COMMONS</span>
+</div>
+<p style="margin: 0; font-family: Sora, sans-serif; font-size: 24px; font-weight: 300">Good morning.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<div style="flex: 1 1 120px; background: #161B21; border-radius: 16px; padding: 14px 16px">
+<p style="margin: 0; font-size: 12px; color: #9AA4AE">Heart</p>
+<p style="margin: 0; font-family: Sora, sans-serif; font-size: 22px">58 <span style="font-size: 13px; color: #9AA4AE">bpm</span></p>
+</div>
+<div style="flex: 1 1 120px; background: #161B21; border-radius: 16px; padding: 14px 16px">
+<p style="margin: 0; font-size: 12px; color: #9AA4AE">Glucose</p>
+<p style="margin: 0; font-family: Sora, sans-serif; font-size: 22px; color: var(--accent)">Steady</p>
+</div>
+<div style="flex: 1 1 120px; background: #161B21; border-radius: 16px; padding: 14px 16px">
+<p style="margin: 0; font-size: 12px; color: #9AA4AE">Sleep</p>
+<p style="margin: 0; font-family: Sora, sans-serif; font-size: 22px">7h 40m</p>
+</div>
+</div>
+<div style="border-top: 1px solid #242B33; padding-top: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 14px">
+<div style="display: flex; justify-content: space-between; gap: 12px"><span>Lecture, Dawnbreak University</span><span style="color: #9AA4AE">9:00</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><span>Route to New Haven</span><span style="color: #9AA4AE">14 min</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><span>Mom: Dinner Sunday?</span><span style="color: #9AA4AE">New</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><span>Recall saved: Harbor sunrise</span><span style="color: var(--accent)">&#9679;</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="border-top: 1px solid #1E242B; border-bottom: 1px solid #1E242B; background: #0D1014">
+<div style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #AEB7C0">
+<span>Proven across two trials</span>
+<span><span style="color: #EDEFF1">Alpha</span> &middot; Medical</span>
+<span><span style="color: #EDEFF1">Beta</span> &middot; Lifestyle</span>
+<span><span style="color: var(--accent)">Gamma</span> &middot; Everyone</span>
+</div>
+</section>
+
+<section id="health" style="max-width: 1200px; margin: 0 auto; padding: 112px 24px 48px">
+<p style="margin: 0 0 16px; font-size: 13px; letter-spacing: 0.18em; color: var(--accent); font-weight: 600">HEALTH</p>
+<h2 style="margin: 0 0 20px; font-family: Sora, sans-serif; font-weight: 300; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; max-width: 760px">A physician's attention, every second of every day.</h2>
+<p style="margin: 0 0 56px; font-size: 18px; color: #AEB7C0; max-width: 680px">Elysium was first trusted by the patients who needed it most. It reads your body continuously and quietly, and speaks up only when it matters.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 1 1 340px; background: #10141A; border: 1px solid #1E242B; border-radius: 20px; padding: 28px">
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 20px">Continuous vitals</p>
+<p style="margin: 0; color: #AEB7C0">Heart rhythm, blood pressure, oxygen, glucose and more, ready at a glance whenever you ask.</p>
+</div>
+<div style="flex: 1 1 340px; background: #10141A; border: 1px solid #1E242B; border-radius: 20px; padding: 28px">
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 20px">Condition management</p>
+<p style="margin: 0; color: #AEB7C0">Care that once meant daily tests and constant worry now runs in the background. Elysium monitors, reminds and alerts, and shares readings with your care team when you allow it.</p>
+</div>
+<div style="flex: 1 1 340px; background: #10141A; border: 1px solid #1E242B; border-radius: 20px; padding: 28px">
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 20px">Early detection</p>
+<p style="margin: 0; color: #AEB7C0">Subtle changes no wearable could catch, flagged early, while they are still simple to treat.</p>
+</div>
+<div style="flex: 1 1 340px; background: #10141A; border: 1px solid #1E242B; border-radius: 20px; padding: 28px">
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 20px">Emergency response</p>
+<p style="margin: 0; color: #AEB7C0">If you become unresponsive, Elysium contacts emergency services and the people you trust, with your location and vitals already on the way. Help is one thought away whenever you need it.</p>
+</div>
+<div style="flex: 1 1 340px; background: #10141A; border: 1px solid #1E242B; border-radius: 20px; padding: 28px">
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 20px">Fitness, from the inside</p>
+<p style="margin: 0; color: #AEB7C0">Precise training metrics measured where they happen. No straps, no sensors, no guesswork.</p>
+</div>
+</div>
+</section>
+
+<section id="everyday" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 48px">
+<p style="margin: 0 0 16px; font-size: 13px; letter-spacing: 0.18em; color: var(--accent); font-weight: 600">EVERYDAY</p>
+<h2 style="margin: 0 0 20px; font-family: Sora, sans-serif; font-weight: 300; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; max-width: 760px">Your phone. Your computer. Your screens. Gone.</h2>
+<p style="margin: 0 0 56px; font-size: 18px; color: #AEB7C0; max-width: 680px">Elysium replaces the devices you carry with an interface that lives in your sight. Speak, glance, or simply think a request, and your assistant handles the rest.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 1 1 260px; border-top: 1px solid #39424C; padding-top: 20px">
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 19px">Connected</p>
+<p style="margin: 0; color: #AEB7C0">Calls, messages and video, in view and hands-free.</p>
+</div>
+<div style="flex: 1 1 260px; border-top: 1px solid #39424C; padding-top: 20px">
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 19px">The whole web</p>
+<p style="margin: 0; color: #AEB7C0">Search, read, work and shop without reaching for anything.</p>
+</div>
+<div style="flex: 1 1 260px; border-top: 1px solid #39424C; padding-top: 20px">
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 19px">Wayfinding</p>
+<p style="margin: 0; color: #AEB7C0">Directions drawn on the street in front of you, from Cape Crooked to Fenmoor Flats.</p>
+</div>
+<div style="flex: 1 1 260px; border-top: 1px solid #39424C; padding-top: 20px">
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 19px">Immersion</p>
+<p style="margin: 0; color: #AEB7C0">Music, film and games with a depth no headset can match. The feature Beta users refused to give back.</p>
+</div>
+<div style="flex: 1 1 260px; border-top: 1px solid #39424C; padding-top: 20px">
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 19px">An assistant that knows you</p>
+<p style="margin: 0; color: #AEB7C0">Elysium learns your routines and quietly prepares for what comes next.</p>
+</div>
+</div>
+</section>
+
+<section id="recall" style="padding: 96px 24px">
+<div style="max-width: 1200px; margin: 0 auto; background: #10141A; border: 1px solid #242B33; border-radius: 32px; padding: clamp(32px, 6vw, 80px); box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 1 1 460px; min-width: 0">
+<p style="margin: 0 0 16px; font-size: 13px; letter-spacing: 0.18em; color: var(--accent); font-weight: 600">RECALL</p>
+<h2 style="margin: 0 0 20px; font-family: Sora, sans-serif; font-weight: 300; font-size: clamp(32px, 4vw, 48px); line-height: 1.15">Never lose a moment again.</h2>
+<p style="margin: 0 0 20px; font-size: 18px; color: #AEB7C0">Elysium's optic layer records what you see, continuously and securely, so your past is always within reach. Find your keys. Replay a lecture. Return to the morning you'll want to remember forever.</p>
+<p style="margin: 0; font-size: 14px; color: #9AA4AE">Recordings are encrypted and kept on Spectre's secure network. Recall also powers Elysium's safety and emergency features.</p>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<div style="background: #161B21; border-radius: 16px; padding: 16px 20px; display: flex; justify-content: space-between; gap: 12px"><span>Where did I leave my keys?</span><span style="color: #9AA4AE">Kitchen &middot; 6:58</span></div>
+<div style="background: #161B21; border-radius: 16px; padding: 16px 20px; display: flex; justify-content: space-between; gap: 12px"><span>Replay Tuesday's lecture</span><span style="color: #9AA4AE">52 min</span></div>
+<div style="background: #161B21; border-radius: 16px; padding: 16px 20px; display: flex; justify-content: space-between; gap: 12px"><span>Her first steps</span><span style="color: var(--accent)">Saved forever</span></div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 96px">
+<h2 style="margin: 0 0 48px; font-family: Sora, sans-serif; font-weight: 300; font-size: clamp(32px, 4vw, 48px); line-height: 1.15">Two trials. One city.</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 1 1 320px; padding: 28px; border: 1px solid #1E242B; border-radius: 20px">
+<p style="margin: 0 0 4px; font-size: 13px; letter-spacing: 0.18em; color: #9AA4AE; font-weight: 600">ALPHA &middot; MEDICAL</p>
+<p style="margin: 0; color: #AEB7C0">Elysium began with patients managing serious and chronic conditions. Their results shaped the health platform at its core.</p>
+</div>
+<div style="flex: 1 1 320px; padding: 28px; border: 1px solid #1E242B; border-radius: 20px">
+<p style="margin: 0 0 4px; font-size: 13px; letter-spacing: 0.18em; color: #9AA4AE; font-weight: 600">BETA &middot; LIFESTYLE</p>
+<p style="margin: 0; color: #AEB7C0">A paid public trial opened Elysium's everyday and entertainment features to residents across the city.</p>
+</div>
+<div style="flex: 1 1 320px; padding: 28px; border: 1px solid var(--accent); border-radius: 20px">
+<p style="margin: 0 0 4px; font-size: 13px; letter-spacing: 0.18em; color: var(--accent); font-weight: 600">GAMMA &middot; CITYWIDE</p>
+<p style="margin: 0; color: #D4DAE0">Elysium is now open to every resident of Dawnbreak City at reduced cost, as Spectre scales its network to meet the whole city.</p>
+</div>
+</div>
+</section>
+
+<section id="how" style="border-top: 1px solid #1E242B; background: #0D1014">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px">
+<h2 style="margin: 0 0 48px; font-family: Sora, sans-serif; font-weight: 300; font-size: clamp(32px, 4vw, 48px); line-height: 1.15">Four steps to Elysium.</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 32px">
+<div style="flex: 1 1 220px">
+<p style="margin: 0 0 12px; font-family: Sora, sans-serif; font-size: 40px; font-weight: 300; color: var(--accent)">01</p>
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 19px">Consultation</p>
+<p style="margin: 0; color: #AEB7C0">A short screening at a Spectre partner clinic confirms Elysium is right for you.</p>
+</div>
+<div style="flex: 1 1 220px">
+<p style="margin: 0 0 12px; font-family: Sora, sans-serif; font-size: 40px; font-weight: 300; color: var(--accent)">02</p>
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 19px">A single injection</p>
+<p style="margin: 0; color: #AEB7C0">Elysium is delivered in one outpatient visit. No surgery, and nothing to wear.</p>
+</div>
+<div style="flex: 1 1 220px">
+<p style="margin: 0 0 12px; font-family: Sora, sans-serif; font-size: 40px; font-weight: 300; color: var(--accent)">03</p>
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 19px">Calibration</p>
+<p style="margin: 0; color: #AEB7C0">Over your first days, Elysium learns your body, your voice and your habits.</p>
+</div>
+<div style="flex: 1 1 220px">
+<p style="margin: 0 0 12px; font-family: Sora, sans-serif; font-size: 40px; font-weight: 300; color: var(--accent)">04</p>
+<p style="margin: 0 0 8px; font-family: Sora, sans-serif; font-size: 19px">Awakening</p>
+<p style="margin: 0; color: #AEB7C0">Open your eyes. Everything you need is already there.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="reserve" style="max-width: 1200px; margin: 0 auto; padding: 112px 24px; display: flex; flex-wrap: wrap; gap: 56px">
+<div style="flex: 1 1 440px; min-width: 0">
+<p style="margin: 0 0 16px; font-size: 13px; letter-spacing: 0.18em; color: var(--accent); font-weight: 600">GAMMA ACCESS</p>
+<h2 style="margin: 0 0 20px; font-family: Sora, sans-serif; font-weight: 300; font-size: clamp(32px, 4vw, 48px); line-height: 1.15">Elysium, for everyone.</h2>
+<p style="margin: 0 0 32px; font-size: 18px; color: #AEB7C0">Introductory pricing for Dawnbreak City residents during the Gamma release.</p>
+<p style="margin: 0 0 4px; font-family: Sora, sans-serif; font-size: 44px; font-weight: 300">$29 <span style="font-size: 20px; color: #9AA4AE">/ month</span></p>
+<p style="margin: 0 0 32px; font-size: 14px; color: #9AA4AE">Consultation, injection and calibration at no charge.</p>
+<div style="display: flex; flex-direction: column; gap: 12px; color: #D4DAE0">
+<span>&#10003; The complete health suite</span>
+<span>&#10003; Everyday interface and assistant</span>
+<span>&#10003; Recall</span>
+<span>&#10003; Emergency response</span>
+<span>&#10003; Updates delivered automatically, for life</span>
+</div>
+</div>
+<form style="flex: 1 1 380px; min-width: 0; background: #10141A; border: 1px solid #242B33; border-radius: 24px; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: Sora, sans-serif; font-size: 22px">Reserve your appointment</p>
+<label for="r-name" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #AEB7C0">Full name
+<input id="r-name" type="text" autocomplete="off" style="background: #0A0C0F; border: 1px solid #39424C; border-radius: 12px; padding: 12px 14px; color: #EDEFF1; font-size: 16px; min-height: 48px; box-sizing: border-box">
+</label>
+<label for="r-email" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #AEB7C0">Email
+<input id="r-email" type="email" autocomplete="off" style="background: #0A0C0F; border: 1px solid #39424C; border-radius: 12px; padding: 12px 14px; color: #EDEFF1; font-size: 16px; min-height: 48px; box-sizing: border-box">
+</label>
+<label for="r-district" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #AEB7C0">Your district
+<select id="r-district" style="background: #0A0C0F; border: 1px solid #39424C; border-radius: 12px; padding: 12px 14px; color: #EDEFF1; font-size: 16px; min-height: 48px; box-sizing: border-box">
+<option>Aldergate</option>
+<option>Cape Crooked</option>
+<option>Elysian Heights</option>
+<option>Fenmoor Flats</option>
+<option>Folded Ridge Point</option>
+<option>Grid Row</option>
+<option>The Harbor</option>
+<option>New Haven</option>
+<option>The Old Financial District</option>
+<option>Tidewater Commons</option>
+</select>
+</label>
+<button type="button" style="background: var(--accent); color: #0A0C0F; border: none; border-radius: 999px; padding: 14px 24px; font-size: 16px; font-weight: 600; font-family: Inter, sans-serif; min-height: 48px; cursor: pointer">Reserve my appointment</button>
+<p style="margin: 0; font-size: 13px; color: #9AA4AE">Appointments are allocated by district as network capacity expands.</p>
+</form>
+</section>
+
+<section id="faq" style="border-top: 1px solid #1E242B">
+<div style="max-width: 860px; margin: 0 auto; padding: 96px 24px">
+<h2 style="margin: 0 0 40px; font-family: Sora, sans-serif; font-weight: 300; font-size: clamp(32px, 4vw, 44px); line-height: 1.15">Questions</h2>
+<div style="display: flex; flex-direction: column">
+<div style="border-top: 1px solid #242B33; padding: 24px 0">
+<h3 style="margin: 0 0 8px; font-family: Sora, sans-serif; font-weight: 400; font-size: 19px">Is Elysium permanent?</h3>
+<p style="margin: 0; color: #AEB7C0">Elysium is designed to stay with you for life. It updates itself over Spectre's network, so the Elysium you receive today keeps getting better.</p>
+</div>
+<div style="border-top: 1px solid #242B33; padding: 24px 0">
+<h3 style="margin: 0 0 8px; font-family: Sora, sans-serif; font-weight: 400; font-size: 19px">Who can see my recordings?</h3>
+<p style="margin: 0; color: #AEB7C0">Your recordings are yours. Spectre stores them on its secure network so that Recall, safety and emergency features are ready the moment you need them.</p>
+</div>
+<div style="border-top: 1px solid #242B33; padding: 24px 0">
+<h3 style="margin: 0 0 8px; font-family: Sora, sans-serif; font-weight: 400; font-size: 19px">Can I turn recording off?</h3>
+<p style="margin: 0; color: #AEB7C0">You can hide Recall from your view at any time. Background recording continues so your emergency and safety features always remain available.</p>
+</div>
+<div style="border-top: 1px solid #242B33; padding: 24px 0">
+<h3 style="margin: 0 0 8px; font-family: Sora, sans-serif; font-weight: 400; font-size: 19px">Does Elysium work for powered individuals?</h3>
+<p style="margin: 0; color: #AEB7C0">Elysium is compatible with most post H-Day physiologies. Your consultation will confirm compatibility before your injection.</p>
+</div>
+<div style="border-top: 1px solid #242B33; padding: 24px 0">
+<h3 style="margin: 0 0 8px; font-family: Sora, sans-serif; font-weight: 400; font-size: 19px">Does Spectre sell my data?</h3>
+<p style="margin: 0; color: #AEB7C0">Spectre never sells personal data. Anonymized information from Gamma participants supports ongoing research and the growth of the network.</p>
+</div>
+<div style="border-top: 1px solid #242B33; border-bottom: 1px solid #242B33; padding: 24px 0">
+<h3 style="margin: 0 0 8px; font-family: Sora, sans-serif; font-weight: 400; font-size: 19px">I was part of Alpha or Beta. Do I need to do anything?</h3>
+<p style="margin: 0; color: #AEB7C0">Nothing at all. Your NIOS will update to Elysium automatically.</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1E242B; background: #07090B">
+<div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: center">
+<div>
+<p style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; letter-spacing: 0.22em; font-size: 13px">SPECTRE TECHNOLOGIES</p>
+<p style="margin: 4px 0 0; color: #9AA4AE; font-size: 14px">See further.</p>
+</div>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px">
+<a href="#top" style="text-decoration: none; color: #AEB7C0">Privacy</a>
+<a href="#top" style="text-decoration: none; color: #AEB7C0">Terms</a>
+<a href="#top" style="text-decoration: none; color: #AEB7C0">Clinical information</a>
+<a href="#top" style="text-decoration: none; color: #AEB7C0">Press</a>
+<a href="#top" style="text-decoration: none; color: #AEB7C0">Careers</a>
+</nav>
+</div>
+<p style="margin: 0; font-size: 12px; line-height: 1.7; color: #8A949E; max-width: 900px">&copy; 2040 Spectre Technologies, Dawnbreak City, Virginia. NIOS: Elysium is offered through the Gamma release program. Features and availability depend on network capacity and may change during the program. Elysium supports, and does not replace, the judgment of your physician. Participation in Gamma includes the contribution of anonymized data to Spectre research programs. Continued use of Elysium constitutes acceptance of updated terms as they are released.</p>
+</div>
+</footer>
+
+</div>
+</body>
+</html>

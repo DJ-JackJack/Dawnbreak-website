@@ -109,6 +109,42 @@
     {{ content | safe }}
   </main>
 
+  {#
+    The way in to /spectre/elysium/, which is linked from nowhere else. The
+    page is the point; the banner is how a reader finds it without a nav item
+    announcing it.
+
+    The label is the record speaking: mono, dim, the same voice the
+    attribution strip uses on /spectre/elysium/. Everything beneath it belongs
+    to the advertiser -- its palette, its sans, its claims. The two never share
+    a typeface, which is what keeps the creative from reading as something the
+    record is saying. Same rule as the strip, applied from the other side.
+
+    Kept off the player area and the Foundry door. Those are the out-of-world
+    half of the site, and the banner is set dressing that does not belong
+    there.
+  #}
+  {% if "/player/" not in page.url and "/play/" not in page.url %}
+  <aside class="adslot" aria-labelledby="adslot-label">
+    <p class="adslot__label" id="adslot-label">Advertisement</p>
+
+    <a class="adbanner" href="/spectre/elysium/">
+      <span class="adbanner__media">
+        <img class="adbanner__art" src="/assets/img/spectre-nios-eye.jpg"
+             alt="" width="736" height="1298" loading="lazy" decoding="async">
+      </span>
+
+      <span class="adbanner__copy">
+        <span class="adbanner__brand">Spectre Technologies</span>
+        <span class="adbanner__head">NIOS: <b>Elysium</b></span>
+        <span class="adbanner__sub">One injection. Your phone, your screens and your physician, behind your eyes.</span>
+        <span class="adbanner__cta">Now open to every resident <span class="adbanner__arrow" aria-hidden="true">&rarr;</span></span>
+        <span class="adbanner__fine">Gamma release program &middot; reduced cost, citywide</span>
+      </span>
+    </a>
+  </aside>
+  {% endif %}
+
   <footer class="site-footer">
     <p class="site-footer__motto">{{ meta.site.subtitle }}</p>
     <p class="site-footer__tagline">

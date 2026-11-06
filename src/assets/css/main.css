@@ -704,7 +704,7 @@ html.daybreak .hero {
 }
 
 @media print {
-  .site-header, .site-footer, .article-sidebar, .grain, .back-link { display: none; }
+  .site-header, .site-footer, .article-sidebar, .grain, .back-link, .adslot { display: none; }
   body { background: #fff; color: #000; }
 }
 
@@ -1296,4 +1296,166 @@ html.daybreak .entry:hover { background: rgba(20, 22, 28, 0.03); }
 .citymap__districts {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
   gap: .45rem .9rem; padding: 0; margin: 0; list-style: none;
+}
+
+/* ================================================================
+   Sponsored slot
+
+   A delivery device, not a claim about the record's finances. The
+   NIOS launch is the real thing; this is how a reader stumbles onto
+   the page that carries it.
+
+   The label is the record's own voice -- mono, dim, the same face the
+   attribution strip wears on /spectre/elysium/. Everything inside the
+   creative belongs to the advertiser: its ink, its accent, its sans.
+   Holding the two typefaces apart is what keeps the creative from
+   reading as a thing the record is saying.
+
+   The creative stays dark in Daybreak. It is a foreign object on the
+   page, and the mismatch is the point.
+
+   The sans is a plain system stack on purpose. Spectre's real faces
+   live on its own page; loading them site-wide would put a second
+   font request on every article in the record for the sake of one
+   banner.
+   ================================================================ */
+
+.adslot {
+  max-width: var(--max-w);
+  margin: 3.5rem auto 2.5rem;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+}
+
+.adslot__label {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--smoke);
+}
+
+.adbanner {
+  /* The advertiser's tokens, scoped to the creative and nothing else. */
+  --spectre-ink:    #0B0F12;
+  --spectre-edge:   #1E2A2E;
+  --spectre-accent: #8EE0D6;
+  --spectre-text:   #EDEFF1;
+  --spectre-dim:    #8A949E;
+
+  display: grid;
+  grid-template-columns: minmax(0, 11rem) 1fr;
+  min-height: 12.5rem;
+  overflow: hidden;
+  border: 1px solid var(--spectre-edge);
+  border-radius: var(--radius);
+  background: var(--spectre-ink);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.adbanner:hover,
+.adbanner:focus-visible {
+  border-color: color-mix(in srgb, var(--spectre-accent) 55%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--spectre-accent) 22%, transparent),
+    var(--shadow-md);
+}
+
+.adbanner__media { position: relative; display: block; overflow: hidden; }
+
+.adbanner__art {
+  /* Taken out of flow so the row height is the banner's, not the art's. */
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* The art is a tall portrait; the eye sits above its middle, so the
+     crop is pulled upward to keep the eye in a short wide frame. */
+  object-position: center 38%;
+}
+
+/* Carries the art into the ink rather than butting it against a seam. */
+.adbanner__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 72%, var(--spectre-ink) 100%);
+}
+
+.adbanner__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 1.15rem 1.5rem 1.25rem;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+.adbanner__copy > * { display: block; }
+
+.adbanner__brand {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--spectre-dim);
+}
+
+.adbanner__head {
+  font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--spectre-text);
+}
+
+.adbanner__head b { font-weight: 600; color: var(--spectre-accent); }
+
+.adbanner__sub {
+  max-width: 34rem;
+  font-size: 0.87rem;
+  line-height: 1.5;
+  color: var(--spectre-dim);
+}
+
+.adbanner__cta {
+  margin-top: 0.45rem;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--spectre-accent);
+}
+
+.adbanner__arrow {
+  display: inline-block;
+  transition: transform 160ms ease;
+}
+
+.adbanner:hover .adbanner__arrow { transform: translateX(3px); }
+
+.adbanner__fine {
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--spectre-dim) 70%, transparent);
+}
+
+@media (max-width: 44rem) {
+  .adbanner { grid-template-columns: 1fr; }
+  .adbanner { min-height: 0; }
+  .adbanner__media { height: 9rem; }
+  .adbanner__media::after {
+    background: linear-gradient(180deg, transparent 55%, var(--spectre-ink) 100%);
+  }
+  .adbanner__copy { padding: 1rem 1.15rem 1.15rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adbanner,
+  .adbanner__arrow { transition: none; }
+  .adbanner:hover .adbanner__arrow { transform: none; }
 }
